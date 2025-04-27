@@ -1,4 +1,4 @@
-name: LEACE
+name: leace
 channels:
   - defaults
   - conda-forge
@@ -11,5 +11,8 @@ dependencies:
   - scikit-learn
   - numpy
   - tqdm
-  - pip
+  - pip:
+    - conllu #for UD 
+    - concept_erasure
   - matplotlib
+

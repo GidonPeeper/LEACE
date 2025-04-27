@@ -17,7 +17,7 @@ Inspired by earlier work applying LEACE to BERT and brain alignment studies, thi
 
 ---
 
-## 📋 Project Roadmap
+## Project Roadmap
 
 ### Stage 1: Toy Example Validation
 - Generate synthetic embeddings encoding a simple binary concept.
