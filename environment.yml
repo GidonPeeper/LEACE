@@ -1,0 +1,15 @@
+name: LEACE
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch
+  - transformers
+  - datasets
+  - spacy
+  - scikit-learn
+  - numpy
+  - tqdm
+  - pip
+  - matplotlib
