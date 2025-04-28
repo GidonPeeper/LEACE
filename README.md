@@ -5,6 +5,8 @@ The resulting models are fully compatible GPT-2 variants, but without certain en
 
 Inspired by earlier work applying LEACE to BERT and brain alignment studies, this project focuses purely on modifying the model's internal representations without involving any neural data.
 
+The manuscript (in progress) of this project can be found here: https://www.overleaf.com/read/zdnjhvmbgdtd#cbb13f 
+
 ---
 
 ## Goals
@@ -19,7 +21,7 @@ Inspired by earlier work applying LEACE to BERT and brain alignment studies, thi
 
 ## Project Roadmap
 
-### Stage 1: Toy Example Validation
+### Stage 1: Toy Example Validation (done)
 - Generate synthetic embeddings encoding a simple binary concept.
 - Apply LEACE and verify successful erasure via probing.
 
