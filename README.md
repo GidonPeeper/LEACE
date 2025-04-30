@@ -32,13 +32,14 @@ The manuscript (in progress) of this project can be found here: https://www.over
 ### Stage 3: Full POS Tag Erasure
 - Scale up to removing all POS categories (17+ classes).
 - Evaluate probing accuracy before and after LEACE.
+- Assess: i) amount of data necessary; ii) transfer (e.g. from UD datasets, to "narratives")
 
 ### Stage 4: Dependency Label Erasure
 - Target syntactic dependencies using auto-annotated corpora.
 - Verify erasure using structured probes or classifiers.
 
 ### Stage 5: Dependency Distance Erasure
-- Tackle highly distributed features like syntactic tree distances.
+- Tackle highly distributed features like syntactic tree distances (tbd)
 
 ---
 
