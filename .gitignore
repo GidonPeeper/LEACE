@@ -3,8 +3,12 @@ __pycache__/
 *.pyc
 *.pyo
 
+
 data/
 models/
 checkpoints/
 
 .ipynb_checkpoints/
+
+*.pt
+*.pkl
