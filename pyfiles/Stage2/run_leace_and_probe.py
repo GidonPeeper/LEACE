@@ -10,159 +10,128 @@ from concept_erasure import LeaceEraser
 from collections import Counter
 
 # --------------------------
-# Parameters
+# Settings
 # --------------------------
 LAYER = 8
-FEATURE = "closed_open"
 EMBEDDING_FILE = "gpt2_embeddings.pt"
-BALANCE_CLASSES = False  # <- SET THIS TO True to balance classes
+FEATURES = ["function_content", "noun_nonnoun", "verb_nonverb", "closed_open"]
+BALANCE_CLASSES = False
 SEED = 42
 
 torch.manual_seed(SEED)
 
 # --------------------------
-# Load embeddings and labels
+# Load data once
 # --------------------------
 with open(EMBEDDING_FILE, "rb") as f:
     data = pickle.load(f)
 
-X_list, y_list = [], []
+X_all = [sent["embeddings_by_layer"][LAYER] for sent in data]
+X = torch.cat(X_all, dim=0)  # shape: [N, hidden_dim]
 
-for sent in data:
-    X_list.append(sent["embeddings_by_layer"][LAYER])  # Tensor: [num_words, dim]
-    y_list.extend(sent["word_labels"][FEATURE])         # List[int]
-
-X = torch.cat(X_list, dim=0)           # shape: [N, hidden_dim]
-y = torch.tensor(y_list).long()        # shape: [N]
-
-# --------------------------
-# Report class distribution
-# --------------------------
-counts = Counter(y_list)
-total = sum(counts.values())
-print(f"\n[CLASS DISTRIBUTION] ({FEATURE}):")
-for cls, count in sorted(counts.items()):
-    print(f"  Class {cls}: {count} tokens ({count / total:.2%})")
-
-print(f"Loaded {X.shape[0]} tokens, embedding dim = {X.shape[1]}")
+# Load all label sets
+labels_by_feature = {}
+for feat in FEATURES:
+    labels_by_feature[feat] = torch.tensor(
+        [label for sent in data for label in sent["word_labels"][feat]]
+    ).long()
 
 # --------------------------
-# Optional: balance the classes
+# Evaluate all source → target combinations
 # --------------------------
-if BALANCE_CLASSES:
-    print("\n[INFO] Balancing classes by downsampling majority class...")
+results = []
 
-    idx_class_0 = (y == 0).nonzero(as_tuple=True)[0]
-    idx_class_1 = (y == 1).nonzero(as_tuple=True)[0]
+for source_feat in FEATURES:
+    y = labels_by_feature[source_feat]
+    
+    # Optional balancing
+    if BALANCE_CLASSES:
+        idx_class_0 = (y == 0).nonzero(as_tuple=True)[0]
+        idx_class_1 = (y == 1).nonzero(as_tuple=True)[0]
+        min_class_size = min(len(idx_class_0), len(idx_class_1))
+        idx_0_sampled = idx_class_0[torch.randperm(len(idx_class_0))[:min_class_size]]
+        idx_1_sampled = idx_class_1[torch.randperm(len(idx_class_1))[:min_class_size]]
+        selected_indices = torch.cat([idx_0_sampled, idx_1_sampled])
+        selected_indices = selected_indices[torch.randperm(len(selected_indices))]
 
-    min_class_size = min(len(idx_class_0), len(idx_class_1))
+        X_bal = X[selected_indices]
+        y = y[selected_indices]
+    else:
+        X_bal = X
+        selected_indices = torch.arange(len(y))
 
-    idx_0_sampled = idx_class_0[torch.randperm(len(idx_class_0))[:min_class_size]]
-    idx_1_sampled = idx_class_1[torch.randperm(len(idx_class_1))[:min_class_size]]
-    selected_indices = torch.cat([idx_0_sampled, idx_1_sampled])
-    selected_indices = selected_indices[torch.randperm(len(selected_indices))]
+    # Split
+    N = X_bal.shape[0]
+    train_size = int(0.8 * N)
+    val_size = N - train_size
+    dataset = TensorDataset(X_bal, y)
+    train_set, val_set = random_split(dataset, [train_size, val_size])
+    X_train, y_train = train_set[:][0], train_set[:][1]
+    X_val, y_val = val_set[:][0], val_set[:][1]
 
-    X = X[selected_indices]
-    y = y[selected_indices]
+    # Scale
+    scaler = StandardScaler()
+    X_train_np = scaler.fit_transform(X_train.numpy())
+    X_val_np = scaler.transform(X_val.numpy())
 
-    print(f"[INFO] After balancing: {X.shape[0]} samples (equal per class)")
+    # Fit probe before LEACE
+    clf_orig = LogisticRegression(max_iter=2000)
+    clf_orig.fit(X_train_np, y_train.numpy())
+    acc_orig = clf_orig.score(X_val_np, y_val.numpy())
 
-# --------------------------
-# Train-test split
-# --------------------------
-N = X.shape[0]
-train_size = int(0.8 * N)
-val_size = N - train_size
+    # Dummy
+    dummy = DummyClassifier(strategy="most_frequent")
+    dummy.fit(X_train_np, y_train.numpy())
+    dummy_acc = dummy.score(X_val_np, y_val.numpy())
 
-dataset = TensorDataset(X, y)
-train_set, val_set = random_split(dataset, [train_size, val_size])
+    # Apply LEACE
+    Z = y.unsqueeze(1).float()
+    eraser = LeaceEraser.fit(X_bal, Z)
+    X_erased = eraser(X_bal)
+    X_train_e = X_erased[train_set.indices]
+    X_val_e = X_erased[val_set.indices]
+    X_train_e_np = scaler.fit_transform(X_train_e.numpy())
+    X_val_e_np = scaler.transform(X_val_e.numpy())
 
-X_train, y_train = train_set[:][0], train_set[:][1]
-X_val, y_val = val_set[:][0], val_set[:][1]
+    # Refit probe after LEACE on original concept
+    clf_leace = LogisticRegression(max_iter=2000)
+    clf_leace.fit(X_train_e_np, y_train.numpy())
+    acc_erased = clf_leace.score(X_val_e_np, y_val.numpy())
 
-# --------------------------
-# Scale the data
-# --------------------------
-scaler = StandardScaler()
-X_train_np = scaler.fit_transform(X_train.numpy())
-X_val_np = scaler.transform(X_val.numpy())
+    for target_feat in FEATURES:
+        y2 = labels_by_feature[target_feat][selected_indices]
+        y2_train = y2[train_set.indices]
+        y2_val = y2[val_set.indices]
 
-# --------------------------
-# Fit probe on original embeddings
-# --------------------------
-clf_orig = LogisticRegression(max_iter=2000)
-clf_orig.fit(X_train_np, y_train.numpy())
-y_pred_orig = clf_orig.predict(X_val_np)
-acc_orig = accuracy_score(y_val.numpy(), y_pred_orig)
-print(f"[BEFORE LEACE] Probe accuracy: {acc_orig:.4f}")
+        # Before LEACE
+        clf2_orig = LogisticRegression(max_iter=2000)
+        clf2_orig.fit(X_train_np, y2_train.numpy())
+        acc2_orig = clf2_orig.score(X_val_np, y2_val.numpy())
 
-# --------------------------
-# Dummy baseline
-# --------------------------
-dummy = DummyClassifier(strategy="most_frequent")
-dummy.fit(X_train_np, y_train.numpy())
-dummy_acc = dummy.score(X_val_np, y_val.numpy())
-print(f"[DUMMY BASELINE] Majority class accuracy: {dummy_acc:.4f}")
+        # After LEACE
+        clf2_leace = LogisticRegression(max_iter=2000)
+        clf2_leace.fit(X_train_e_np, y2_train.numpy())
+        acc2_leace = clf2_leace.score(X_val_e_np, y2_val.numpy())
 
-# --------------------------
-# Apply LEACE
-# --------------------------
-Z = y.unsqueeze(1).float()
-eraser = LeaceEraser.fit(X, Z)
-X_erased = eraser(X)
-
-# --------------------------
-# Re-split and scale erased data
-# --------------------------
-X_train_erased = X_erased[train_set.indices]
-X_val_erased = X_erased[val_set.indices]
-
-X_train_erased_np = scaler.fit_transform(X_train_erased.numpy())
-X_val_erased_np = scaler.transform(X_val_erased.numpy())
-
-# --------------------------
-# Fit probe on LEACE-erased embeddings
-# --------------------------
-clf_leace = LogisticRegression(max_iter=2000)
-clf_leace.fit(X_train_erased_np, y_train.numpy())
-y_pred_leace = clf_leace.predict(X_val_erased_np)
-acc_leace = accuracy_score(y_val.numpy(), y_pred_leace)
-print(f"[AFTER LEACE ] Probe accuracy: {acc_leace:.4f}")
-
-
-# --------------------------
-# Load second concept labels (e.g., for preservation check)
-# --------------------------
-SECOND_FEATURE = "noun_nonnoun"
-print(f"\n[INFO] Evaluating preservation of: {SECOND_FEATURE}")
-
-# Reload sentence-level labels for the second concept
-y2_list = []
-for sent in data:
-    y2_list.extend(sent["word_labels"][SECOND_FEATURE])
-y2 = torch.tensor(y2_list).long()
-
-# Subselect to match any balancing or selection from first concept
-if BALANCE_CLASSES:
-    y2 = y2[selected_indices]
-
-# Reuse train/val split
-y2_train = y2[train_set.indices]
-y2_val = y2[val_set.indices]
+        results.append({
+            "erased": source_feat,
+            "probed": target_feat,
+            "acc_before": acc2_orig,
+            "acc_after": acc2_leace,
+            "erasure_accuracy": acc_erased if source_feat == target_feat else None,
+            "dummy": dummy_acc if source_feat == target_feat else None
+        })
 
 # --------------------------
-# Probe on second concept BEFORE LEACE (sanity check)
+# Display Results
 # --------------------------
-clf2_orig = LogisticRegression(max_iter=2000)
-clf2_orig.fit(X_train_np, y2_train.numpy())
-acc2_orig = clf2_orig.score(X_val_np, y2_val.numpy())
-print(f"[PRESERVATION] Probe on {SECOND_FEATURE} BEFORE LEACE: {acc2_orig:.4f}")
-
-# --------------------------
-# Probe on second concept AFTER LEACE
-# --------------------------
-clf2_leace = LogisticRegression(max_iter=2000)
-clf2_leace.fit(X_train_erased_np, y2_train.numpy())
-acc2_leace = clf2_leace.score(X_val_erased_np, y2_val.numpy())
-print(f"[PRESERVATION] Probe on {SECOND_FEATURE} AFTER  LEACE: {acc2_leace:.4f}")
-
+print("\n\nLEACE Concept Erasure Matrix")
+print("Erased → Probed | Acc (before) → Acc (after)")
+for source_feat in FEATURES:
+    for target_feat in FEATURES:
+        row = next(r for r in results if r["erased"] == source_feat and r["probed"] == target_feat)
+        print(f"{source_feat:16} → {target_feat:16} | {row['acc_before']:.4f} → {row['acc_after']:.4f}", end="")
+        if source_feat == target_feat:
+            print(f" (dummy: {row['dummy']:.4f})", end="")
+        print()
+        
