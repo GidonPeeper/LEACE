@@ -12,7 +12,7 @@ from collections import Counter
 # --------------------------
 # Settings
 # --------------------------
-LAYER = 8
+LAYER = 4
 EMBEDDING_FILE = "gpt2_embeddings.pt"
 FEATURES = ["function_content", "noun_nonnoun", "verb_nonverb", "closed_open"]
 BALANCE_CLASSES = False
