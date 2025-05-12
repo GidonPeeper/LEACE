@@ -15,7 +15,7 @@ from collections import Counter
 LAYER = 8
 FEATURE = "closed_open"
 EMBEDDING_FILE = "gpt2_embeddings.pt"
-BALANCE_CLASSES = True  # <- SET THIS TO True to balance classes
+BALANCE_CLASSES = False  # <- SET THIS TO True to balance classes
 SEED = 42
 
 torch.manual_seed(SEED)
@@ -128,4 +128,41 @@ clf_leace.fit(X_train_erased_np, y_train.numpy())
 y_pred_leace = clf_leace.predict(X_val_erased_np)
 acc_leace = accuracy_score(y_val.numpy(), y_pred_leace)
 print(f"[AFTER LEACE ] Probe accuracy: {acc_leace:.4f}")
+
+
+# --------------------------
+# Load second concept labels (e.g., for preservation check)
+# --------------------------
+SECOND_FEATURE = "noun_nonnoun"
+print(f"\n[INFO] Evaluating preservation of: {SECOND_FEATURE}")
+
+# Reload sentence-level labels for the second concept
+y2_list = []
+for sent in data:
+    y2_list.extend(sent["word_labels"][SECOND_FEATURE])
+y2 = torch.tensor(y2_list).long()
+
+# Subselect to match any balancing or selection from first concept
+if BALANCE_CLASSES:
+    y2 = y2[selected_indices]
+
+# Reuse train/val split
+y2_train = y2[train_set.indices]
+y2_val = y2[val_set.indices]
+
+# --------------------------
+# Probe on second concept BEFORE LEACE (sanity check)
+# --------------------------
+clf2_orig = LogisticRegression(max_iter=2000)
+clf2_orig.fit(X_train_np, y2_train.numpy())
+acc2_orig = clf2_orig.score(X_val_np, y2_val.numpy())
+print(f"[PRESERVATION] Probe on {SECOND_FEATURE} BEFORE LEACE: {acc2_orig:.4f}")
+
+# --------------------------
+# Probe on second concept AFTER LEACE
+# --------------------------
+clf2_leace = LogisticRegression(max_iter=2000)
+clf2_leace.fit(X_train_erased_np, y2_train.numpy())
+acc2_leace = clf2_leace.score(X_val_erased_np, y2_val.numpy())
+print(f"[PRESERVATION] Probe on {SECOND_FEATURE} AFTER  LEACE: {acc2_leace:.4f}")
 
