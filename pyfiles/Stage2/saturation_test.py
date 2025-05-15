@@ -17,7 +17,7 @@ EMBEDDING_FILE = "gpt2_embeddings.pt"
 FEATURES = ["function_content", "noun_nonnoun", "verb_nonverb", "closed_open"]
 BALANCE_CLASSES = False
 SEED = 42
-FRACTIONS = [0.1, 0.5, 1.0]
+FRACTIONS = [0.01, 0.1, 1.0]
 
 torch.manual_seed(SEED)
 
@@ -84,10 +84,10 @@ for source_feat in FEATURES:
         clf_orig.fit(X_train_np, y_train.numpy())
         acc_orig = clf_orig.score(X_val_np, y_val.numpy())
 
-        # Dummy
-        dummy = DummyClassifier(strategy="most_frequent")
-        dummy.fit(X_train_np, y_train.numpy())
-        dummy_acc = dummy.score(X_val_np, y_val.numpy())
+        # baseline
+        baseline = DummyClassifier(strategy="most_frequent")
+        baseline.fit(X_train_np, y_train.numpy())
+        baseline_acc = baseline.score(X_val_np, y_val.numpy())
 
         # Apply LEACE
         Z = y_sub.unsqueeze(1).float()
@@ -108,7 +108,7 @@ for source_feat in FEATURES:
             "fraction": frac,
             "acc_before": acc_orig,
             "acc_after": acc_erased,
-            "dummy": dummy_acc
+            "baseline": baseline_acc,
         })
 
 # --------------------------
@@ -116,4 +116,4 @@ for source_feat in FEATURES:
 # --------------------------
 print("\n\nLEACE Saturation Test Results")
 for row in results:
-    print(f"{row['feature']:16} | {int(row['fraction']*100)}% | {row['acc_before']:.4f} → {row['acc_after']:.4f} (dummy: {row['dummy']:.4f})")
+    print(f"{row['feature']:16} | {int(row['fraction']*100)}% | {row['acc_before']:.4f} → {row['acc_after']:.4f} (baseline: {row['baseline']:.4f})")
