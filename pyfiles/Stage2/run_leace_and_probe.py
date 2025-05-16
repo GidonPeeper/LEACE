@@ -95,6 +95,14 @@ for source_feat in FEATURES:
         pickle.dump(eraser, f)
     # ----------------------------------------
 
+    # --- Save the LEACE-erased embeddings for this feature ---
+    with open(f"s2_leace_embeddings_{source_feat}.pkl", "wb") as f:
+        pickle.dump({
+            "train_erased": X_erased.cpu(),
+            "train_labels": y.cpu(),
+        }, f)
+    # ---------------------------------------------------------
+
     # --- Compute L2 norm between original and erased embeddings ---
     l2_train = torch.norm(X_bal - X_erased, dim=1).mean().item()
     l2_test = torch.norm(X_test - X_test_erased, dim=1).mean().item()
