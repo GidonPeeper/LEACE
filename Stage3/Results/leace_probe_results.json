@@ -1,0 +1,2892 @@
+[
+  {
+    "erased": "ADJ",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.979357615366223,
+    "erasure_accuracy": 0.979357615366223,
+    "baseline": 0.9285088068861083,
+    "l2_train": 38.11882019042969,
+    "l2_test": 36.59333038330078
+  },
+  {
+    "erased": "ADJ",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9859328923248585,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9882043516378417,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9938630748386068,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9993623973858293,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9949788794134056,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9618633936399139,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9980871921574879,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9967322866023751,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9933051725512074,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9753327488642703,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.992029967322866,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9981668924842592,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.98334263170479,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9974894397067028,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9808719215748785,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9783613612815812,
+    "erasure_accuracy": 0.9783613612815812,
+    "baseline": 0.9191041683270902,
+    "l2_train": 28.594989776611328,
+    "l2_test": 27.54454803466797
+  },
+  {
+    "erased": "ADP",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.987925400494142,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9937435243484498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9995616482027576,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9947397784330916,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9633378496851837,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9983262931378019,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9965728859488324,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9933051725512074,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9747349964134853,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9917510161791664,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9836614330118754,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9975292898700885,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9806726707579501,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9858930421614729,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9882442018012274,
+    "erasure_accuracy": 0.9882442018012274,
+    "baseline": 0.9528572567147525,
+    "l2_train": 88.73085021972656,
+    "l2_test": 88.92806243896484
+  },
+  {
+    "erased": "ADV",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9936638240216785,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994022475492149,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9948593289232486,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9650115565473818,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9967721367657607,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9934645732047501,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9748545469036423,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9980871921574879,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9921096676496374,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9984458436279589,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.982864429744162,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976886905236312,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9807125209213358,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9857336415079302,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.987925400494142,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.992627719773651,
+    "erasure_accuracy": 0.992627719773651,
+    "baseline": 0.9385111978959114,
+    "l2_train": 27.17313003540039,
+    "l2_test": 26.834423065185547
+  },
+  {
+    "erased": "AUX",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994022475492149,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9949788794134056,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9986052442815015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9641348529528971,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9984458436279589,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9968916872559177,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9934247230413644,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.975013947557185,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9983262931378019,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.983462182194947,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9975292898700885,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9809516219016498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9856140910177732,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9880051008209134,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9939826253287638,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9981270423208736,
+    "erasure_accuracy": 0.9981270423208736,
+    "baseline": 0.970670279748147,
+    "l2_train": 6.499794006347656,
+    "l2_test": 6.165703773498535
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9946999282697059,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9647326054036821,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982864429744162,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9967721367657607,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9934645732047501,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9752530485374991,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9983262931378019,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9921893679764087,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9983661433011876,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.983940384155575,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976089901968598,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9808719215748785,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9856539411811588,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9881246513110704,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9937435243484498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9995217980393719,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9931059217342791,
+    "erasure_accuracy": 0.9931059217342791,
+    "baseline": 0.9244440902207699,
+    "l2_train": 19.919395446777344,
+    "l2_test": 18.729154586791992
+  },
+  {
+    "erased": "DET",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9986052442815015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9642544034430541,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9984059934645731,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.996612736112218,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9932653223878218,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9750537977205707,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9839802343189608,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "DET",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9975292898700885,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9809516219016498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9856539411811588,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9881246513110704,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9935841236949071,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994022475492149,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9945006774527776,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": 0.9985653941181158,
+    "baseline": 0.995178130230334,
+    "l2_train": 0.0,
+    "l2_test": 0.0
+  },
+  {
+    "erased": "INTJ",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9649318562206105,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9968518370925321,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9935044233681358,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.975133498047342,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9984458436279589,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.983940384155575,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976089901968598,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9799952179803937,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9858930421614729,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9880848011476847,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9935044233681358,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994022475492149,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9946600781063203,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9986052442815015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9418984617836933,
+    "erasure_accuracy": 0.9418984617836933,
+    "baseline": 0.835697776360883,
+    "l2_train": 74.11885070800781,
+    "l2_test": 73.65897369384766
+  },
+  {
+    "erased": "NOUN",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982864429744162,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9966525862756037,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9933848728779788,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9744958954331713,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.992029967322866,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9837809835020324,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9977285406870168,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9804734199410218,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9856937913445445,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9880051008209134,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9937036741850641,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994819478759863,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9946999282697059,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9986052442815015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9638160516458117,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9981668924842592,
+    "erasure_accuracy": 0.9981668924842592,
+    "baseline": 0.978401211444967,
+    "l2_train": 41.761165618896484,
+    "l2_test": 42.93166732788086
+  },
+  {
+    "erased": "NUM",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9967721367657607,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9935044233681358,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9738582928190006,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9981668924842592,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9985255439547303,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9838208336654181,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9978480911771739,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9807922212481072,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9858133418347015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.987925400494142,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9934247230413644,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994420977126006,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9947397784330916,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.963656650992269,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9984856937913446,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9966525862756037,
+    "erasure_accuracy": 0.9966525862756037,
+    "baseline": 0.9741372439627003,
+    "l2_train": 35.2446403503418,
+    "l2_test": 34.10897445678711
+  },
+  {
+    "erased": "PART",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9934247230413644,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9749740973937994,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9986052442815015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9921096676496374,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9984059934645731,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9837809835020324,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PART",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976886905236312,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9809516219016498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9858133418347015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9882043516378417,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9936239738582928,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994819478759863,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9948593289232486,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985255439547303,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9644536542599824,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982864429744162,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9967721367657607,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9909540129114529,
+    "erasure_accuracy": 0.9909540129114529,
+    "baseline": 0.9137243962700247,
+    "l2_train": 145.9034423828125,
+    "l2_test": 142.0463104248047
+  },
+  {
+    "erased": "PRON",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9752530485374991,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9921495178130231,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9833027815414043,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976089901968598,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9804734199410218,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9857734916713159,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9881246513110704,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9939029250019925,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994022475492149,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9948194787598629,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9986052442815015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9616242926595999,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9969713875826891,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9934645732047501,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9688371722324062,
+    "erasure_accuracy": 0.9688371722324062,
+    "baseline": 0.9172710608113493,
+    "l2_train": 35.356441497802734,
+    "l2_test": 36.03867721557617
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9983262931378019,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.992029967322866,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.983581732685104,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976089901968598,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9805132701044075,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9857336415079302,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9881246513110704,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9940623256555352,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994819478759863,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9948593289232486,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9986052442815015,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9643341037698254,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9967721367657607,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9935841236949071,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.975133498047342,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.8971068781382003,
+    "erasure_accuracy": 0.8971068781382003,
+    "baseline": 0.876623894157966,
+    "l2_train": 31.45929718017578,
+    "l2_test": 32.137752532958984
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9921495178130231,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9984059934645731,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9838606838288037,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9974894397067028,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9807523710847215,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9854148402008448,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.988164501474456,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9937435243484498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9993225472224436,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9946999282697059,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9986450944448872,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9643341037698254,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9983661433011876,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9965330357854467,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9934247230413644,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.9737785924922292,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9983262931378019,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9921893679764087,
+    "erasure_accuracy": 0.9921893679764087,
+    "baseline": 0.9846975372599027,
+    "l2_train": 128.16351318359375,
+    "l2_test": 127.68328857421875
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9983661433011876,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9837411333386467,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976488403602455,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9809516219016498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9856539411811588,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9881246513110704,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9935841236949071,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994022475492149,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9945006774527776,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9649318562206105,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9968518370925321,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9935044233681358,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.975133498047342,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9984458436279589,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": 0.9982465928110306,
+    "baseline": 0.995656332190962,
+    "l2_train": 0.0,
+    "l2_test": 0.0
+  },
+  {
+    "erased": "SYM",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.983940384155575,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "SYM",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976089901968598,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9806328205945645,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9858531919980872,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9882840519646131,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9935044233681358,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994420977126006,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9947397784330916,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9646927552402965,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982067426476449,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9968119869291464,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9931856220610504,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.974894397067028,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9984458436279589,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982864429744162,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.9795170160197657,
+    "erasure_accuracy": 0.9795170160197657,
+    "baseline": 0.89619032438033,
+    "l2_train": 46.23822784423828,
+    "l2_test": 44.43671798706055
+  },
+  {
+    "erased": "VERB",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9975292898700885,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "ADJ",
+    "acc_before": 0.9809516219016498,
+    "acc_after": 0.9809516219016498,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "ADP",
+    "acc_before": 0.9856539411811588,
+    "acc_after": 0.9856539411811588,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "ADV",
+    "acc_before": 0.9881246513110704,
+    "acc_after": 0.9881246513110704,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "AUX",
+    "acc_before": 0.9935841236949071,
+    "acc_after": 0.9935841236949071,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "CCONJ",
+    "acc_before": 0.9994022475492149,
+    "acc_after": 0.9994022475492149,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "DET",
+    "acc_before": 0.9945006774527776,
+    "acc_after": 0.9945006774527776,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "INTJ",
+    "acc_before": 0.9985653941181158,
+    "acc_after": 0.9985653941181158,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "NOUN",
+    "acc_before": 0.9649318562206105,
+    "acc_after": 0.9649318562206105,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "NUM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "PART",
+    "acc_before": 0.9968518370925321,
+    "acc_after": 0.9968518370925321,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "PRON",
+    "acc_before": 0.9935044233681358,
+    "acc_after": 0.9935044233681358,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "PROPN",
+    "acc_before": 0.975133498047342,
+    "acc_after": 0.975133498047342,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "PUNCT",
+    "acc_before": 0.9984458436279589,
+    "acc_after": 0.9984458436279589,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "SCONJ",
+    "acc_before": 0.9919901171594804,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "SYM",
+    "acc_before": 0.9982465928110306,
+    "acc_after": 0.9982465928110306,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "VERB",
+    "acc_before": 0.983940384155575,
+    "acc_after": 0.983940384155575,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "X",
+    "probed": "X",
+    "acc_before": 0.9976089901968598,
+    "acc_after": 0.9976089901968598,
+    "erasure_accuracy": 0.9976089901968598,
+    "baseline": 0.9983262931378019,
+    "l2_train": 0.0,
+    "l2_test": 0.0
+  }
+]
