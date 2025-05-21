@@ -14,9 +14,9 @@ import json
 # Settings
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Stage3/Embeddings/Narratives/AllPOS/gpt2_embeddings.pt"
-TEST_FILE = "Stage3/Embeddings/Narratives/AllPOS/gpt2_embeddings_test.pt"
-RESULTS_FILE = "Stage3/Results/Narratives/leace_probe_results.json"
+EMBEDDING_FILE = "Stage3/Embeddings/Narratives/4conc/Original_embeddings/gpt2_embeddings.pt"
+TEST_FILE = "Stage3/Embeddings/Narratives/4conc/Original_embeddings/gpt2_embeddings_test.pt"
+RESULTS_FILE = "Stage3/Results/Narratives/4conc/leace_probe_results.json"
 BALANCE_CLASSES = False
 SEED = 42
 

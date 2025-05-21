@@ -1,0 +1,162 @@
+[
+  {
+    "erased": "closed_open",
+    "probed": "closed_open",
+    "acc_before": 0.9777714985400773,
+    "acc_after": 0.5994160308938495,
+    "erasure_accuracy": 0.5994160308938495,
+    "baseline": 0.5994160308938495,
+    "l2_train": 66.86219024658203,
+    "l2_test": 60.144412994384766
+  },
+  {
+    "erased": "closed_open",
+    "probed": "function_content",
+    "acc_before": 0.9790901384571913,
+    "acc_after": 0.9997174343034756,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "closed_open",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9794668927192239,
+    "acc_after": 0.9752284072713573,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "closed_open",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9884148064424979,
+    "acc_after": 0.9866252236978431,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "function_content",
+    "probed": "closed_open",
+    "acc_before": 0.9777714985400773,
+    "acc_after": 0.9993406800414429,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "function_content",
+    "probed": "function_content",
+    "acc_before": 0.9790901384571913,
+    "acc_after": 0.6018649335970613,
+    "erasure_accuracy": 0.6018649335970613,
+    "baseline": 0.6018649335970613,
+    "l2_train": 69.3629150390625,
+    "l2_test": 62.66791915893555
+  },
+  {
+    "erased": "function_content",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9794668927192239,
+    "acc_after": 0.9803145898087973,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "function_content",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9884148064424979,
+    "acc_after": 0.9869077893943675,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "closed_open",
+    "acc_before": 0.9777714985400773,
+    "acc_after": 0.913723273994537,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "function_content",
+    "acc_before": 0.9790901384571913,
+    "acc_after": 0.9779598756710935,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9794668927192239,
+    "acc_after": 0.8374305359329377,
+    "erasure_accuracy": 0.8374305359329377,
+    "baseline": 0.8374305359329377,
+    "l2_train": 32.10626983642578,
+    "l2_test": 35.44728469848633
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9884148064424979,
+    "acc_after": 0.9909578977112179,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "closed_open",
+    "acc_before": 0.9777714985400773,
+    "acc_after": 0.9729678816991617,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "function_content",
+    "acc_before": 0.9790901384571913,
+    "acc_after": 0.9795610812847321,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9794668927192239,
+    "acc_after": 0.9840821324291231,
+    "erasure_accuracy": null,
+    "baseline": null,
+    "l2_train": null,
+    "l2_test": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9884148064424979,
+    "acc_after": 0.8269756051615333,
+    "erasure_accuracy": 0.8269756051615333,
+    "baseline": 0.8269756051615333,
+    "l2_train": 56.19308090209961,
+    "l2_test": 54.906333923339844
+  }
+]

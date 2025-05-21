@@ -21,9 +21,9 @@ def oracle_leace(X: np.ndarray, Z: np.ndarray) -> np.ndarray:
 # Settings
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Stage3/Embeddings/Narratives/AllPOS/gpt2_embeddings.pt"
-TEST_FILE = "Stage3/Embeddings/Narratives/AllPOS/gpt2_embeddings_test.pt"
-RESULTS_FILE = "Stage3/Results/oracle_leace_after_leace_results.json"
+EMBEDDING_FILE = "Stage3/Embeddings/Narratives/4conc/Original_embeddings/gpt2_embeddings.pt"
+TEST_FILE = "Stage3/Embeddings/Narratives/4conc/Original_embeddings/gpt2_embeddings_test.pt"
+RESULTS_FILE = "Stage3/Results/Narratives/4conc/oracle_leace_after_leace_results.json"
 SEED = 42
 
 torch.manual_seed(SEED)
@@ -54,7 +54,7 @@ results = []
 for source_feat in all_pos_tags:
     print(f"\n=== Erasing: {source_feat} ===")
     # Load the LEACE eraser trained on the training set
-    with open(f"Stage3/pyfiles/s3_leace_eraser_{source_feat}.pkl", "rb") as f:
+    with open(f"Stage3/Leace_transf_matrices/Narratives/4conc/s3_leace_eraser_{source_feat}.pkl", "rb") as f:
         eraser = pickle.load(f)
 
     # Apply normal LEACE to the test data
