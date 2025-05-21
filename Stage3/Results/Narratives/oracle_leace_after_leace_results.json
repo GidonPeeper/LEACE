@@ -1,0 +1,2306 @@
+[
+  {
+    "erased": "ADJ",
+    "probed": "ADJ",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9593105397004804,
+    "baseline": 0.9593105397004804,
+    "l2_orig_leace": 94.11648559570312,
+    "l2_orig_leace_oracle": 93.5139389038086
+  },
+  {
+    "erased": "ADJ",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "NOUN",
+    "acc_before": 0.996138268814166,
+    "acc_after": 0.9982104172553452,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "VERB",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADJ",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9217293020627296,
+    "baseline": 0.9217293020627296,
+    "l2_orig_leace": 57.182071685791016,
+    "l2_orig_leace_oracle": 59.546138763427734
+  },
+  {
+    "erased": "ADP",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "NOUN",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADP",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "ADJ",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9515870773288123,
+    "baseline": 0.9515870773288123,
+    "l2_orig_leace": 11.866251945495605,
+    "l2_orig_leace_oracle": 15.32532024383545
+  },
+  {
+    "erased": "ADV",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "INTJ",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "NOUN",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "PUNCT",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "ADV",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9498916831496657,
+    "baseline": 0.9498916831496657,
+    "l2_orig_leace": 55.3532829284668,
+    "l2_orig_leace_oracle": 55.87129211425781
+  },
+  {
+    "erased": "AUX",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "INTJ",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "NOUN",
+    "acc_before": 0.9992464914759348,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "AUX",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 0.969953847602901,
+    "baseline": 0.969953847602901,
+    "l2_orig_leace": 177.36538696289062,
+    "l2_orig_leace_oracle": 174.6712646484375
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "NOUN",
+    "acc_before": 0.9989639257794104,
+    "acc_after": 0.9992464914759348,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "CCONJ",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9318074785721013,
+    "baseline": 0.9318074785721013,
+    "l2_orig_leace": 16.37383460998535,
+    "l2_orig_leace_oracle": 16.043516159057617
+  },
+  {
+    "erased": "DET",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "NOUN",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PRON",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "SCONJ",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "DET",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9822925496844683,
+    "baseline": 0.9822925496844683,
+    "l2_orig_leace": 177.73321533203125,
+    "l2_orig_leace_oracle": 178.11981201171875
+  },
+  {
+    "erased": "INTJ",
+    "probed": "NOUN",
+    "acc_before": 0.9991523029104267,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "VERB",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "INTJ",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "ADJ",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "NOUN",
+    "acc_before": 0.9800320241122727,
+    "acc_after": 0.8755769049637374,
+    "baseline": 0.8755769049637374,
+    "l2_orig_leace": 85.76275634765625,
+    "l2_orig_leace_oracle": 89.44088745117188
+  },
+  {
+    "erased": "NOUN",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "VERB",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9992464914759348,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NOUN",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "ADJ",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "NOUN",
+    "acc_before": 0.9985871715173777,
+    "acc_after": 0.9985871715173777,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 0.9918055948007912,
+    "baseline": 0.9918055948007912,
+    "l2_orig_leace": 53.64282989501953,
+    "l2_orig_leace_oracle": 54.156646728515625
+  },
+  {
+    "erased": "NUM",
+    "probed": "PART",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "VERB",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "NUM",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "NOUN",
+    "acc_before": 0.9989639257794104,
+    "acc_after": 0.9990581143449185,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9762644814919469,
+    "baseline": 0.9762644814919469,
+    "l2_orig_leace": 76.5268783569336,
+    "l2_orig_leace_oracle": 77.15290069580078
+  },
+  {
+    "erased": "PART",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PART",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "ADJ",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "NOUN",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "PRON",
+    "acc_before": 0.9742865216162758,
+    "acc_after": 0.8684185739851182,
+    "baseline": 0.8684185739851182,
+    "l2_orig_leace": 74.96725463867188,
+    "l2_orig_leace_oracle": 82.4868392944336
+  },
+  {
+    "erased": "PRON",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "VERB",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PRON",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "ADJ",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "NOUN",
+    "acc_before": 0.9931242347179052,
+    "acc_after": 0.9920881604973156,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9618536309692003,
+    "baseline": 0.9618536309692003,
+    "l2_orig_leace": 75.22504425048828,
+    "l2_orig_leace_oracle": 75.65760040283203
+  },
+  {
+    "erased": "PROPN",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "VERB",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PROPN",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "ADJ",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "NOUN",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9991523029104267,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "PUNCT",
+    "acc_before": 0.8214184797965527,
+    "acc_after": 0.7987190355090892,
+    "baseline": 0.7987190355090892,
+    "l2_orig_leace": 11.611580848693848,
+    "l2_orig_leace_oracle": 11.678723335266113
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "PUNCT",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "NOUN",
+    "acc_before": 0.9991523029104267,
+    "acc_after": 0.9992464914759348,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9837995667325986,
+    "baseline": 0.9837995667325986,
+    "l2_orig_leace": 67.63346862792969,
+    "l2_orig_leace_oracle": 67.88763427734375
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "VERB",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "SCONJ",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "ADJ",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "INTJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "NOUN",
+    "acc_before": 0.9992464914759348,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "VERB",
+    "probed": "VERB",
+    "acc_before": 0.9984929829518696,
+    "acc_after": 0.8770839220118678,
+    "baseline": 0.8770839220118678,
+    "l2_orig_leace": 107.8243179321289,
+    "l2_orig_leace_oracle": 107.46060943603516
+  },
+  {
+    "erased": "VERB",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "ADJ",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9996232457379675,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "ADP",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "ADV",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "AUX",
+    "acc_before": 0.9998116228689837,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "CCONJ",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "DET",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "INTJ",
+    "acc_before": 0.9995290571724592,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "NOUN",
+    "acc_before": 0.9993406800414429,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "NUM",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "PART",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "PRON",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9994348686069511,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "PROPN",
+    "acc_before": 0.9997174343034756,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "PUNCT",
+    "acc_before": 1.0,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "SCONJ",
+    "acc_before": 0.9999058114344919,
+    "acc_after": 0.9999058114344919,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "VERB",
+    "acc_before": 0.9994348686069511,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "X",
+    "probed": "X",
+    "acc_before": 1.0,
+    "acc_after": 0.9999058114344919,
+    "baseline": 0.9999058114344919,
+    "l2_orig_leace": 0.0,
+    "l2_orig_leace_oracle": 0.041082367300987244
+  }
+]

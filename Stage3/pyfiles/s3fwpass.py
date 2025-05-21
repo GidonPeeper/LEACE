@@ -70,6 +70,10 @@ def tokenize_and_label(sentences, all_pos_tags, tokenizer):
             for feature in feature_names:
                 word_labels[feature].append(feature_labels[feature][i])
 
+        # SKIP sentences with no tokens
+        if len(input_ids) == 0:
+            continue
+
         tokenized_sentences.append({
             "input_ids": input_ids,
             "attention_mask": attention_mask,
@@ -123,22 +127,24 @@ def encode_with_gpt2(tokenized_sentences, model, device):
 
 def main():
     # Paths
-    train_file = "data/ud_ewt/en_ewt-ud-train.conllu"
-    valid_file = "data/ud_ewt/en_ewt-ud-dev.conllu"
-    test_file = "data/ud_ewt/en_ewt-ud-test.conllu"
-    save_dir = "Stage3/Embeddings"
+    #train_file = "data/ud_ewt/en_ewt-ud-train.conllu"
+    #valid_file = "data/ud_ewt/en_ewt-ud-dev.conllu"
+    #test_file = "data/ud_ewt/en_ewt-ud-test.conllu"
+    train_file = "/home/gpeeper/LEACE/data/narratives/train_clean.conllu"
+    test_file = "/home/gpeeper/LEACE/data/narratives/test_clean.conllu"
+    save_dir = "Stage3/Embeddings/Narratives"
     os.makedirs(save_dir, exist_ok=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device:", device)
 
     # Step 1: Parse and concatenate train + valid for training set
-    print(f"Parsing {train_file} and {valid_file} for training set...")
+    print(f"Parsing {train_file} for training set...")
     train_sentences, train_pos_tags = parse_conllu(train_file)
-    valid_sentences, valid_pos_tags = parse_conllu(valid_file)
-    all_train_sentences = train_sentences + valid_sentences
-    all_pos_tags = train_pos_tags.union(valid_pos_tags)
-    print(f"Parsed {len(all_train_sentences)} training+valid sentences.")
+    #valid_sentences, valid_pos_tags = parse_conllu(valid_file)
+    all_train_sentences = train_sentences # + valid_sentences
+    all_pos_tags = train_pos_tags#.union(valid_pos_tags)
+    print(f"Parsed {len(all_train_sentences)} training sentences.")
     print(f"POS tags found: {sorted(list(all_pos_tags))}")
 
     # Step 2–3: Tokenize and label training set
