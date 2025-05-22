@@ -120,6 +120,15 @@ for source_feat in all_pos_tags:
             "l2_test": l2_test if source_feat == target_feat else None
         })
 
+    # --- Save the LEACE-erased embeddings for this feature ---
+    os.makedirs("Stage3/Embeddings/Narratives/4conc/UD_Prec_LEACE/", exist_ok=True)
+    with open(f"Stage3/Embeddings/Narratives/4conc/UD_Prec_LEACE/s3_leace_embeddings_{source_feat}.pkl", "wb") as f:
+        pickle.dump({
+            "train_erased": X_erased.cpu(),
+            "train_labels": y.cpu(),
+        }, f)
+    # ---------------------------------------------------------
+
 # --------------------------
 # Save Results
 # --------------------------

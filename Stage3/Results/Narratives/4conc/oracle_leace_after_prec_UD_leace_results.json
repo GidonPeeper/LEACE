@@ -1,0 +1,146 @@
+[
+  {
+    "erased": "closed_open",
+    "probed": "closed_open",
+    "acc_before": 0.9263445417726288,
+    "acc_after": 0.5994160308938495,
+    "baseline": 0.5994160308938495,
+    "l2_orig_leace": 35.1141471862793,
+    "l2_orig_leace_oracle": 62.04170608520508
+  },
+  {
+    "erased": "closed_open",
+    "probed": "function_content",
+    "acc_before": 0.9965150230761985,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "closed_open",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9854949609117453,
+    "acc_after": 0.9916172176697748,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "closed_open",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "function_content",
+    "probed": "closed_open",
+    "acc_before": 0.9957615145521334,
+    "acc_after": 1.0,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "function_content",
+    "probed": "function_content",
+    "acc_before": 0.937364603937082,
+    "acc_after": 0.6018649335970613,
+    "baseline": 0.6018649335970613,
+    "l2_orig_leace": 57.543025970458984,
+    "l2_orig_leace_oracle": 66.1518325805664
+  },
+  {
+    "erased": "function_content",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9975510972967881,
+    "acc_after": 0.9993406800414429,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "function_content",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9997174343034756,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "closed_open",
+    "acc_before": 0.9661863049825751,
+    "acc_after": 0.9158896110012245,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "function_content",
+    "acc_before": 0.996138268814166,
+    "acc_after": 0.9976452858622963,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9734388245267025,
+    "acc_after": 0.8374305359329377,
+    "baseline": 0.8374305359329377,
+    "l2_orig_leace": 38.879364013671875,
+    "l2_orig_leace_oracle": 49.27396774291992
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9996232457379675,
+    "acc_after": 0.9998116228689837,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "closed_open",
+    "acc_before": 0.9983987943863615,
+    "acc_after": 0.9950080060280682,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "function_content",
+    "acc_before": 0.9985871715173777,
+    "acc_after": 0.9986813600828859,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.9986813600828859,
+    "acc_after": 0.9995290571724592,
+    "baseline": null,
+    "l2_orig_leace": null,
+    "l2_orig_leace_oracle": null
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9953847602901008,
+    "acc_after": 0.8269756051615333,
+    "baseline": 0.8269756051615333,
+    "l2_orig_leace": 41.53116226196289,
+    "l2_orig_leace_oracle": 62.67367935180664
+  }
+]
