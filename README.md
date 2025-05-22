@@ -21,7 +21,7 @@ The manuscript (in progress) of this project can be found here: https://www.over
 
 ## Project Roadmap
 
-### Stage 1: Toy Example Validation (done)
+### Stage 1: Toy Example Validation
 - Generate synthetic embeddings encoding a simple binary concept.
 - Apply LEACE and verify successful erasure via probing.
 
@@ -32,7 +32,8 @@ The manuscript (in progress) of this project can be found here: https://www.over
 ### Stage 3: Full POS Tag Erasure
 - Scale up to removing all POS categories (17+ classes).
 - Evaluate probing accuracy before and after LEACE.
-- Assess: i) amount of data necessary; ii) transfer (e.g. from UD datasets, to "narratives")
+- Assess: i) amount of data necessary -> Oracle leace achieves full erasure on POS-tags for both UD and Narratives; ii) transfer (e.g. from UD datasets, to "narratives")
+- Evaluate transferability eraser objects to other datasets (address overfitting?)
 
 ### Stage 4: Dependency Label Erasure
 - Target syntactic dependencies using auto-annotated corpora.

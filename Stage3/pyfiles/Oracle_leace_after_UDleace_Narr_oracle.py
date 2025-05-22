@@ -21,9 +21,9 @@ def oracle_leace(X: np.ndarray, Z: np.ndarray) -> np.ndarray:
 # Settings
 # --------------------------
 LAYER = 8
-TEST_FILE = "Stage3/Embeddings/Narratives/4conc/Original_embeddings/gpt2_embeddings_test.pt"
-RESULTS_FILE = "Stage3/Results/Narratives/4conc/oracle_leace_after_UDleace_Narr_oracle_results.json"
-UD_ERASER_DIR = "Stage3/Leace_transf_matrices/UD/4conc/"
+TEST_FILE = "Stage3/Embeddings/Narratives/AllPOS/Original_embeddings/gpt2_embeddings_test.pt"
+RESULTS_FILE = "Stage3/Results/Narratives/AllPOS/oracle_leace_after_UDleace_Narr_oracle_results.json"
+UD_ERASER_DIR = "Stage3/Leace_transf_matrices/UD/AllPOS/"
 SEED = 42
 
 torch.manual_seed(SEED)
