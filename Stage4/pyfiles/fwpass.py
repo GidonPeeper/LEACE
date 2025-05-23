@@ -12,31 +12,32 @@ import torch
 # Step 1: Parse .conllu into words and dependency labels
 # ----------------------------------------------------------------------
 
-from conllu import parse_incr
+def collapse_ud_label(label): #This is to concatenate the subcategories of the dependency labels (for UD)
+    return label.split(":", 1)[0] if ":" in label else label
 
 def parse_conllu(file_path):
     sentences = []
     all_dep_labels = set()
-    
+
     with open(file_path, "r", encoding="utf-8") as f:
         for tokenlist in parse_incr(f):
             words = []
             head_indices = []
             dep_labels = []
-            
+
             for token in tokenlist:
                 if isinstance(token['id'], int):  # Skip multi-word tokens
                     words.append(token['form'])
-                    
+
                     # Dependency head
                     head = token['head']  # Head index (1-based or 0 = ROOT)
                     head_indices.append(head)
 
                     # Dependency label
-                    deprel = token['deprel']
+                    deprel = collapse_ud_label(token['deprel'])
                     dep_labels.append(deprel)
                     all_dep_labels.add(deprel)
-            
+
             sentences.append({
                 "words": words,
                 "dep_heads": head_indices,
@@ -148,15 +149,13 @@ def main():
     train_file = "data/ud_ewt/en_ewt-ud-train.conllu"
     valid_file = "data/ud_ewt/en_ewt-ud-dev.conllu"
     test_file = "data/ud_ewt/en_ewt-ud-test.conllu"
-    # train_file = "/home/gpeeper/LEACE/data/narratives/train_clean.conllu"
-    # test_file = "/home/gpeeper/LEACE/data/narratives/test_clean.conllu"
     save_dir = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/"
     os.makedirs(save_dir, exist_ok=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device:", device)
 
-   # Step 1: Parse and concatenate train + valid for training set
+    # Step 1: Parse and concatenate train + valid for training set
     print(f"Parsing {train_file} for training set...")
     train_sentences, train_dep_labels = parse_conllu(train_file)
     valid_sentences, valid_dep_labels = parse_conllu(valid_file)
