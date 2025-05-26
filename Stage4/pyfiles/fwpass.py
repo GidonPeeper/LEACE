@@ -67,6 +67,7 @@ def tokenize_and_label(sentences, all_dep_labels, tokenizer):
     for sentence in tqdm(sentences, desc="Tokenizing and aligning"):
         words = sentence["words"]
         dep_labels = sentence["dep_labels"]
+        dep_heads = sentence["dep_heads"]  # <-- Extract heads
         feature_labels = get_feature_matrix(dep_labels, all_dep_labels)
         feature_names = list(feature_labels.keys())
 
@@ -97,7 +98,9 @@ def tokenize_and_label(sentences, all_dep_labels, tokenizer):
             "input_ids": input_ids,
             "attention_mask": attention_mask,
             "word_to_token_positions": word_to_token_positions,
-            "word_labels": word_labels
+            "word_labels": word_labels,
+            "dep_heads": dep_heads,      # <-- Save heads
+            "dep_labels": dep_labels     # <-- Save gold dep_labels
         })
 
     return tokenized_sentences, all_dep_labels
@@ -135,7 +138,9 @@ def encode_with_gpt2(tokenized_sentences, model, device):
 
         all_outputs.append({
             "embeddings_by_layer": word_embeddings_by_layer,  # List[Tensor] per layer
-            "word_labels": sentence["word_labels"]             # Dict[str, List[int]]
+            "word_labels": sentence["word_labels"],           # Dict[str, List[int]]
+            "dep_heads": sentence["dep_heads"],               # <-- Save heads
+            "dep_labels": sentence["dep_labels"],             # <-- Save gold dep_labels
         })
 
     return all_outputs
