@@ -52,23 +52,94 @@ class PrecomputedEmbeddingModel(nn.Module):
             att_mask[i, :l] = True
         return [batch_tensor, batch_tensor], att_mask
 
-def get_depprobe_batches(data):
+def extract_dep_labels(word_labels, label2idx=None):
+    """
+    Converts a word_labels dict to a list of label indices.
+    label2idx: dict mapping label name to index. If None, will create one.
+    Returns: dep_labels (list of int), label2idx (dict)
+    """
+    if label2idx is None:
+        label2idx = {label: idx for idx, label in enumerate(word_labels.keys())}
+    num_tokens = len(next(iter(word_labels.values())))
+    dep_labels = []
+    for i in range(num_tokens):
+        found = False
+        for label, idx in label2idx.items():
+            if word_labels[label][i]:
+                dep_labels.append(idx)
+                found = True
+                break
+        if not found:
+            dep_labels.append(label2idx.get('root', 0))  # fallback to 'root' or 0
+    return dep_labels, label2idx
+
+def pad_distance_matrix(distances, max_len):
+    padded_distances = torch.zeros((max_len, max_len), dtype=distances.dtype, device=distances.device)
+    L = distances.shape[0]
+    padded_distances[:L, :L] = distances
+    return padded_distances
+
+def pad_distance_matrix_to(pred_distances, trgt_distances):
+    max_len = pred_distances.shape[1]
+    L = trgt_distances.shape[1]
+    padded = torch.full((1, max_len, max_len), -1, dtype=trgt_distances.dtype, device=trgt_distances.device)
+    padded[:, :L, :L] = trgt_distances
+    return padded
+
+def get_depprobe_batches(data, batch_size=16, device=None):
+    if device is None:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     batches = []
-    for sentence in data:
-        sentence_len = sent["embeddings_by_layer"][LAYER].shape[0]
-        heads = torch.tensor(sentence.get("heads", [0]*sentence), dtype=torch.long)
-        rels = torch.tensor(sentence.get("rels", [0]*sentence), dtype=torch.long)
-        # Add dummy distances (zeros)
-        distances = torch.zeros((sentence_len, sentence_len), dtype=torch.float)
-        distances = distances.unsqueeze(0)  # [1, L, L]
-        targets = {"heads": heads, "rels": rels, "distances": distances}
-        sentences = [""] * sentence_len  # tokens not needed
-        batches.append((sentences, targets, 1))
+    for i in range(0, len(data), batch_size):
+        batch = data[i:i+batch_size]
+        batch_lens = [s["embeddings_by_layer"][LAYER].shape[0] for s in batch]
+        max_len = max(batch_lens)
+        dep_heads_batch = []
+        dep_labels_batch = []
+        distances_batch = []
+        for sentence, sentence_len in zip(batch, batch_lens):
+            dep_heads = torch.tensor(sentence.get("dep_heads", [0]*sentence_len), dtype=torch.long, device=device)
+            dep_labels = torch.tensor(sentence.get("dep_labels", [0]*sentence_len), dtype=torch.long, device=device)
+            if sentence_len < max_len:
+                pad = torch.full((max_len - sentence_len,), -1, dtype=torch.long, device=device)
+                dep_labels = torch.cat([dep_labels, pad])
+                dep_heads = torch.cat([dep_heads, pad])
+            distances = torch.zeros((sentence_len, sentence_len), dtype=torch.float, device=device)
+            padded_distances = pad_distance_matrix(distances, max_len).to(device)
+            dep_heads_batch.append(dep_heads)
+            dep_labels_batch.append(dep_labels)
+            distances_batch.append(padded_distances)
+        dep_heads_batch = torch.stack(dep_heads_batch)
+        dep_labels_batch = torch.stack(dep_labels_batch)
+        distances_batch = torch.stack(distances_batch)
+        targets = {"heads": dep_heads_batch, "rels": dep_labels_batch, "distances": distances_batch}
+        sentences = [[""] * max_len for _ in range(len(batch))]
+        # Debug prints for batch content
+        print("dep_labels unique:", torch.unique(dep_labels_batch))
+        print("dep_heads unique:", torch.unique(dep_heads_batch))
+        print("dep_labels_batch shape:", dep_labels_batch.shape)
+        print("dep_heads_batch shape:", dep_heads_batch.shape)
+        print("distances_batch shape:", distances_batch.shape)
+        batches.append((sentences, targets, len(data) - (i + batch_size)))
     return batches
 
-results = []
+# ---- Preprocess: Extract dep_labels from word_labels ----
+label2idx = None
+for sentence in train_data:
+    if sentence.get("word_labels") is not None:
+        dep_labels, label2idx = extract_dep_labels(sentence["word_labels"], label2idx)
+        sentence["dep_labels"] = dep_labels
+    if sentence.get("heads") is not None:
+        sentence["dep_heads"] = sentence["heads"]
+for sentence in test_data:
+    if sentence.get("word_labels") is not None:
+        dep_labels, _ = extract_dep_labels(sentence["word_labels"], label2idx)
+        sentence["dep_labels"] = dep_labels
+    if sentence.get("heads") is not None:
+        sentence["dep_heads"] = sentence["heads"]
 
 # ---- Depprobe on original embeddings ----
+results = []
 train_embs_orig = get_embeddings_by_sentence(train_data, LAYER)
 test_embs_orig = get_embeddings_by_sentence(test_data, LAYER)
 train_batches = get_depprobe_batches(train_data)
@@ -97,3 +168,7 @@ with open(RESULTS_FILE, "w") as f:
     json.dump(results, f, indent=2)
 
 print("\nDone. Results saved to", RESULTS_FILE)
+print("Sample train_data[0]:", train_data[0])
+print("Sample dep_labels:", train_data[0].get("dep_labels"))
+print("Sample dep_heads:", train_data[0].get("dep_heads"))
+
