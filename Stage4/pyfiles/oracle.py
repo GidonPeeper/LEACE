@@ -24,9 +24,9 @@ def oracle_leace(X: np.ndarray, Z: np.ndarray) -> np.ndarray:
 # Settings
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Stage4/Embeddings/Narratives/Synt_deps/Original_embeddings/gpt2_embeddings.pt"
-TEST_FILE = "Stage4/Embeddings/Narratives/Synt_deps/Original_embeddings/gpt2_embeddings_test.pt"
-RESULTS_FILE = "Stage4/Results/Narratives/Synt_deps/oracle.json"
+EMBEDDING_FILE = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/gpt2_embeddings.pt"
+TEST_FILE = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/gpt2_embeddings_test.pt"
+RESULTS_FILE = "Stage4/Results/UD/Synt_deps/oracle.json"
 BALANCE_CLASSES = False
 SEED = 42
 
