@@ -151,10 +151,10 @@ def encode_with_gpt2(tokenized_sentences, model, device):
 
 def main():
     # Paths
-    train_file = "data/ud_ewt/en_ewt-ud-train.conllu"
-    valid_file = "data/ud_ewt/en_ewt-ud-dev.conllu"
-    test_file = "data/ud_ewt/en_ewt-ud-test.conllu"
-    save_dir = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/"
+    train_file = "data/narratives/train_clean.conllu"
+    # valid_file = "data/narratives/en_ewt-ud-dev.conllu"
+    test_file = "data/narratives/test_clean.conllu"
+    save_dir = "Stage4/Embeddings/narratives/Synt_deps/Original_embeddings/"
     os.makedirs(save_dir, exist_ok=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -163,9 +163,9 @@ def main():
     # Step 1: Parse and concatenate train + valid for training set
     print(f"Parsing {train_file} for training set...")
     train_sentences, train_dep_labels = parse_conllu(train_file)
-    valid_sentences, valid_dep_labels = parse_conllu(valid_file)
-    all_train_sentences = train_sentences + valid_sentences
-    all_dep_labels = train_dep_labels.union(valid_dep_labels)
+    # valid_sentences, valid_dep_labels = parse_conllu(valid_file)
+    all_train_sentences = train_sentences# + valid_sentences
+    all_dep_labels = train_dep_labels#.union(valid_dep_labels)
     print(f"Parsed {len(all_train_sentences)} training sentences.")
     print(f"Dependency labels found: {sorted(list(all_dep_labels))}")
 
