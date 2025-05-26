@@ -79,6 +79,20 @@ for source_feat in all_dep_labels:
     for target_feat in all_dep_labels:
         y_test_target = labels_by_feature_test[target_feat].numpy()
 
+        # Skip if only one class is present
+        if len(np.unique(y_test_target)) < 2:
+            print(f"Skipping probe for erased='{source_feat}', probed='{target_feat}': only one class ({np.unique(y_test_target)[0]}) present in test labels.")
+            results.append({
+                "erased": source_feat,
+                "probed": target_feat,
+                "acc_before": None,
+                "acc_after": None,
+                "baseline": None,
+                "l2_orig_leace": l2_orig_leace if source_feat == target_feat else None,
+                "l2_orig_leace_oracle": l2_orig_leace_oracle if source_feat == target_feat else None,
+            })
+            continue
+
         # Probe before Oracle LEACE
         clf_before = LogisticRegression(max_iter=2000)
         clf_before.fit(X_test_leace_np_scaled, y_test_target)

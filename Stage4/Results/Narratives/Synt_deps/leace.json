@@ -2,7 +2,7 @@
   {
     "erased": "ROOT",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.952058020156353,
     "acc_after": 0.952058020156353,
     "erasure_accuracy": 0.952058020156353,
     "baseline": 0.9295469529999059,
@@ -12,7 +12,7 @@
   {
     "erased": "ROOT",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -22,7 +22,7 @@
   {
     "erased": "ROOT",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9937835546764623,
     "acc_after": 0.9937835546764623,
     "erasure_accuracy": null,
     "baseline": null,
@@ -32,7 +32,7 @@
   {
     "erased": "ROOT",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9854007723462371,
     "acc_after": 0.9854007723462371,
     "erasure_accuracy": null,
     "baseline": null,
@@ -42,7 +42,7 @@
   {
     "erased": "ROOT",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9844588866911557,
     "acc_after": 0.9844588866911557,
     "erasure_accuracy": null,
     "baseline": null,
@@ -72,7 +72,7 @@
   {
     "erased": "ROOT",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9916172176697748,
     "acc_after": 0.9916172176697748,
     "erasure_accuracy": null,
     "baseline": null,
@@ -92,7 +92,7 @@
   {
     "erased": "ROOT",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.982763492512009,
     "acc_after": 0.982763492512009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -112,7 +112,7 @@
   {
     "erased": "ROOT",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -132,7 +132,7 @@
   {
     "erased": "ROOT",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9752284072713573,
     "acc_after": 0.9752284072713573,
     "erasure_accuracy": null,
     "baseline": null,
@@ -142,7 +142,7 @@
   {
     "erased": "ROOT",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9829518696430254,
     "acc_after": 0.9829518696430254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -152,7 +152,7 @@
   {
     "erased": "ROOT",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.982763492512009,
     "acc_after": 0.982763492512009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -182,7 +182,7 @@
   {
     "erased": "ROOT",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -192,7 +192,7 @@
   {
     "erased": "ROOT",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -202,7 +202,7 @@
   {
     "erased": "ROOT",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9728736931336536,
     "acc_after": 0.9728736931336536,
     "erasure_accuracy": null,
     "baseline": null,
@@ -212,7 +212,7 @@
   {
     "erased": "ROOT",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -222,7 +222,7 @@
   {
     "erased": "ROOT",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -232,7 +232,7 @@
   {
     "erased": "ROOT",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -252,7 +252,7 @@
   {
     "erased": "ROOT",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -262,7 +262,7 @@
   {
     "erased": "ROOT",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9899218234906282,
     "acc_after": 0.9899218234906282,
     "erasure_accuracy": null,
     "baseline": null,
@@ -272,7 +272,7 @@
   {
     "erased": "ROOT",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9711782989545069,
     "acc_after": 0.9711782989545069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -282,7 +282,7 @@
   {
     "erased": "ROOT",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -302,7 +302,7 @@
   {
     "erased": "ROOT",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -312,7 +312,7 @@
   {
     "erased": "ROOT",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9976452858622963,
     "acc_after": 0.9976452858622963,
     "erasure_accuracy": null,
     "baseline": null,
@@ -322,7 +322,7 @@
   {
     "erased": "ROOT",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -332,7 +332,7 @@
   {
     "erased": "ROOT",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9704247904304417,
     "acc_after": 0.9704247904304417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -342,7 +342,7 @@
   {
     "erased": "ROOT",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -362,7 +362,7 @@
   {
     "erased": "ROOT",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -372,7 +372,7 @@
   {
     "erased": "ROOT",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9832344353395498,
     "acc_after": 0.9832344353395498,
     "erasure_accuracy": null,
     "baseline": null,
@@ -382,7 +382,7 @@
   {
     "erased": "ROOT",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9957615145521334,
     "acc_after": 0.9957615145521334,
     "erasure_accuracy": null,
     "baseline": null,
@@ -392,7 +392,7 @@
   {
     "erased": "ROOT",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -402,7 +402,7 @@
   {
     "erased": "ROOT",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9994348686069511,
     "acc_after": 0.9994348686069511,
     "erasure_accuracy": null,
     "baseline": null,
@@ -412,7 +412,7 @@
   {
     "erased": "ROOT",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -422,7 +422,7 @@
   {
     "erased": "ROOT",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -862,7 +862,7 @@
   {
     "erased": "acomp",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9560139399076952,
     "acc_after": 0.9560139399076952,
     "erasure_accuracy": null,
     "baseline": null,
@@ -882,7 +882,7 @@
   {
     "erased": "acomp",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9936893661109542,
     "acc_after": 0.9936893661109542,
     "erasure_accuracy": 0.9936893661109542,
     "baseline": 0.9895450692285956,
@@ -892,7 +892,7 @@
   {
     "erased": "acomp",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9844588866911557,
     "acc_after": 0.9844588866911557,
     "erasure_accuracy": null,
     "baseline": null,
@@ -902,7 +902,7 @@
   {
     "erased": "acomp",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9841763209946313,
     "acc_after": 0.9841763209946313,
     "erasure_accuracy": null,
     "baseline": null,
@@ -922,7 +922,7 @@
   {
     "erased": "acomp",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9841763209946313,
     "acc_after": 0.9841763209946313,
     "erasure_accuracy": null,
     "baseline": null,
@@ -942,7 +942,7 @@
   {
     "erased": "acomp",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9884148064424979,
     "acc_after": 0.9884148064424979,
     "erasure_accuracy": null,
     "baseline": null,
@@ -952,7 +952,7 @@
   {
     "erased": "acomp",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9822925496844683,
     "acc_after": 0.9822925496844683,
     "erasure_accuracy": null,
     "baseline": null,
@@ -972,7 +972,7 @@
   {
     "erased": "acomp",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -992,7 +992,7 @@
   {
     "erased": "acomp",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.976358670057455,
     "acc_after": 0.976358670057455,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1002,7 +1002,7 @@
   {
     "erased": "acomp",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1012,7 +1012,7 @@
   {
     "erased": "acomp",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9829518696430254,
     "acc_after": 0.9829518696430254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1032,7 +1032,7 @@
   {
     "erased": "acomp",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1042,7 +1042,7 @@
   {
     "erased": "acomp",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1052,7 +1052,7 @@
   {
     "erased": "acomp",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9917114062352831,
     "acc_after": 0.9917114062352831,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1062,7 +1062,7 @@
   {
     "erased": "acomp",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9726853160026373,
     "acc_after": 0.9726853160026373,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1082,7 +1082,7 @@
   {
     "erased": "acomp",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1092,7 +1092,7 @@
   {
     "erased": "acomp",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1112,7 +1112,7 @@
   {
     "erased": "acomp",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1122,7 +1122,7 @@
   {
     "erased": "acomp",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9900160120561364,
     "acc_after": 0.9900160120561364,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1132,7 +1132,7 @@
   {
     "erased": "acomp",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9711782989545069,
     "acc_after": 0.9711782989545069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1142,7 +1142,7 @@
   {
     "erased": "acomp",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1162,7 +1162,7 @@
   {
     "erased": "acomp",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1172,7 +1172,7 @@
   {
     "erased": "acomp",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9978336629933127,
     "acc_after": 0.9978336629933127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1182,7 +1182,7 @@
   {
     "erased": "acomp",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9972685316002637,
     "acc_after": 0.9972685316002637,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1192,7 +1192,7 @@
   {
     "erased": "acomp",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9679758877272299,
     "acc_after": 0.9679758877272299,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1202,7 +1202,7 @@
   {
     "erased": "acomp",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1222,7 +1222,7 @@
   {
     "erased": "acomp",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1232,7 +1232,7 @@
   {
     "erased": "acomp",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1242,7 +1242,7 @@
   {
     "erased": "acomp",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1252,7 +1252,7 @@
   {
     "erased": "acomp",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1272,7 +1272,7 @@
   {
     "erased": "acomp",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1282,7 +1282,7 @@
   {
     "erased": "acomp",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9924649147593482,
     "acc_after": 0.9924649147593482,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1292,7 +1292,7 @@
   {
     "erased": "advcl",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.95780352265235,
     "acc_after": 0.95780352265235,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1312,7 +1312,7 @@
   {
     "erased": "advcl",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1322,7 +1322,7 @@
   {
     "erased": "advcl",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9854949609117453,
     "acc_after": 0.9854949609117453,
     "erasure_accuracy": 0.9854949609117453,
     "baseline": 0.9857775266082698,
@@ -1332,7 +1332,7 @@
   {
     "erased": "advcl",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9841763209946313,
     "acc_after": 0.9841763209946313,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1352,7 +1352,7 @@
   {
     "erased": "advcl",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9840821324291231,
     "acc_after": 0.9840821324291231,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1372,7 +1372,7 @@
   {
     "erased": "advcl",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9886031835735142,
     "acc_after": 0.9886031835735142,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1382,7 +1382,7 @@
   {
     "erased": "advcl",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1422,7 +1422,7 @@
   {
     "erased": "advcl",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9759819157954225,
     "acc_after": 0.9759819157954225,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1432,7 +1432,7 @@
   {
     "erased": "advcl",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1442,7 +1442,7 @@
   {
     "erased": "advcl",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9826693039465009,
     "acc_after": 0.9826693039465009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1462,7 +1462,7 @@
   {
     "erased": "advcl",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9990581143449185,
     "acc_after": 0.9990581143449185,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1482,7 +1482,7 @@
   {
     "erased": "advcl",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9918055948007912,
     "acc_after": 0.9918055948007912,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1492,7 +1492,7 @@
   {
     "erased": "advcl",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9732504473956861,
     "acc_after": 0.9732504473956861,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1512,7 +1512,7 @@
   {
     "erased": "advcl",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1552,7 +1552,7 @@
   {
     "erased": "advcl",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.98982763492512,
     "acc_after": 0.98982763492512,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1572,7 +1572,7 @@
   {
     "erased": "advcl",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1592,7 +1592,7 @@
   {
     "erased": "advcl",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1602,7 +1602,7 @@
   {
     "erased": "advcl",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9977394744278044,
     "acc_after": 0.9977394744278044,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1622,7 +1622,7 @@
   {
     "erased": "advcl",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9694829047753603,
     "acc_after": 0.9694829047753603,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1662,7 +1662,7 @@
   {
     "erased": "advcl",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9833286239050579,
     "acc_after": 0.9833286239050579,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1682,7 +1682,7 @@
   {
     "erased": "advcl",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9990581143449185,
     "acc_after": 0.9990581143449185,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1692,7 +1692,7 @@
   {
     "erased": "advcl",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9995290571724592,
     "acc_after": 0.9995290571724592,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1702,7 +1702,7 @@
   {
     "erased": "advcl",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1722,7 +1722,7 @@
   {
     "erased": "advmod",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9567674484317604,
     "acc_after": 0.9567674484317604,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1732,7 +1732,7 @@
   {
     "erased": "advmod",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1742,7 +1742,7 @@
   {
     "erased": "advmod",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1752,7 +1752,7 @@
   {
     "erased": "advmod",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9848356409531883,
     "acc_after": 0.9848356409531883,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1762,7 +1762,7 @@
   {
     "erased": "advmod",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9840821324291231,
     "acc_after": 0.9840821324291231,
     "erasure_accuracy": 0.9840821324291231,
     "baseline": 0.9465008947913723,
@@ -1782,7 +1782,7 @@
   {
     "erased": "advmod",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9838937552981069,
     "acc_after": 0.9838937552981069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1792,7 +1792,7 @@
   {
     "erased": "advmod",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1812,7 +1812,7 @@
   {
     "erased": "advmod",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.982763492512009,
     "acc_after": 0.982763492512009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1822,7 +1822,7 @@
   {
     "erased": "advmod",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9958557031176415,
     "acc_after": 0.9958557031176415,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1832,7 +1832,7 @@
   {
     "erased": "advmod",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1842,7 +1842,7 @@
   {
     "erased": "advmod",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9996232457379675,
     "acc_after": 0.9996232457379675,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1852,7 +1852,7 @@
   {
     "erased": "advmod",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.975699350098898,
     "acc_after": 0.975699350098898,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1862,7 +1862,7 @@
   {
     "erased": "advmod",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9830460582085335,
     "acc_after": 0.9830460582085335,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1872,7 +1872,7 @@
   {
     "erased": "advmod",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9830460582085335,
     "acc_after": 0.9830460582085335,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1892,7 +1892,7 @@
   {
     "erased": "advmod",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1902,7 +1902,7 @@
   {
     "erased": "advmod",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1912,7 +1912,7 @@
   {
     "erased": "advmod",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1922,7 +1922,7 @@
   {
     "erased": "advmod",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9734388245267025,
     "acc_after": 0.9734388245267025,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1942,7 +1942,7 @@
   {
     "erased": "advmod",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.996138268814166,
     "acc_after": 0.996138268814166,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1952,7 +1952,7 @@
   {
     "erased": "advmod",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9943486860695112,
     "acc_after": 0.9943486860695112,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1962,7 +1962,7 @@
   {
     "erased": "advmod",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1972,7 +1972,7 @@
   {
     "erased": "advmod",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1982,7 +1982,7 @@
   {
     "erased": "advmod",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9902985777526608,
     "acc_after": 0.9902985777526608,
     "erasure_accuracy": null,
     "baseline": null,
@@ -1992,7 +1992,7 @@
   {
     "erased": "advmod",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.971272487520015,
     "acc_after": 0.971272487520015,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2002,7 +2002,7 @@
   {
     "erased": "advmod",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9955731374211171,
     "acc_after": 0.9955731374211171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2012,7 +2012,7 @@
   {
     "erased": "advmod",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9967034002072148,
     "acc_after": 0.9967034002072148,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2032,7 +2032,7 @@
   {
     "erased": "advmod",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9978336629933127,
     "acc_after": 0.9978336629933127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2042,7 +2042,7 @@
   {
     "erased": "advmod",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9972685316002637,
     "acc_after": 0.9972685316002637,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2052,7 +2052,7 @@
   {
     "erased": "advmod",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9695770933408684,
     "acc_after": 0.9695770933408684,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2062,7 +2062,7 @@
   {
     "erased": "advmod",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9916172176697748,
     "acc_after": 0.9916172176697748,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2082,7 +2082,7 @@
   {
     "erased": "advmod",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2092,7 +2092,7 @@
   {
     "erased": "advmod",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.983987943863615,
     "acc_after": 0.983987943863615,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2102,7 +2102,7 @@
   {
     "erased": "advmod",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2112,7 +2112,7 @@
   {
     "erased": "advmod",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9984929829518696,
     "acc_after": 0.9984929829518696,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2132,7 +2132,7 @@
   {
     "erased": "advmod",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2582,7 +2582,7 @@
   {
     "erased": "amod",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9559197513421871,
     "acc_after": 0.9559197513421871,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2602,7 +2602,7 @@
   {
     "erased": "amod",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.994254497504003,
     "acc_after": 0.994254497504003,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2612,7 +2612,7 @@
   {
     "erased": "amod",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9849298295186965,
     "acc_after": 0.9849298295186965,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2622,7 +2622,7 @@
   {
     "erased": "amod",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9843646981256475,
     "acc_after": 0.9843646981256475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2642,7 +2642,7 @@
   {
     "erased": "amod",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9845530752566638,
     "acc_after": 0.9845530752566638,
     "erasure_accuracy": 0.9845530752566638,
     "baseline": 0.9729678816991617,
@@ -2652,7 +2652,7 @@
   {
     "erased": "amod",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9917114062352831,
     "acc_after": 0.9917114062352831,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2672,7 +2672,7 @@
   {
     "erased": "amod",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2682,7 +2682,7 @@
   {
     "erased": "amod",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2692,7 +2692,7 @@
   {
     "erased": "amod",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2702,7 +2702,7 @@
   {
     "erased": "amod",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9996232457379675,
     "acc_after": 0.9996232457379675,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2722,7 +2722,7 @@
   {
     "erased": "amod",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9821983611189602,
     "acc_after": 0.9821983611189602,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2732,7 +2732,7 @@
   {
     "erased": "amod",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9824809268154846,
     "acc_after": 0.9824809268154846,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2762,7 +2762,7 @@
   {
     "erased": "amod",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9975510972967881,
     "acc_after": 0.9975510972967881,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2772,7 +2772,7 @@
   {
     "erased": "amod",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2782,7 +2782,7 @@
   {
     "erased": "amod",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9740039559197513,
     "acc_after": 0.9740039559197513,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2812,7 +2812,7 @@
   {
     "erased": "amod",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2822,7 +2822,7 @@
   {
     "erased": "amod",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2842,7 +2842,7 @@
   {
     "erased": "amod",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9902985777526608,
     "acc_after": 0.9902985777526608,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2852,7 +2852,7 @@
   {
     "erased": "amod",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9711782989545069,
     "acc_after": 0.9711782989545069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2872,7 +2872,7 @@
   {
     "erased": "amod",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2882,7 +2882,7 @@
   {
     "erased": "amod",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2892,7 +2892,7 @@
   {
     "erased": "amod",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9977394744278044,
     "acc_after": 0.9977394744278044,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2902,7 +2902,7 @@
   {
     "erased": "amod",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2912,7 +2912,7 @@
   {
     "erased": "amod",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9676933220307055,
     "acc_after": 0.9676933220307055,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2922,7 +2922,7 @@
   {
     "erased": "amod",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2952,7 +2952,7 @@
   {
     "erased": "amod",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2962,7 +2962,7 @@
   {
     "erased": "amod",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2972,7 +2972,7 @@
   {
     "erased": "amod",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2982,7 +2982,7 @@
   {
     "erased": "amod",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9995290571724592,
     "acc_after": 0.9995290571724592,
     "erasure_accuracy": null,
     "baseline": null,
@@ -2992,7 +2992,7 @@
   {
     "erased": "amod",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3002,7 +3002,7 @@
   {
     "erased": "amod",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9925591033248564,
     "acc_after": 0.9925591033248564,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3442,7 +3442,7 @@
   {
     "erased": "attr",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9562965056042196,
     "acc_after": 0.9562965056042196,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3462,7 +3462,7 @@
   {
     "erased": "attr",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9937835546764623,
     "acc_after": 0.9937835546764623,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3472,7 +3472,7 @@
   {
     "erased": "attr",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9849298295186965,
     "acc_after": 0.9849298295186965,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3482,7 +3482,7 @@
   {
     "erased": "attr",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9851182066497127,
     "acc_after": 0.9851182066497127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3502,7 +3502,7 @@
   {
     "erased": "attr",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9846472638221719,
     "acc_after": 0.9846472638221719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3512,7 +3512,7 @@
   {
     "erased": "attr",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3522,7 +3522,7 @@
   {
     "erased": "attr",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.989074126401055,
     "acc_after": 0.989074126401055,
     "erasure_accuracy": 0.989074126401055,
     "baseline": 0.9893566920975794,
@@ -3532,7 +3532,7 @@
   {
     "erased": "attr",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9824809268154846,
     "acc_after": 0.9824809268154846,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3542,7 +3542,7 @@
   {
     "erased": "attr",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9958557031176415,
     "acc_after": 0.9958557031176415,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3562,7 +3562,7 @@
   {
     "erased": "attr",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9998116228689837,
     "acc_after": 0.9998116228689837,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3572,7 +3572,7 @@
   {
     "erased": "attr",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9761702929264388,
     "acc_after": 0.9761702929264388,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3582,7 +3582,7 @@
   {
     "erased": "attr",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3592,7 +3592,7 @@
   {
     "erased": "attr",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.982763492512009,
     "acc_after": 0.982763492512009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3612,7 +3612,7 @@
   {
     "erased": "attr",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3622,7 +3622,7 @@
   {
     "erased": "attr",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3632,7 +3632,7 @@
   {
     "erased": "attr",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9918055948007912,
     "acc_after": 0.9918055948007912,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3642,7 +3642,7 @@
   {
     "erased": "attr",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9716492417820477,
     "acc_after": 0.9716492417820477,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3652,7 +3652,7 @@
   {
     "erased": "attr",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3672,7 +3672,7 @@
   {
     "erased": "attr",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3682,7 +3682,7 @@
   {
     "erased": "attr",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3692,7 +3692,7 @@
   {
     "erased": "attr",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3702,7 +3702,7 @@
   {
     "erased": "attr",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9902043891871527,
     "acc_after": 0.9902043891871527,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3712,7 +3712,7 @@
   {
     "erased": "attr",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9709899218234906,
     "acc_after": 0.9709899218234906,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3732,7 +3732,7 @@
   {
     "erased": "attr",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9967034002072148,
     "acc_after": 0.9967034002072148,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3742,7 +3742,7 @@
   {
     "erased": "attr",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3762,7 +3762,7 @@
   {
     "erased": "attr",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3772,7 +3772,7 @@
   {
     "erased": "attr",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9661863049825751,
     "acc_after": 0.9661863049825751,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3782,7 +3782,7 @@
   {
     "erased": "attr",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9909578977112179,
     "acc_after": 0.9909578977112179,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3802,7 +3802,7 @@
   {
     "erased": "attr",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3812,7 +3812,7 @@
   {
     "erased": "attr",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9832344353395498,
     "acc_after": 0.9832344353395498,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3832,7 +3832,7 @@
   {
     "erased": "attr",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9983987943863615,
     "acc_after": 0.9983987943863615,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3842,7 +3842,7 @@
   {
     "erased": "attr",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9994348686069511,
     "acc_after": 0.9994348686069511,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3852,7 +3852,7 @@
   {
     "erased": "attr",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9918997833662994,
     "acc_after": 0.9918997833662994,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3862,7 +3862,7 @@
   {
     "erased": "attr",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9924649147593482,
     "acc_after": 0.9924649147593482,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3872,7 +3872,7 @@
   {
     "erased": "aux",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9570500141282848,
     "acc_after": 0.9570500141282848,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3892,7 +3892,7 @@
   {
     "erased": "aux",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9937835546764623,
     "acc_after": 0.9937835546764623,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3902,7 +3902,7 @@
   {
     "erased": "aux",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9849298295186965,
     "acc_after": 0.9849298295186965,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3912,7 +3912,7 @@
   {
     "erased": "aux",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9842705095601394,
     "acc_after": 0.9842705095601394,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3932,7 +3932,7 @@
   {
     "erased": "aux",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9844588866911557,
     "acc_after": 0.9844588866911557,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3942,7 +3942,7 @@
   {
     "erased": "aux",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9916172176697748,
     "acc_after": 0.9916172176697748,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3952,7 +3952,7 @@
   {
     "erased": "aux",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9891683149665631,
     "acc_after": 0.9891683149665631,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3962,7 +3962,7 @@
   {
     "erased": "aux",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9828576810775171,
     "acc_after": 0.9828576810775171,
     "erasure_accuracy": 0.9828576810775171,
     "baseline": 0.9626071394932655,
@@ -3972,7 +3972,7 @@
   {
     "erased": "aux",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -3982,7 +3982,7 @@
   {
     "erased": "aux",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4002,7 +4002,7 @@
   {
     "erased": "aux",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9751342187058492,
     "acc_after": 0.9751342187058492,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4012,7 +4012,7 @@
   {
     "erased": "aux",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4022,7 +4022,7 @@
   {
     "erased": "aux",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9816332297259113,
     "acc_after": 0.9816332297259113,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4052,7 +4052,7 @@
   {
     "erased": "aux",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4062,7 +4062,7 @@
   {
     "erased": "aux",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9926532918903646,
     "acc_after": 0.9926532918903646,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4072,7 +4072,7 @@
   {
     "erased": "aux",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9737213902232269,
     "acc_after": 0.9737213902232269,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4092,7 +4092,7 @@
   {
     "erased": "aux",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.996138268814166,
     "acc_after": 0.996138268814166,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4102,7 +4102,7 @@
   {
     "erased": "aux",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4112,7 +4112,7 @@
   {
     "erased": "aux",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4132,7 +4132,7 @@
   {
     "erased": "aux",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.98982763492512,
     "acc_after": 0.98982763492512,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4142,7 +4142,7 @@
   {
     "erased": "aux",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.971272487520015,
     "acc_after": 0.971272487520015,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4152,7 +4152,7 @@
   {
     "erased": "aux",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9952905717245927,
     "acc_after": 0.9952905717245927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4192,7 +4192,7 @@
   {
     "erased": "aux",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9972685316002637,
     "acc_after": 0.9972685316002637,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4202,7 +4202,7 @@
   {
     "erased": "aux",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9702364132994254,
     "acc_after": 0.9702364132994254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4212,7 +4212,7 @@
   {
     "erased": "aux",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4232,7 +4232,7 @@
   {
     "erased": "aux",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4252,7 +4252,7 @@
   {
     "erased": "aux",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9953847602901008,
     "acc_after": 0.9953847602901008,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4262,7 +4262,7 @@
   {
     "erased": "aux",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4272,7 +4272,7 @@
   {
     "erased": "aux",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9994348686069511,
     "acc_after": 0.9994348686069511,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4282,7 +4282,7 @@
   {
     "erased": "aux",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9918055948007912,
     "acc_after": 0.9918055948007912,
     "erasure_accuracy": null,
     "baseline": null,
@@ -4292,7 +4292,7 @@
   {
     "erased": "aux",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9928416690213808,
     "acc_after": 0.9928416690213808,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5162,7 +5162,7 @@
   {
     "erased": "cc",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9557313742111707,
     "acc_after": 0.9557313742111707,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5172,7 +5172,7 @@
   {
     "erased": "cc",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5182,7 +5182,7 @@
   {
     "erased": "cc",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9937835546764623,
     "acc_after": 0.9937835546764623,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5192,7 +5192,7 @@
   {
     "erased": "cc",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9848356409531883,
     "acc_after": 0.9848356409531883,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5202,7 +5202,7 @@
   {
     "erased": "cc",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9846472638221719,
     "acc_after": 0.9846472638221719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5222,7 +5222,7 @@
   {
     "erased": "cc",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9838937552981069,
     "acc_after": 0.9838937552981069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5232,7 +5232,7 @@
   {
     "erased": "cc",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5242,7 +5242,7 @@
   {
     "erased": "cc",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9891683149665631,
     "acc_after": 0.9891683149665631,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5252,7 +5252,7 @@
   {
     "erased": "cc",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.981444852594895,
     "acc_after": 0.981444852594895,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5262,7 +5262,7 @@
   {
     "erased": "cc",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9957615145521334,
     "acc_after": 0.9957615145521334,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5272,7 +5272,7 @@
   {
     "erased": "cc",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5282,7 +5282,7 @@
   {
     "erased": "cc",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9995290571724592,
     "acc_after": 0.9995290571724592,
     "erasure_accuracy": 0.9995290571724592,
     "baseline": 0.9702364132994254,
@@ -5302,7 +5302,7 @@
   {
     "erased": "cc",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5312,7 +5312,7 @@
   {
     "erased": "cc",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9820099839879438,
     "acc_after": 0.9820099839879438,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5352,7 +5352,7 @@
   {
     "erased": "cc",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9919939719318075,
     "acc_after": 0.9919939719318075,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5362,7 +5362,7 @@
   {
     "erased": "cc",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9734388245267025,
     "acc_after": 0.9734388245267025,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5372,7 +5372,7 @@
   {
     "erased": "cc",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5382,7 +5382,7 @@
   {
     "erased": "cc",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9962324573796741,
     "acc_after": 0.9962324573796741,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5392,7 +5392,7 @@
   {
     "erased": "cc",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9938777432419704,
     "acc_after": 0.9938777432419704,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5422,7 +5422,7 @@
   {
     "erased": "cc",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9902043891871527,
     "acc_after": 0.9902043891871527,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5432,7 +5432,7 @@
   {
     "erased": "cc",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.971272487520015,
     "acc_after": 0.971272487520015,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5452,7 +5452,7 @@
   {
     "erased": "cc",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5472,7 +5472,7 @@
   {
     "erased": "cc",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9977394744278044,
     "acc_after": 0.9977394744278044,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5482,7 +5482,7 @@
   {
     "erased": "cc",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5492,7 +5492,7 @@
   {
     "erased": "cc",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9696712819063765,
     "acc_after": 0.9696712819063765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5502,7 +5502,7 @@
   {
     "erased": "cc",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9907695205802015,
     "acc_after": 0.9907695205802015,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5532,7 +5532,7 @@
   {
     "erased": "cc",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9843646981256475,
     "acc_after": 0.9843646981256475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5542,7 +5542,7 @@
   {
     "erased": "cc",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5552,7 +5552,7 @@
   {
     "erased": "cc",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5572,7 +5572,7 @@
   {
     "erased": "cc",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5582,7 +5582,7 @@
   {
     "erased": "cc",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5592,7 +5592,7 @@
   {
     "erased": "ccomp",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9562023170387115,
     "acc_after": 0.9562023170387115,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5602,7 +5602,7 @@
   {
     "erased": "ccomp",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5622,7 +5622,7 @@
   {
     "erased": "ccomp",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9854949609117453,
     "acc_after": 0.9854949609117453,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5662,7 +5662,7 @@
   {
     "erased": "ccomp",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5682,7 +5682,7 @@
   {
     "erased": "ccomp",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9829518696430254,
     "acc_after": 0.9829518696430254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5692,7 +5692,7 @@
   {
     "erased": "ccomp",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.996138268814166,
     "acc_after": 0.996138268814166,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5702,7 +5702,7 @@
   {
     "erased": "ccomp",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5712,7 +5712,7 @@
   {
     "erased": "ccomp",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9998116228689837,
     "acc_after": 0.9998116228689837,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5722,7 +5722,7 @@
   {
     "erased": "ccomp",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9756051615333898,
     "acc_after": 0.9756051615333898,
     "erasure_accuracy": 0.9756051615333898,
     "baseline": 0.9772063671470284,
@@ -5732,7 +5732,7 @@
   {
     "erased": "ccomp",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9830460582085335,
     "acc_after": 0.9830460582085335,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5742,7 +5742,7 @@
   {
     "erased": "ccomp",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9820099839879438,
     "acc_after": 0.9820099839879438,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5772,7 +5772,7 @@
   {
     "erased": "ccomp",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5782,7 +5782,7 @@
   {
     "erased": "ccomp",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9919939719318075,
     "acc_after": 0.9919939719318075,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5792,7 +5792,7 @@
   {
     "erased": "ccomp",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9730620702646698,
     "acc_after": 0.9730620702646698,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5802,7 +5802,7 @@
   {
     "erased": "ccomp",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 0.9998116228689837,
     "acc_after": 0.9998116228689837,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5812,7 +5812,7 @@
   {
     "erased": "ccomp",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9963266459451823,
     "acc_after": 0.9963266459451823,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5822,7 +5822,7 @@
   {
     "erased": "ccomp",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9943486860695112,
     "acc_after": 0.9943486860695112,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5842,7 +5842,7 @@
   {
     "erased": "ccomp",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5852,7 +5852,7 @@
   {
     "erased": "ccomp",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9900160120561364,
     "acc_after": 0.9900160120561364,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5862,7 +5862,7 @@
   {
     "erased": "ccomp",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9714608646510313,
     "acc_after": 0.9714608646510313,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5872,7 +5872,7 @@
   {
     "erased": "ccomp",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5882,7 +5882,7 @@
   {
     "erased": "ccomp",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5892,7 +5892,7 @@
   {
     "erased": "ccomp",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5902,7 +5902,7 @@
   {
     "erased": "ccomp",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9975510972967881,
     "acc_after": 0.9975510972967881,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5912,7 +5912,7 @@
   {
     "erased": "ccomp",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5922,7 +5922,7 @@
   {
     "erased": "ccomp",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9702364132994254,
     "acc_after": 0.9702364132994254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5962,7 +5962,7 @@
   {
     "erased": "ccomp",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9830460582085335,
     "acc_after": 0.9830460582085335,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5972,7 +5972,7 @@
   {
     "erased": "ccomp",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -5982,7 +5982,7 @@
   {
     "erased": "ccomp",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6002,7 +6002,7 @@
   {
     "erased": "ccomp",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.991052086276726,
     "acc_after": 0.991052086276726,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6012,7 +6012,7 @@
   {
     "erased": "ccomp",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6022,7 +6022,7 @@
   {
     "erased": "compound",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9564848827352359,
     "acc_after": 0.9564848827352359,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6032,7 +6032,7 @@
   {
     "erased": "compound",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6042,7 +6042,7 @@
   {
     "erased": "compound",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9936893661109542,
     "acc_after": 0.9936893661109542,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6052,7 +6052,7 @@
   {
     "erased": "compound",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9851182066497127,
     "acc_after": 0.9851182066497127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6062,7 +6062,7 @@
   {
     "erased": "compound",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9846472638221719,
     "acc_after": 0.9846472638221719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6082,7 +6082,7 @@
   {
     "erased": "compound",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9846472638221719,
     "acc_after": 0.9846472638221719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6102,7 +6102,7 @@
   {
     "erased": "compound",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9880380521804653,
     "acc_after": 0.9880380521804653,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6112,7 +6112,7 @@
   {
     "erased": "compound",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6142,7 +6142,7 @@
   {
     "erased": "compound",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9996232457379675,
     "acc_after": 0.9996232457379675,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6152,7 +6152,7 @@
   {
     "erased": "compound",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.976358670057455,
     "acc_after": 0.976358670057455,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6162,7 +6162,7 @@
   {
     "erased": "compound",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9826693039465009,
     "acc_after": 0.9826693039465009,
     "erasure_accuracy": 0.9826693039465009,
     "baseline": 0.9817274182914194,
@@ -6172,7 +6172,7 @@
   {
     "erased": "compound",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9832344353395498,
     "acc_after": 0.9832344353395498,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6192,7 +6192,7 @@
   {
     "erased": "compound",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9990581143449185,
     "acc_after": 0.9990581143449185,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6202,7 +6202,7 @@
   {
     "erased": "compound",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6212,7 +6212,7 @@
   {
     "erased": "compound",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6222,7 +6222,7 @@
   {
     "erased": "compound",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9728736931336536,
     "acc_after": 0.9728736931336536,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6232,7 +6232,7 @@
   {
     "erased": "compound",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6242,7 +6242,7 @@
   {
     "erased": "compound",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6252,7 +6252,7 @@
   {
     "erased": "compound",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9937835546764623,
     "acc_after": 0.9937835546764623,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6262,7 +6262,7 @@
   {
     "erased": "compound",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6282,7 +6282,7 @@
   {
     "erased": "compound",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.990392766318169,
     "acc_after": 0.990392766318169,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6292,7 +6292,7 @@
   {
     "erased": "compound",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9704247904304417,
     "acc_after": 0.9704247904304417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6302,7 +6302,7 @@
   {
     "erased": "compound",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9957615145521334,
     "acc_after": 0.9957615145521334,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6322,7 +6322,7 @@
   {
     "erased": "compound",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6332,7 +6332,7 @@
   {
     "erased": "compound",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9978336629933127,
     "acc_after": 0.9978336629933127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6352,7 +6352,7 @@
   {
     "erased": "compound",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9658095507205425,
     "acc_after": 0.9658095507205425,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6362,7 +6362,7 @@
   {
     "erased": "compound",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9907695205802015,
     "acc_after": 0.9907695205802015,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6382,7 +6382,7 @@
   {
     "erased": "compound",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6402,7 +6402,7 @@
   {
     "erased": "compound",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6432,7 +6432,7 @@
   {
     "erased": "compound",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9917114062352831,
     "acc_after": 0.9917114062352831,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6442,7 +6442,7 @@
   {
     "erased": "compound",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6452,7 +6452,7 @@
   {
     "erased": "conj",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9567674484317604,
     "acc_after": 0.9567674484317604,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6472,7 +6472,7 @@
   {
     "erased": "conj",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.994254497504003,
     "acc_after": 0.994254497504003,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6482,7 +6482,7 @@
   {
     "erased": "conj",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9847414523876802,
     "acc_after": 0.9847414523876802,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6512,7 +6512,7 @@
   {
     "erased": "conj",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9841763209946313,
     "acc_after": 0.9841763209946313,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6522,7 +6522,7 @@
   {
     "erased": "conj",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6532,7 +6532,7 @@
   {
     "erased": "conj",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9892625035320712,
     "acc_after": 0.9892625035320712,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6542,7 +6542,7 @@
   {
     "erased": "conj",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9822925496844683,
     "acc_after": 0.9822925496844683,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6552,7 +6552,7 @@
   {
     "erased": "conj",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.996138268814166,
     "acc_after": 0.996138268814166,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6562,7 +6562,7 @@
   {
     "erased": "conj",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6582,7 +6582,7 @@
   {
     "erased": "conj",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9756051615333898,
     "acc_after": 0.9756051615333898,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6592,7 +6592,7 @@
   {
     "erased": "conj",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6602,7 +6602,7 @@
   {
     "erased": "conj",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9820099839879438,
     "acc_after": 0.9820099839879438,
     "erasure_accuracy": 0.9820099839879438,
     "baseline": 0.9761702929264388,
@@ -6622,7 +6622,7 @@
   {
     "erased": "conj",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6642,7 +6642,7 @@
   {
     "erased": "conj",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9916172176697748,
     "acc_after": 0.9916172176697748,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6652,7 +6652,7 @@
   {
     "erased": "conj",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9725911274371292,
     "acc_after": 0.9725911274371292,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6662,7 +6662,7 @@
   {
     "erased": "conj",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6672,7 +6672,7 @@
   {
     "erased": "conj",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6712,7 +6712,7 @@
   {
     "erased": "conj",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9900160120561364,
     "acc_after": 0.9900160120561364,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6722,7 +6722,7 @@
   {
     "erased": "conj",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.971272487520015,
     "acc_after": 0.971272487520015,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6732,7 +6732,7 @@
   {
     "erased": "conj",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6752,7 +6752,7 @@
   {
     "erased": "conj",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6762,7 +6762,7 @@
   {
     "erased": "conj",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9978336629933127,
     "acc_after": 0.9978336629933127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6772,7 +6772,7 @@
   {
     "erased": "conj",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6782,7 +6782,7 @@
   {
     "erased": "conj",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9692003390788358,
     "acc_after": 0.9692003390788358,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6792,7 +6792,7 @@
   {
     "erased": "conj",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6812,7 +6812,7 @@
   {
     "erased": "conj",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6822,7 +6822,7 @@
   {
     "erased": "conj",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9830460582085335,
     "acc_after": 0.9830460582085335,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6832,7 +6832,7 @@
   {
     "erased": "conj",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6842,7 +6842,7 @@
   {
     "erased": "conj",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6852,7 +6852,7 @@
   {
     "erased": "conj",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9995290571724592,
     "acc_after": 0.9995290571724592,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6862,7 +6862,7 @@
   {
     "erased": "conj",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9927474804558727,
     "acc_after": 0.9927474804558727,
     "erasure_accuracy": null,
     "baseline": null,
@@ -6872,7 +6872,7 @@
   {
     "erased": "conj",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.992935857586889,
     "acc_after": 0.992935857586889,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8172,7 +8172,7 @@
   {
     "erased": "det",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9557313742111707,
     "acc_after": 0.9557313742111707,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8182,7 +8182,7 @@
   {
     "erased": "det",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8192,7 +8192,7 @@
   {
     "erased": "det",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9936893661109542,
     "acc_after": 0.9936893661109542,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8202,7 +8202,7 @@
   {
     "erased": "det",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9844588866911557,
     "acc_after": 0.9844588866911557,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8212,7 +8212,7 @@
   {
     "erased": "det",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9843646981256475,
     "acc_after": 0.9843646981256475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8232,7 +8232,7 @@
   {
     "erased": "det",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9840821324291231,
     "acc_after": 0.9840821324291231,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8242,7 +8242,7 @@
   {
     "erased": "det",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8252,7 +8252,7 @@
   {
     "erased": "det",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.989074126401055,
     "acc_after": 0.989074126401055,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8262,7 +8262,7 @@
   {
     "erased": "det",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9824809268154846,
     "acc_after": 0.9824809268154846,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8272,7 +8272,7 @@
   {
     "erased": "det",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8282,7 +8282,7 @@
   {
     "erased": "det",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8302,7 +8302,7 @@
   {
     "erased": "det",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9755109729678817,
     "acc_after": 0.9755109729678817,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8312,7 +8312,7 @@
   {
     "erased": "det",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9826693039465009,
     "acc_after": 0.9826693039465009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8322,7 +8322,7 @@
   {
     "erased": "det",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8352,7 +8352,7 @@
   {
     "erased": "det",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8362,7 +8362,7 @@
   {
     "erased": "det",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": 0.9914288405387586,
     "baseline": 0.9327493642271828,
@@ -8382,7 +8382,7 @@
   {
     "erased": "det",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8392,7 +8392,7 @@
   {
     "erased": "det",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8402,7 +8402,7 @@
   {
     "erased": "det",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8412,7 +8412,7 @@
   {
     "erased": "det",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8432,7 +8432,7 @@
   {
     "erased": "det",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9896392577941038,
     "acc_after": 0.9896392577941038,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8442,7 +8442,7 @@
   {
     "erased": "det",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9716492417820477,
     "acc_after": 0.9716492417820477,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8452,7 +8452,7 @@
   {
     "erased": "det",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8462,7 +8462,7 @@
   {
     "erased": "det",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9967034002072148,
     "acc_after": 0.9967034002072148,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8472,7 +8472,7 @@
   {
     "erased": "det",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8482,7 +8482,7 @@
   {
     "erased": "det",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9978336629933127,
     "acc_after": 0.9978336629933127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8492,7 +8492,7 @@
   {
     "erased": "det",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8502,7 +8502,7 @@
   {
     "erased": "det",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9708015446924744,
     "acc_after": 0.9708015446924744,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8512,7 +8512,7 @@
   {
     "erased": "det",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8532,7 +8532,7 @@
   {
     "erased": "det",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8542,7 +8542,7 @@
   {
     "erased": "det",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9836111896015823,
     "acc_after": 0.9836111896015823,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8552,7 +8552,7 @@
   {
     "erased": "det",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8582,7 +8582,7 @@
   {
     "erased": "det",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9926532918903646,
     "acc_after": 0.9926532918903646,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8592,7 +8592,7 @@
   {
     "erased": "det",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9928416690213808,
     "acc_after": 0.9928416690213808,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8602,7 +8602,7 @@
   {
     "erased": "dobj",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9568616369972686,
     "acc_after": 0.9568616369972686,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8612,7 +8612,7 @@
   {
     "erased": "dobj",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8622,7 +8622,7 @@
   {
     "erased": "dobj",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8632,7 +8632,7 @@
   {
     "erased": "dobj",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9852123952152209,
     "acc_after": 0.9852123952152209,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8642,7 +8642,7 @@
   {
     "erased": "dobj",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9846472638221719,
     "acc_after": 0.9846472638221719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8662,7 +8662,7 @@
   {
     "erased": "dobj",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9845530752566638,
     "acc_after": 0.9845530752566638,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8672,7 +8672,7 @@
   {
     "erased": "dobj",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8682,7 +8682,7 @@
   {
     "erased": "dobj",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9889799378355467,
     "acc_after": 0.9889799378355467,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8692,7 +8692,7 @@
   {
     "erased": "dobj",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8702,7 +8702,7 @@
   {
     "erased": "dobj",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8712,7 +8712,7 @@
   {
     "erased": "dobj",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8722,7 +8722,7 @@
   {
     "erased": "dobj",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9996232457379675,
     "acc_after": 0.9996232457379675,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8732,7 +8732,7 @@
   {
     "erased": "dobj",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9759819157954225,
     "acc_after": 0.9759819157954225,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8742,7 +8742,7 @@
   {
     "erased": "dobj",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9822925496844683,
     "acc_after": 0.9822925496844683,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8752,7 +8752,7 @@
   {
     "erased": "dobj",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8782,7 +8782,7 @@
   {
     "erased": "dobj",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8792,7 +8792,7 @@
   {
     "erased": "dobj",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9919939719318075,
     "acc_after": 0.9919939719318075,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8802,7 +8802,7 @@
   {
     "erased": "dobj",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9732504473956861,
     "acc_after": 0.9732504473956861,
     "erasure_accuracy": 0.9732504473956861,
     "baseline": 0.9567674484317604,
@@ -8812,7 +8812,7 @@
   {
     "erased": "dobj",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8822,7 +8822,7 @@
   {
     "erased": "dobj",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9959498916831496,
     "acc_after": 0.9959498916831496,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8832,7 +8832,7 @@
   {
     "erased": "dobj",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8842,7 +8842,7 @@
   {
     "erased": "dobj",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8862,7 +8862,7 @@
   {
     "erased": "dobj",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9902985777526608,
     "acc_after": 0.9902985777526608,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8872,7 +8872,7 @@
   {
     "erased": "dobj",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9707073561269662,
     "acc_after": 0.9707073561269662,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8882,7 +8882,7 @@
   {
     "erased": "dobj",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8892,7 +8892,7 @@
   {
     "erased": "dobj",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9966092116417067,
     "acc_after": 0.9966092116417067,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8902,7 +8902,7 @@
   {
     "erased": "dobj",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8922,7 +8922,7 @@
   {
     "erased": "dobj",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9972685316002637,
     "acc_after": 0.9972685316002637,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8932,7 +8932,7 @@
   {
     "erased": "dobj",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9646792879344448,
     "acc_after": 0.9646792879344448,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8942,7 +8942,7 @@
   {
     "erased": "dobj",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8972,7 +8972,7 @@
   {
     "erased": "dobj",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9835170010360742,
     "acc_after": 0.9835170010360742,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8982,7 +8982,7 @@
   {
     "erased": "dobj",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9953847602901008,
     "acc_after": 0.9953847602901008,
     "erasure_accuracy": null,
     "baseline": null,
@@ -8992,7 +8992,7 @@
   {
     "erased": "dobj",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9002,7 +9002,7 @@
   {
     "erased": "dobj",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9994348686069511,
     "acc_after": 0.9994348686069511,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9012,7 +9012,7 @@
   {
     "erased": "dobj",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9918997833662994,
     "acc_after": 0.9918997833662994,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9022,7 +9022,7 @@
   {
     "erased": "dobj",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9924649147593482,
     "acc_after": 0.9924649147593482,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9462,7 +9462,7 @@
   {
     "erased": "intj",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9560139399076952,
     "acc_after": 0.9560139399076952,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9472,7 +9472,7 @@
   {
     "erased": "intj",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9482,7 +9482,7 @@
   {
     "erased": "intj",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9492,7 +9492,7 @@
   {
     "erased": "intj",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9849298295186965,
     "acc_after": 0.9849298295186965,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9502,7 +9502,7 @@
   {
     "erased": "intj",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9842705095601394,
     "acc_after": 0.9842705095601394,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9532,7 +9532,7 @@
   {
     "erased": "intj",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9542,7 +9542,7 @@
   {
     "erased": "intj",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9892625035320712,
     "acc_after": 0.9892625035320712,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9552,7 +9552,7 @@
   {
     "erased": "intj",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9828576810775171,
     "acc_after": 0.9828576810775171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9562,7 +9562,7 @@
   {
     "erased": "intj",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9592,7 +9592,7 @@
   {
     "erased": "intj",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9761702929264388,
     "acc_after": 0.9761702929264388,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9602,7 +9602,7 @@
   {
     "erased": "intj",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9824809268154846,
     "acc_after": 0.9824809268154846,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9612,7 +9612,7 @@
   {
     "erased": "intj",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9642,7 +9642,7 @@
   {
     "erased": "intj",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9652,7 +9652,7 @@
   {
     "erased": "intj",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9682,7 +9682,7 @@
   {
     "erased": "intj",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.996138268814166,
     "acc_after": 0.996138268814166,
     "erasure_accuracy": 0.996138268814166,
     "baseline": 0.9833286239050579,
@@ -9692,7 +9692,7 @@
   {
     "erased": "intj",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9712,7 +9712,7 @@
   {
     "erased": "intj",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9722,7 +9722,7 @@
   {
     "erased": "intj",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.990392766318169,
     "acc_after": 0.990392766318169,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9742,7 +9742,7 @@
   {
     "erased": "intj",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9955731374211171,
     "acc_after": 0.9955731374211171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9752,7 +9752,7 @@
   {
     "erased": "intj",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9762,7 +9762,7 @@
   {
     "erased": "intj",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9772,7 +9772,7 @@
   {
     "erased": "intj",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9981162286898371,
     "acc_after": 0.9981162286898371,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9782,7 +9782,7 @@
   {
     "erased": "intj",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9792,7 +9792,7 @@
   {
     "erased": "intj",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9701422247339173,
     "acc_after": 0.9701422247339173,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9802,7 +9802,7 @@
   {
     "erased": "intj",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9832,7 +9832,7 @@
   {
     "erased": "intj",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9842,7 +9842,7 @@
   {
     "erased": "intj",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9852,7 +9852,7 @@
   {
     "erased": "intj",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9984929829518696,
     "acc_after": 0.9984929829518696,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9872,7 +9872,7 @@
   {
     "erased": "intj",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9924649147593482,
     "acc_after": 0.9924649147593482,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9892,7 +9892,7 @@
   {
     "erased": "mark",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.955825562776679,
     "acc_after": 0.955825562776679,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9902,7 +9902,7 @@
   {
     "erased": "mark",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9912,7 +9912,7 @@
   {
     "erased": "mark",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9936893661109542,
     "acc_after": 0.9936893661109542,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9922,7 +9922,7 @@
   {
     "erased": "mark",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9849298295186965,
     "acc_after": 0.9849298295186965,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9932,7 +9932,7 @@
   {
     "erased": "mark",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9842705095601394,
     "acc_after": 0.9842705095601394,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9952,7 +9952,7 @@
   {
     "erased": "mark",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9840821324291231,
     "acc_after": 0.9840821324291231,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9962,7 +9962,7 @@
   {
     "erased": "mark",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9909578977112179,
     "acc_after": 0.9909578977112179,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9972,7 +9972,7 @@
   {
     "erased": "mark",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.989074126401055,
     "acc_after": 0.989074126401055,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9982,7 +9982,7 @@
   {
     "erased": "mark",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -9992,7 +9992,7 @@
   {
     "erased": "mark",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10022,7 +10022,7 @@
   {
     "erased": "mark",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9759819157954225,
     "acc_after": 0.9759819157954225,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10032,7 +10032,7 @@
   {
     "erased": "mark",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10042,7 +10042,7 @@
   {
     "erased": "mark",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9820099839879438,
     "acc_after": 0.9820099839879438,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10062,7 +10062,7 @@
   {
     "erased": "mark",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10072,7 +10072,7 @@
   {
     "erased": "mark",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10082,7 +10082,7 @@
   {
     "erased": "mark",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10092,7 +10092,7 @@
   {
     "erased": "mark",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9732504473956861,
     "acc_after": 0.9732504473956861,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10102,7 +10102,7 @@
   {
     "erased": "mark",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 0.9998116228689837,
     "acc_after": 0.9998116228689837,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10112,7 +10112,7 @@
   {
     "erased": "mark",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9963266459451823,
     "acc_after": 0.9963266459451823,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10122,7 +10122,7 @@
   {
     "erased": "mark",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9936893661109542,
     "acc_after": 0.9936893661109542,
     "erasure_accuracy": 0.9936893661109542,
     "baseline": 0.9902985777526608,
@@ -10142,7 +10142,7 @@
   {
     "erased": "mark",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10162,7 +10162,7 @@
   {
     "erased": "mark",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9716492417820477,
     "acc_after": 0.9716492417820477,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10172,7 +10172,7 @@
   {
     "erased": "mark",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9955731374211171,
     "acc_after": 0.9955731374211171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10182,7 +10182,7 @@
   {
     "erased": "mark",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9967034002072148,
     "acc_after": 0.9967034002072148,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10212,7 +10212,7 @@
   {
     "erased": "mark",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10232,7 +10232,7 @@
   {
     "erased": "mark",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10252,7 +10252,7 @@
   {
     "erased": "mark",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10262,7 +10262,7 @@
   {
     "erased": "mark",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9840821324291231,
     "acc_after": 0.9840821324291231,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10272,7 +10272,7 @@
   {
     "erased": "mark",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9953847602901008,
     "acc_after": 0.9953847602901008,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10282,7 +10282,7 @@
   {
     "erased": "mark",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9984929829518696,
     "acc_after": 0.9984929829518696,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10302,7 +10302,7 @@
   {
     "erased": "mark",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9919939719318075,
     "acc_after": 0.9919939719318075,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10312,7 +10312,7 @@
   {
     "erased": "mark",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9922765376283319,
     "acc_after": 0.9922765376283319,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10332,7 +10332,7 @@
   {
     "erased": "neg",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10352,7 +10352,7 @@
   {
     "erased": "neg",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9848356409531883,
     "acc_after": 0.9848356409531883,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10362,7 +10362,7 @@
   {
     "erased": "neg",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9844588866911557,
     "acc_after": 0.9844588866911557,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10392,7 +10392,7 @@
   {
     "erased": "neg",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10402,7 +10402,7 @@
   {
     "erased": "neg",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9891683149665631,
     "acc_after": 0.9891683149665631,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10412,7 +10412,7 @@
   {
     "erased": "neg",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9828576810775171,
     "acc_after": 0.9828576810775171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10432,7 +10432,7 @@
   {
     "erased": "neg",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10442,7 +10442,7 @@
   {
     "erased": "neg",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9996232457379675,
     "acc_after": 0.9996232457379675,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10452,7 +10452,7 @@
   {
     "erased": "neg",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9751342187058492,
     "acc_after": 0.9751342187058492,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10472,7 +10472,7 @@
   {
     "erased": "neg",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10492,7 +10492,7 @@
   {
     "erased": "neg",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10502,7 +10502,7 @@
   {
     "erased": "neg",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10522,7 +10522,7 @@
   {
     "erased": "neg",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9734388245267025,
     "acc_after": 0.9734388245267025,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10552,7 +10552,7 @@
   {
     "erased": "neg",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10562,7 +10562,7 @@
   {
     "erased": "neg",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": 0.9993406800414429,
     "baseline": 0.9911462748422342,
@@ -10572,7 +10572,7 @@
   {
     "erased": "neg",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10582,7 +10582,7 @@
   {
     "erased": "neg",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9899218234906282,
     "acc_after": 0.9899218234906282,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10592,7 +10592,7 @@
   {
     "erased": "neg",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.971272487520015,
     "acc_after": 0.971272487520015,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10622,7 +10622,7 @@
   {
     "erased": "neg",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10632,7 +10632,7 @@
   {
     "erased": "neg",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9977394744278044,
     "acc_after": 0.9977394744278044,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10642,7 +10642,7 @@
   {
     "erased": "neg",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10652,7 +10652,7 @@
   {
     "erased": "neg",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.969294527644344,
     "acc_after": 0.969294527644344,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10662,7 +10662,7 @@
   {
     "erased": "neg",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10692,7 +10692,7 @@
   {
     "erased": "neg",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9833286239050579,
     "acc_after": 0.9833286239050579,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10702,7 +10702,7 @@
   {
     "erased": "neg",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9958557031176415,
     "acc_after": 0.9958557031176415,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10712,7 +10712,7 @@
   {
     "erased": "neg",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10722,7 +10722,7 @@
   {
     "erased": "neg",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9994348686069511,
     "acc_after": 0.9994348686069511,
     "erasure_accuracy": null,
     "baseline": null,
@@ -10732,7 +10732,7 @@
   {
     "erased": "neg",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11612,7 +11612,7 @@
   {
     "erased": "nsubj",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9560139399076952,
     "acc_after": 0.9560139399076952,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11672,7 +11672,7 @@
   {
     "erased": "nsubj",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9842705095601394,
     "acc_after": 0.9842705095601394,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11682,7 +11682,7 @@
   {
     "erased": "nsubj",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11692,7 +11692,7 @@
   {
     "erased": "nsubj",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.989074126401055,
     "acc_after": 0.989074126401055,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11702,7 +11702,7 @@
   {
     "erased": "nsubj",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9822925496844683,
     "acc_after": 0.9822925496844683,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11742,7 +11742,7 @@
   {
     "erased": "nsubj",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9756051615333898,
     "acc_after": 0.9756051615333898,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11752,7 +11752,7 @@
   {
     "erased": "nsubj",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9832344353395498,
     "acc_after": 0.9832344353395498,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11762,7 +11762,7 @@
   {
     "erased": "nsubj",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9824809268154846,
     "acc_after": 0.9824809268154846,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11782,7 +11782,7 @@
   {
     "erased": "nsubj",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9991523029104267,
     "acc_after": 0.9991523029104267,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11792,7 +11792,7 @@
   {
     "erased": "nsubj",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11802,7 +11802,7 @@
   {
     "erased": "nsubj",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11812,7 +11812,7 @@
   {
     "erased": "nsubj",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9728736931336536,
     "acc_after": 0.9728736931336536,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11822,7 +11822,7 @@
   {
     "erased": "nsubj",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11832,7 +11832,7 @@
   {
     "erased": "nsubj",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9962324573796741,
     "acc_after": 0.9962324573796741,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11842,7 +11842,7 @@
   {
     "erased": "nsubj",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9939719318074786,
     "acc_after": 0.9939719318074786,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11862,7 +11862,7 @@
   {
     "erased": "nsubj",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11872,7 +11872,7 @@
   {
     "erased": "nsubj",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.991052086276726,
     "acc_after": 0.991052086276726,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11882,7 +11882,7 @@
   {
     "erased": "nsubj",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9330319299237073,
     "acc_after": 0.9330319299237073,
     "erasure_accuracy": 0.9330319299237073,
     "baseline": 0.8918715267966469,
@@ -11892,7 +11892,7 @@
   {
     "erased": "nsubj",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9955731374211171,
     "acc_after": 0.9955731374211171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11902,7 +11902,7 @@
   {
     "erased": "nsubj",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9966092116417067,
     "acc_after": 0.9966092116417067,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11942,7 +11942,7 @@
   {
     "erased": "nsubj",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9702364132994254,
     "acc_after": 0.9702364132994254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11952,7 +11952,7 @@
   {
     "erased": "nsubj",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11972,7 +11972,7 @@
   {
     "erased": "nsubj",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11982,7 +11982,7 @@
   {
     "erased": "nsubj",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -11992,7 +11992,7 @@
   {
     "erased": "nsubj",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -12002,7 +12002,7 @@
   {
     "erased": "nsubj",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9984929829518696,
     "acc_after": 0.9984929829518696,
     "erasure_accuracy": null,
     "baseline": null,
@@ -12022,7 +12022,7 @@
   {
     "erased": "nsubj",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9922765376283319,
     "acc_after": 0.9922765376283319,
     "erasure_accuracy": null,
     "baseline": null,
@@ -12032,7 +12032,7 @@
   {
     "erased": "nsubj",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9927474804558727,
     "acc_after": 0.9927474804558727,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13332,7 +13332,7 @@
   {
     "erased": "parataxis",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9562023170387115,
     "acc_after": 0.9562023170387115,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13342,7 +13342,7 @@
   {
     "erased": "parataxis",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13352,7 +13352,7 @@
   {
     "erased": "parataxis",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9936893661109542,
     "acc_after": 0.9936893661109542,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13362,7 +13362,7 @@
   {
     "erased": "parataxis",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9849298295186965,
     "acc_after": 0.9849298295186965,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13372,7 +13372,7 @@
   {
     "erased": "parataxis",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9843646981256475,
     "acc_after": 0.9843646981256475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13392,7 +13392,7 @@
   {
     "erased": "parataxis",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9838937552981069,
     "acc_after": 0.9838937552981069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13402,7 +13402,7 @@
   {
     "erased": "parataxis",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9917114062352831,
     "acc_after": 0.9917114062352831,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13412,7 +13412,7 @@
   {
     "erased": "parataxis",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9892625035320712,
     "acc_after": 0.9892625035320712,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13422,7 +13422,7 @@
   {
     "erased": "parataxis",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.982763492512009,
     "acc_after": 0.982763492512009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13442,7 +13442,7 @@
   {
     "erased": "parataxis",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13462,7 +13462,7 @@
   {
     "erased": "parataxis",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9756051615333898,
     "acc_after": 0.9756051615333898,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13472,7 +13472,7 @@
   {
     "erased": "parataxis",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9830460582085335,
     "acc_after": 0.9830460582085335,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13482,7 +13482,7 @@
   {
     "erased": "parataxis",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9829518696430254,
     "acc_after": 0.9829518696430254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13502,7 +13502,7 @@
   {
     "erased": "parataxis",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13512,7 +13512,7 @@
   {
     "erased": "parataxis",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13522,7 +13522,7 @@
   {
     "erased": "parataxis",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13532,7 +13532,7 @@
   {
     "erased": "parataxis",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9728736931336536,
     "acc_after": 0.9728736931336536,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13542,7 +13542,7 @@
   {
     "erased": "parataxis",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13562,7 +13562,7 @@
   {
     "erased": "parataxis",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13572,7 +13572,7 @@
   {
     "erased": "parataxis",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13592,7 +13592,7 @@
   {
     "erased": "parataxis",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9902985777526608,
     "acc_after": 0.9902985777526608,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13602,7 +13602,7 @@
   {
     "erased": "parataxis",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9715550532165396,
     "acc_after": 0.9715550532165396,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13612,7 +13612,7 @@
   {
     "erased": "parataxis",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13622,7 +13622,7 @@
   {
     "erased": "parataxis",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13632,7 +13632,7 @@
   {
     "erased": "parataxis",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13642,7 +13642,7 @@
   {
     "erased": "parataxis",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9977394744278044,
     "acc_after": 0.9977394744278044,
     "erasure_accuracy": 0.9977394744278044,
     "baseline": 0.9962324573796741,
@@ -13652,7 +13652,7 @@
   {
     "erased": "parataxis",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9972685316002637,
     "acc_after": 0.9972685316002637,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13662,7 +13662,7 @@
   {
     "erased": "parataxis",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9698596590373929,
     "acc_after": 0.9698596590373929,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13672,7 +13672,7 @@
   {
     "erased": "parataxis",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13692,7 +13692,7 @@
   {
     "erased": "parataxis",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13712,7 +13712,7 @@
   {
     "erased": "parataxis",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13722,7 +13722,7 @@
   {
     "erased": "parataxis",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13732,7 +13732,7 @@
   {
     "erased": "parataxis",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9995290571724592,
     "acc_after": 0.9995290571724592,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13742,7 +13742,7 @@
   {
     "erased": "parataxis",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9917114062352831,
     "acc_after": 0.9917114062352831,
     "erasure_accuracy": null,
     "baseline": null,
@@ -13752,7 +13752,7 @@
   {
     "erased": "parataxis",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9924649147593482,
     "acc_after": 0.9924649147593482,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14192,7 +14192,7 @@
   {
     "erased": "pobj",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9564848827352359,
     "acc_after": 0.9564848827352359,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14212,7 +14212,7 @@
   {
     "erased": "pobj",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9938777432419704,
     "acc_after": 0.9938777432419704,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14222,7 +14222,7 @@
   {
     "erased": "pobj",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9848356409531883,
     "acc_after": 0.9848356409531883,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14232,7 +14232,7 @@
   {
     "erased": "pobj",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9847414523876802,
     "acc_after": 0.9847414523876802,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14252,7 +14252,7 @@
   {
     "erased": "pobj",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9842705095601394,
     "acc_after": 0.9842705095601394,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14262,7 +14262,7 @@
   {
     "erased": "pobj",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14272,7 +14272,7 @@
   {
     "erased": "pobj",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9883206178769898,
     "acc_after": 0.9883206178769898,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14282,7 +14282,7 @@
   {
     "erased": "pobj",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14292,7 +14292,7 @@
   {
     "erased": "pobj",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14302,7 +14302,7 @@
   {
     "erased": "pobj",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14322,7 +14322,7 @@
   {
     "erased": "pobj",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9759819157954225,
     "acc_after": 0.9759819157954225,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14332,7 +14332,7 @@
   {
     "erased": "pobj",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14342,7 +14342,7 @@
   {
     "erased": "pobj",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.982763492512009,
     "acc_after": 0.982763492512009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14362,7 +14362,7 @@
   {
     "erased": "pobj",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14372,7 +14372,7 @@
   {
     "erased": "pobj",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14382,7 +14382,7 @@
   {
     "erased": "pobj",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9918055948007912,
     "acc_after": 0.9918055948007912,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14392,7 +14392,7 @@
   {
     "erased": "pobj",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.973815578788735,
     "acc_after": 0.973815578788735,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14402,7 +14402,7 @@
   {
     "erased": "pobj",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14422,7 +14422,7 @@
   {
     "erased": "pobj",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9939719318074786,
     "acc_after": 0.9939719318074786,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14442,7 +14442,7 @@
   {
     "erased": "pobj",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14452,7 +14452,7 @@
   {
     "erased": "pobj",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.98982763492512,
     "acc_after": 0.98982763492512,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14462,7 +14462,7 @@
   {
     "erased": "pobj",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9714608646510313,
     "acc_after": 0.9714608646510313,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14472,7 +14472,7 @@
   {
     "erased": "pobj",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9957615145521334,
     "acc_after": 0.9957615145521334,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14482,7 +14482,7 @@
   {
     "erased": "pobj",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9965150230761985,
     "acc_after": 0.9965150230761985,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14492,7 +14492,7 @@
   {
     "erased": "pobj",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14512,7 +14512,7 @@
   {
     "erased": "pobj",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9972685316002637,
     "acc_after": 0.9972685316002637,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14522,7 +14522,7 @@
   {
     "erased": "pobj",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9633606480173307,
     "acc_after": 0.9633606480173307,
     "erasure_accuracy": 0.9633606480173307,
     "baseline": 0.9365169068475088,
@@ -14532,7 +14532,7 @@
   {
     "erased": "pobj",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14552,7 +14552,7 @@
   {
     "erased": "pobj",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14562,7 +14562,7 @@
   {
     "erased": "pobj",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9829518696430254,
     "acc_after": 0.9829518696430254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14572,7 +14572,7 @@
   {
     "erased": "pobj",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9951021945935763,
     "acc_after": 0.9951021945935763,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14582,7 +14582,7 @@
   {
     "erased": "pobj",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14602,7 +14602,7 @@
   {
     "erased": "pobj",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14612,7 +14612,7 @@
   {
     "erased": "pobj",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9922765376283319,
     "acc_after": 0.9922765376283319,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14622,7 +14622,7 @@
   {
     "erased": "poss",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9556371856456626,
     "acc_after": 0.9556371856456626,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14632,7 +14632,7 @@
   {
     "erased": "poss",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.9976452858622963,
     "acc_after": 0.9976452858622963,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14642,7 +14642,7 @@
   {
     "erased": "poss",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14652,7 +14652,7 @@
   {
     "erased": "poss",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9844588866911557,
     "acc_after": 0.9844588866911557,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14662,7 +14662,7 @@
   {
     "erased": "poss",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9843646981256475,
     "acc_after": 0.9843646981256475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14682,7 +14682,7 @@
   {
     "erased": "poss",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9837995667325986,
     "acc_after": 0.9837995667325986,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14692,7 +14692,7 @@
   {
     "erased": "poss",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14702,7 +14702,7 @@
   {
     "erased": "poss",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9889799378355467,
     "acc_after": 0.9889799378355467,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14712,7 +14712,7 @@
   {
     "erased": "poss",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14722,7 +14722,7 @@
   {
     "erased": "poss",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9958557031176415,
     "acc_after": 0.9958557031176415,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14732,7 +14732,7 @@
   {
     "erased": "poss",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14752,7 +14752,7 @@
   {
     "erased": "poss",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9757935386644061,
     "acc_after": 0.9757935386644061,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14762,7 +14762,7 @@
   {
     "erased": "poss",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9822925496844683,
     "acc_after": 0.9822925496844683,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14772,7 +14772,7 @@
   {
     "erased": "poss",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14802,7 +14802,7 @@
   {
     "erased": "poss",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14812,7 +14812,7 @@
   {
     "erased": "poss",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14822,7 +14822,7 @@
   {
     "erased": "poss",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9727795045681454,
     "acc_after": 0.9727795045681454,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14852,7 +14852,7 @@
   {
     "erased": "poss",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9938777432419704,
     "acc_after": 0.9938777432419704,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14862,7 +14862,7 @@
   {
     "erased": "poss",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14872,7 +14872,7 @@
   {
     "erased": "poss",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14882,7 +14882,7 @@
   {
     "erased": "poss",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9900160120561364,
     "acc_after": 0.9900160120561364,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14892,7 +14892,7 @@
   {
     "erased": "poss",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9711782989545069,
     "acc_after": 0.9711782989545069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14912,7 +14912,7 @@
   {
     "erased": "poss",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9967034002072148,
     "acc_after": 0.9967034002072148,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14922,7 +14922,7 @@
   {
     "erased": "poss",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14942,7 +14942,7 @@
   {
     "erased": "poss",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9972685316002637,
     "acc_after": 0.9972685316002637,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14952,7 +14952,7 @@
   {
     "erased": "poss",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.969953847602901,
     "acc_after": 0.969953847602901,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14962,7 +14962,7 @@
   {
     "erased": "poss",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": 0.9911462748422342,
     "baseline": 0.9794668927192239,
@@ -14982,7 +14982,7 @@
   {
     "erased": "poss",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -14992,7 +14992,7 @@
   {
     "erased": "poss",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9829518696430254,
     "acc_after": 0.9829518696430254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15002,7 +15002,7 @@
   {
     "erased": "poss",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15032,7 +15032,7 @@
   {
     "erased": "poss",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15042,7 +15042,7 @@
   {
     "erased": "poss",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9928416690213808,
     "acc_after": 0.9928416690213808,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15922,7 +15922,7 @@
   {
     "erased": "prep",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15932,7 +15932,7 @@
   {
     "erased": "prep",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9936893661109542,
     "acc_after": 0.9936893661109542,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15942,7 +15942,7 @@
   {
     "erased": "prep",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9847414523876802,
     "acc_after": 0.9847414523876802,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15972,7 +15972,7 @@
   {
     "erased": "prep",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9837995667325986,
     "acc_after": 0.9837995667325986,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15982,7 +15982,7 @@
   {
     "erased": "prep",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -15992,7 +15992,7 @@
   {
     "erased": "prep",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9891683149665631,
     "acc_after": 0.9891683149665631,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16012,7 +16012,7 @@
   {
     "erased": "prep",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16052,7 +16052,7 @@
   {
     "erased": "prep",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9828576810775171,
     "acc_after": 0.9828576810775171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16082,7 +16082,7 @@
   {
     "erased": "prep",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16092,7 +16092,7 @@
   {
     "erased": "prep",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16102,7 +16102,7 @@
   {
     "erased": "prep",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16122,7 +16122,7 @@
   {
     "erased": "prep",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16132,7 +16132,7 @@
   {
     "erased": "prep",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9963266459451823,
     "acc_after": 0.9963266459451823,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16142,7 +16142,7 @@
   {
     "erased": "prep",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16162,7 +16162,7 @@
   {
     "erased": "prep",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16172,7 +16172,7 @@
   {
     "erased": "prep",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9896392577941038,
     "acc_after": 0.9896392577941038,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16182,7 +16182,7 @@
   {
     "erased": "prep",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9709899218234906,
     "acc_after": 0.9709899218234906,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16192,7 +16192,7 @@
   {
     "erased": "prep",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9955731374211171,
     "acc_after": 0.9955731374211171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16202,7 +16202,7 @@
   {
     "erased": "prep",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9966092116417067,
     "acc_after": 0.9966092116417067,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16212,7 +16212,7 @@
   {
     "erased": "prep",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16222,7 +16222,7 @@
   {
     "erased": "prep",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9980220401243289,
     "acc_after": 0.9980220401243289,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16232,7 +16232,7 @@
   {
     "erased": "prep",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16242,7 +16242,7 @@
   {
     "erased": "prep",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9703306018649336,
     "acc_after": 0.9703306018649336,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16252,7 +16252,7 @@
   {
     "erased": "prep",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16282,7 +16282,7 @@
   {
     "erased": "prep",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9832344353395498,
     "acc_after": 0.9832344353395498,
     "erasure_accuracy": 0.9832344353395498,
     "baseline": 0.9312423471790524,
@@ -16292,7 +16292,7 @@
   {
     "erased": "prep",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9957615145521334,
     "acc_after": 0.9957615145521334,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16302,7 +16302,7 @@
   {
     "erased": "prep",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16312,7 +16312,7 @@
   {
     "erased": "prep",
     "probed": "quantmod",
-    "acc_before": 0.9996232457379675,
+    "acc_before": 0.9994348686069511,
     "acc_after": 0.9994348686069511,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16322,7 +16322,7 @@
   {
     "erased": "prep",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16332,7 +16332,7 @@
   {
     "erased": "prep",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9927474804558727,
     "acc_after": 0.9927474804558727,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16342,7 +16342,7 @@
   {
     "erased": "prt",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9564848827352359,
     "acc_after": 0.9564848827352359,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16352,7 +16352,7 @@
   {
     "erased": "prt",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16362,7 +16362,7 @@
   {
     "erased": "prt",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9938777432419704,
     "acc_after": 0.9938777432419704,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16372,7 +16372,7 @@
   {
     "erased": "prt",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9848356409531883,
     "acc_after": 0.9848356409531883,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16382,7 +16382,7 @@
   {
     "erased": "prt",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9847414523876802,
     "acc_after": 0.9847414523876802,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16402,7 +16402,7 @@
   {
     "erased": "prt",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9843646981256475,
     "acc_after": 0.9843646981256475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16412,7 +16412,7 @@
   {
     "erased": "prt",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16422,7 +16422,7 @@
   {
     "erased": "prt",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9891683149665631,
     "acc_after": 0.9891683149665631,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16432,7 +16432,7 @@
   {
     "erased": "prt",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9823867382499765,
     "acc_after": 0.9823867382499765,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16442,7 +16442,7 @@
   {
     "erased": "prt",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16452,7 +16452,7 @@
   {
     "erased": "prt",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16482,7 +16482,7 @@
   {
     "erased": "prt",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16492,7 +16492,7 @@
   {
     "erased": "prt",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9828576810775171,
     "acc_after": 0.9828576810775171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16512,7 +16512,7 @@
   {
     "erased": "prt",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16522,7 +16522,7 @@
   {
     "erased": "prt",
     "probed": "dep",
-    "acc_before": 0.9972685316002637,
+    "acc_before": 0.9971743430347556,
     "acc_after": 0.9971743430347556,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16532,7 +16532,7 @@
   {
     "erased": "prt",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9918997833662994,
     "acc_after": 0.9918997833662994,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16562,7 +16562,7 @@
   {
     "erased": "prt",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9963266459451823,
     "acc_after": 0.9963266459451823,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16592,7 +16592,7 @@
   {
     "erased": "prt",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16602,7 +16602,7 @@
   {
     "erased": "prt",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9902043891871527,
     "acc_after": 0.9902043891871527,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16612,7 +16612,7 @@
   {
     "erased": "prt",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9708957332579825,
     "acc_after": 0.9708957332579825,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16622,7 +16622,7 @@
   {
     "erased": "prt",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16632,7 +16632,7 @@
   {
     "erased": "prt",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9967034002072148,
     "acc_after": 0.9967034002072148,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16642,7 +16642,7 @@
   {
     "erased": "prt",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9986813600828859,
     "acc_after": 0.9986813600828859,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16662,7 +16662,7 @@
   {
     "erased": "prt",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.9970801544692475,
     "acc_after": 0.9970801544692475,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16672,7 +16672,7 @@
   {
     "erased": "prt",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9688235848168032,
     "acc_after": 0.9688235848168032,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16682,7 +16682,7 @@
   {
     "erased": "prt",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16712,7 +16712,7 @@
   {
     "erased": "prt",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9837995667325986,
     "acc_after": 0.9837995667325986,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16722,7 +16722,7 @@
   {
     "erased": "prt",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": 0.9956673259866252,
     "baseline": 0.9913346519732504,
@@ -16732,7 +16732,7 @@
   {
     "erased": "prt",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16752,7 +16752,7 @@
   {
     "erased": "prt",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.99237072619384,
     "acc_after": 0.99237072619384,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16762,7 +16762,7 @@
   {
     "erased": "prt",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9931242347179052,
     "acc_after": 0.9931242347179052,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16772,7 +16772,7 @@
   {
     "erased": "punct",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9557313742111707,
     "acc_after": 0.9557313742111707,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16782,7 +16782,7 @@
   {
     "erased": "punct",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.9973627201657719,
     "acc_after": 0.9973627201657719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16792,7 +16792,7 @@
   {
     "erased": "punct",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16802,7 +16802,7 @@
   {
     "erased": "punct",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9848356409531883,
     "acc_after": 0.9848356409531883,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16812,7 +16812,7 @@
   {
     "erased": "punct",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9846472638221719,
     "acc_after": 0.9846472638221719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16832,7 +16832,7 @@
   {
     "erased": "punct",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9842705095601394,
     "acc_after": 0.9842705095601394,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16842,7 +16842,7 @@
   {
     "erased": "punct",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9917114062352831,
     "acc_after": 0.9917114062352831,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16852,7 +16852,7 @@
   {
     "erased": "punct",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9891683149665631,
     "acc_after": 0.9891683149665631,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16862,7 +16862,7 @@
   {
     "erased": "punct",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9821983611189602,
     "acc_after": 0.9821983611189602,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16872,7 +16872,7 @@
   {
     "erased": "punct",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.996138268814166,
     "acc_after": 0.996138268814166,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16882,7 +16882,7 @@
   {
     "erased": "punct",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16892,7 +16892,7 @@
   {
     "erased": "punct",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9996232457379675,
     "acc_after": 0.9996232457379675,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16902,7 +16902,7 @@
   {
     "erased": "punct",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9760761043609306,
     "acc_after": 0.9760761043609306,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16912,7 +16912,7 @@
   {
     "erased": "punct",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16922,7 +16922,7 @@
   {
     "erased": "punct",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.982763492512009,
     "acc_after": 0.982763492512009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16942,7 +16942,7 @@
   {
     "erased": "punct",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16962,7 +16962,7 @@
   {
     "erased": "punct",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16972,7 +16972,7 @@
   {
     "erased": "punct",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9726853160026373,
     "acc_after": 0.9726853160026373,
     "erasure_accuracy": null,
     "baseline": null,
@@ -16992,7 +16992,7 @@
   {
     "erased": "punct",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9962324573796741,
     "acc_after": 0.9962324573796741,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17002,7 +17002,7 @@
   {
     "erased": "punct",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17032,7 +17032,7 @@
   {
     "erased": "punct",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9899218234906282,
     "acc_after": 0.9899218234906282,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17042,7 +17042,7 @@
   {
     "erased": "punct",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9709899218234906,
     "acc_after": 0.9709899218234906,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17052,7 +17052,7 @@
   {
     "erased": "punct",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9955731374211171,
     "acc_after": 0.9955731374211171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17062,7 +17062,7 @@
   {
     "erased": "punct",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9967034002072148,
     "acc_after": 0.9967034002072148,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17072,7 +17072,7 @@
   {
     "erased": "punct",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17082,7 +17082,7 @@
   {
     "erased": "punct",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9978336629933127,
     "acc_after": 0.9978336629933127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17092,7 +17092,7 @@
   {
     "erased": "punct",
     "probed": "pcomp",
-    "acc_before": 0.9971743430347556,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17102,7 +17102,7 @@
   {
     "erased": "punct",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9694829047753603,
     "acc_after": 0.9694829047753603,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17112,7 +17112,7 @@
   {
     "erased": "punct",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17142,7 +17142,7 @@
   {
     "erased": "punct",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9833286239050579,
     "acc_after": 0.9833286239050579,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17162,7 +17162,7 @@
   {
     "erased": "punct",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.8172741829141942,
     "acc_after": 0.8172741829141942,
     "erasure_accuracy": 0.8172741829141942,
     "baseline": 0.7984364698125648,
@@ -17182,7 +17182,7 @@
   {
     "erased": "punct",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9924649147593482,
     "acc_after": 0.9924649147593482,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17192,7 +17192,7 @@
   {
     "erased": "punct",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9924649147593482,
     "acc_after": 0.9924649147593482,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17632,7 +17632,7 @@
   {
     "erased": "relcl",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9572383912593011,
     "acc_after": 0.9572383912593011,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17642,7 +17642,7 @@
   {
     "erased": "relcl",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17652,7 +17652,7 @@
   {
     "erased": "relcl",
     "probed": "acomp",
-    "acc_before": 0.9939719318074786,
+    "acc_before": 0.9941603089384948,
     "acc_after": 0.9941603089384948,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17662,7 +17662,7 @@
   {
     "erased": "relcl",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9855891494772535,
     "acc_after": 0.9855891494772535,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17672,7 +17672,7 @@
   {
     "erased": "relcl",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9846472638221719,
     "acc_after": 0.9846472638221719,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17692,7 +17692,7 @@
   {
     "erased": "relcl",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9840821324291231,
     "acc_after": 0.9840821324291231,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17702,7 +17702,7 @@
   {
     "erased": "relcl",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9914288405387586,
     "acc_after": 0.9914288405387586,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17712,7 +17712,7 @@
   {
     "erased": "relcl",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.989074126401055,
     "acc_after": 0.989074126401055,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17722,7 +17722,7 @@
   {
     "erased": "relcl",
     "probed": "aux",
-    "acc_before": 0.9821041725534521,
+    "acc_before": 0.9826693039465009,
     "acc_after": 0.9826693039465009,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17732,7 +17732,7 @@
   {
     "erased": "relcl",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.996138268814166,
     "acc_after": 0.996138268814166,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17752,7 +17752,7 @@
   {
     "erased": "relcl",
     "probed": "cc",
-    "acc_before": 0.9997174343034756,
+    "acc_before": 0.9998116228689837,
     "acc_after": 0.9998116228689837,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17762,7 +17762,7 @@
   {
     "erased": "relcl",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9750400301403409,
     "acc_after": 0.9750400301403409,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17772,7 +17772,7 @@
   {
     "erased": "relcl",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9828576810775171,
     "acc_after": 0.9828576810775171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17782,7 +17782,7 @@
   {
     "erased": "relcl",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9821041725534521,
     "acc_after": 0.9821041725534521,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17802,7 +17802,7 @@
   {
     "erased": "relcl",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9990581143449185,
     "acc_after": 0.9990581143449185,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17822,7 +17822,7 @@
   {
     "erased": "relcl",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17832,7 +17832,7 @@
   {
     "erased": "relcl",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9727795045681454,
     "acc_after": 0.9727795045681454,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17842,7 +17842,7 @@
   {
     "erased": "relcl",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17862,7 +17862,7 @@
   {
     "erased": "relcl",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9944428746350193,
     "acc_after": 0.9944428746350193,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17872,7 +17872,7 @@
   {
     "erased": "relcl",
     "probed": "neg",
-    "acc_before": 0.9994348686069511,
+    "acc_before": 0.9993406800414429,
     "acc_after": 0.9993406800414429,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17892,7 +17892,7 @@
   {
     "erased": "relcl",
     "probed": "npadvmod",
-    "acc_before": 0.9901102006216446,
+    "acc_before": 0.9900160120561364,
     "acc_after": 0.9900160120561364,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17902,7 +17902,7 @@
   {
     "erased": "relcl",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9711782989545069,
     "acc_after": 0.9711782989545069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17912,7 +17912,7 @@
   {
     "erased": "relcl",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9956673259866252,
     "acc_after": 0.9956673259866252,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17922,7 +17922,7 @@
   {
     "erased": "relcl",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9966092116417067,
     "acc_after": 0.9966092116417067,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17942,7 +17942,7 @@
   {
     "erased": "relcl",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9978336629933127,
     "acc_after": 0.9978336629933127,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17962,7 +17962,7 @@
   {
     "erased": "relcl",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9698596590373929,
     "acc_after": 0.9698596590373929,
     "erasure_accuracy": null,
     "baseline": null,
@@ -17972,7 +17972,7 @@
   {
     "erased": "relcl",
     "probed": "poss",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9911462748422342,
     "acc_after": 0.9911462748422342,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18002,7 +18002,7 @@
   {
     "erased": "relcl",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9831402467740417,
     "acc_after": 0.9831402467740417,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18012,7 +18012,7 @@
   {
     "erased": "relcl",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.9953847602901008,
     "acc_after": 0.9953847602901008,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18022,7 +18022,7 @@
   {
     "erased": "relcl",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18042,7 +18042,7 @@
   {
     "erased": "relcl",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9921823490628238,
     "acc_after": 0.9921823490628238,
     "erasure_accuracy": 0.9921823490628238,
     "baseline": 0.9906753320146934,
@@ -18052,7 +18052,7 @@
   {
     "erased": "relcl",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9925591033248564,
     "acc_after": 0.9925591033248564,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18062,7 +18062,7 @@
   {
     "erased": "xcomp",
     "probed": "ROOT",
-    "acc_before": 0.9566732598662523,
+    "acc_before": 0.9567674484317604,
     "acc_after": 0.9567674484317604,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18072,7 +18072,7 @@
   {
     "erased": "xcomp",
     "probed": "acl",
-    "acc_before": 0.9975510972967881,
+    "acc_before": 0.99745690873128,
     "acc_after": 0.99745690873128,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18092,7 +18092,7 @@
   {
     "erased": "xcomp",
     "probed": "advcl",
-    "acc_before": 0.9843646981256475,
+    "acc_before": 0.9850240180842046,
     "acc_after": 0.9850240180842046,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18102,7 +18102,7 @@
   {
     "erased": "xcomp",
     "probed": "advmod",
-    "acc_before": 0.9845530752566638,
+    "acc_before": 0.9844588866911557,
     "acc_after": 0.9844588866911557,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18122,7 +18122,7 @@
   {
     "erased": "xcomp",
     "probed": "amod",
-    "acc_before": 0.983987943863615,
+    "acc_before": 0.9838937552981069,
     "acc_after": 0.9838937552981069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18132,7 +18132,7 @@
   {
     "erased": "xcomp",
     "probed": "appos",
-    "acc_before": 0.9913346519732504,
+    "acc_before": 0.9912404634077423,
     "acc_after": 0.9912404634077423,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18142,7 +18142,7 @@
   {
     "erased": "xcomp",
     "probed": "attr",
-    "acc_before": 0.9887915607045304,
+    "acc_before": 0.9889799378355467,
     "acc_after": 0.9889799378355467,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18162,7 +18162,7 @@
   {
     "erased": "xcomp",
     "probed": "auxpass",
-    "acc_before": 0.9959498916831496,
+    "acc_before": 0.9958557031176415,
     "acc_after": 0.9958557031176415,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18172,7 +18172,7 @@
   {
     "erased": "xcomp",
     "probed": "case",
-    "acc_before": 0.9991523029104267,
+    "acc_before": 0.9992464914759348,
     "acc_after": 0.9992464914759348,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18192,7 +18192,7 @@
   {
     "erased": "xcomp",
     "probed": "ccomp",
-    "acc_before": 0.9758877272299142,
+    "acc_before": 0.9760761043609306,
     "acc_after": 0.9760761043609306,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18202,7 +18202,7 @@
   {
     "erased": "xcomp",
     "probed": "compound",
-    "acc_before": 0.982763492512009,
+    "acc_before": 0.9829518696430254,
     "acc_after": 0.9829518696430254,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18212,7 +18212,7 @@
   {
     "erased": "xcomp",
     "probed": "conj",
-    "acc_before": 0.9818216068569275,
+    "acc_before": 0.9825751153809927,
     "acc_after": 0.9825751153809927,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18232,7 +18232,7 @@
   {
     "erased": "xcomp",
     "probed": "dative",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9989639257794104,
     "acc_after": 0.9989639257794104,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18252,7 +18252,7 @@
   {
     "erased": "xcomp",
     "probed": "det",
-    "acc_before": 0.9924649147593482,
+    "acc_before": 0.9918997833662994,
     "acc_after": 0.9918997833662994,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18262,7 +18262,7 @@
   {
     "erased": "xcomp",
     "probed": "dobj",
-    "acc_before": 0.973156258830178,
+    "acc_before": 0.9726853160026373,
     "acc_after": 0.9726853160026373,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18272,7 +18272,7 @@
   {
     "erased": "xcomp",
     "probed": "expl",
-    "acc_before": 0.9999058114344919,
+    "acc_before": 1.0,
     "acc_after": 1.0,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18282,7 +18282,7 @@
   {
     "erased": "xcomp",
     "probed": "intj",
-    "acc_before": 0.9964208345106904,
+    "acc_before": 0.9960440802486578,
     "acc_after": 0.9960440802486578,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18292,7 +18292,7 @@
   {
     "erased": "xcomp",
     "probed": "mark",
-    "acc_before": 0.994254497504003,
+    "acc_before": 0.9940661203729867,
     "acc_after": 0.9940661203729867,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18312,7 +18312,7 @@
   {
     "erased": "xcomp",
     "probed": "nmod",
-    "acc_before": 0.9987755486483941,
+    "acc_before": 0.9988697372139023,
     "acc_after": 0.9988697372139023,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18332,7 +18332,7 @@
   {
     "erased": "xcomp",
     "probed": "nsubj",
-    "acc_before": 0.9713666760855232,
+    "acc_before": 0.9711782989545069,
     "acc_after": 0.9711782989545069,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18342,7 +18342,7 @@
   {
     "erased": "xcomp",
     "probed": "nsubjpass",
-    "acc_before": 0.9953847602901008,
+    "acc_before": 0.9955731374211171,
     "acc_after": 0.9955731374211171,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18352,7 +18352,7 @@
   {
     "erased": "xcomp",
     "probed": "nummod",
-    "acc_before": 0.996797588772723,
+    "acc_before": 0.9966092116417067,
     "acc_after": 0.9966092116417067,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18362,7 +18362,7 @@
   {
     "erased": "xcomp",
     "probed": "oprd",
-    "acc_before": 0.9984929829518696,
+    "acc_before": 0.9985871715173777,
     "acc_after": 0.9985871715173777,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18372,7 +18372,7 @@
   {
     "erased": "xcomp",
     "probed": "parataxis",
-    "acc_before": 0.9979278515588208,
+    "acc_before": 0.9975510972967881,
     "acc_after": 0.9975510972967881,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18392,7 +18392,7 @@
   {
     "erased": "xcomp",
     "probed": "pobj",
-    "acc_before": 0.9700480361684092,
+    "acc_before": 0.9694829047753603,
     "acc_after": 0.9694829047753603,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18422,7 +18422,7 @@
   {
     "erased": "xcomp",
     "probed": "predet",
-    "acc_before": 0.9988697372139023,
+    "acc_before": 0.9987755486483941,
     "acc_after": 0.9987755486483941,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18432,7 +18432,7 @@
   {
     "erased": "xcomp",
     "probed": "prep",
-    "acc_before": 0.9834228124705661,
+    "acc_before": 0.9837053781670905,
     "acc_after": 0.9837053781670905,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18442,7 +18442,7 @@
   {
     "erased": "xcomp",
     "probed": "prt",
-    "acc_before": 0.9955731374211171,
+    "acc_before": 0.995478948855609,
     "acc_after": 0.995478948855609,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18452,7 +18452,7 @@
   {
     "erased": "xcomp",
     "probed": "punct",
-    "acc_before": 0.9986813600828859,
+    "acc_before": 0.9990581143449185,
     "acc_after": 0.9990581143449185,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18472,7 +18472,7 @@
   {
     "erased": "xcomp",
     "probed": "relcl",
-    "acc_before": 0.9928416690213808,
+    "acc_before": 0.9920881604973156,
     "acc_after": 0.9920881604973156,
     "erasure_accuracy": null,
     "baseline": null,
@@ -18482,7 +18482,7 @@
   {
     "erased": "xcomp",
     "probed": "xcomp",
-    "acc_before": 0.9926532918903646,
+    "acc_before": 0.9925591033248564,
     "acc_after": 0.9925591033248564,
     "erasure_accuracy": 0.9925591033248564,
     "baseline": 0.9896392577941038,
