@@ -2,16 +2,20 @@ import pickle
 import torch
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
+from sklearn.dummy import DummyClassifier
 from concept_erasure import LeaceEraser
+from collections import Counter
 import os
+import json
 
 # --------------------------
 # Settings
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Stage3/Embeddings/UD/all_pos/Original_embeddings/gpt2_embeddings.pt" #make sure this file exists
-TEST_FILE = "Stage3/Embeddings/UD/all_pos/Original_embeddings/gpt2_embeddings_test.pt"
+EMBEDDING_FILE = "Stage3/Embeddings/UD/AllPOS/Original_embeddings/gpt2_embeddings.pt" 
+TEST_FILE = "Stage3/Embeddings/UD/AllPOS/Original_embeddings/gpt2_embeddings_test.pt"
 SEED = 42
 
 torch.manual_seed(SEED)
@@ -53,14 +57,18 @@ X_all_erased = eraser_all(X)
 X_test_all_erased = eraser_all(X_test)
 
 # Save the eraser and erased embeddings
-os.makedirs("Stage3/pyfiles", exist_ok=True) #make sure the directory exists 
-with open("Stage3/Eraser_objects/s3_leace_embeddings_ALL_POS.pkl", "wb") as f:
+with open("Stage4/Embeddings/UD/leace_embeddings_ALL_POS.pkl", "wb") as f:
     pickle.dump({
         "train_erased": X_all_erased.cpu(),
         "test_erased": X_test_all_erased.cpu(),
         "train_labels": {feat: labels_by_feature[feat].cpu() for feat in all_pos_tags},
         "test_labels": {feat: labels_by_feature_test[feat].cpu() for feat in all_pos_tags},
     }, f)
+
+# --- Save the eraser object ---
+with open(f"Stage4/Eraser_objects/UD/leace_eraser__ALL_POS.pkl", "wb") as f:
+    pickle.dump(eraser_all, f)
+# ----------------------------------------
 
 # Compute L2 norm between original and erased embeddings
 l2_train_all = torch.norm(X - X_all_erased, dim=1).mean().item()
@@ -85,7 +93,7 @@ for feat in all_pos_tags:
     print(f"{feat:10}: {acc:.4f}")
 
 # Save probe results and L2 norms
-with open("Stage3/Results/s3_leace_results_ALL_POS.pkl", "wb") as f:
+with open("Stage4/Results/leace_results_ALL_POS.json", "wb") as f:
     pickle.dump({
         "probe_accuracy": probe_results,
         "l2_train": l2_train_all,
