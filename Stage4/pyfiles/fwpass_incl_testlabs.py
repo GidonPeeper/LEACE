@@ -1,3 +1,5 @@
+# Je moet deze nog runnen om ervoor te zorgen dat ook de labels bij de test set worden opgeslagen. Eerst erover nadenken of dit nodig is. 
+# Dit zou zijn voor de fw pass voor de dependency labels. Dus dat moet voor zowel UD als Narratives.
 import argparse
 import pickle
 import os
@@ -127,12 +129,12 @@ def encode_with_gpt2(tokenized_sentences, model, device):
 
 def main():
     # Paths
-    #train_file = "data/ud_ewt/en_ewt-ud-train.conllu"
-    #valid_file = "data/ud_ewt/en_ewt-ud-dev.conllu"
-    #test_file = "data/ud_ewt/en_ewt-ud-test.conllu"
-    train_file = "/home/gpeeper/LEACE/data/narratives/train_clean.conllu"
-    test_file = "/home/gpeeper/LEACE/data/narratives/test_clean.conllu"
-    save_dir = "Stage3/Embeddings/Narratives"
+    train_file = "data/ud_ewt/en_ewt-ud-train.conllu"
+    valid_file = "data/ud_ewt/en_ewt-ud-dev.conllu"
+    test_file = "data/ud_ewt/en_ewt-ud-test.conllu"
+    # train_file = "/home/gpeeper/LEACE/data/narratives/train_clean.conllu"
+    # test_file = "/home/gpeeper/LEACE/data/narratives/test_clean.conllu"
+    save_dir = "Stage3/Embeddings/UD"
     os.makedirs(save_dir, exist_ok=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -141,37 +143,37 @@ def main():
     # Step 1: Parse and concatenate train + valid for training set
     print(f"Parsing {train_file} for training set...")
     train_sentences, train_pos_tags = parse_conllu(train_file)
-    #valid_sentences, valid_pos_tags = parse_conllu(valid_file)
-    all_train_sentences = train_sentences # + valid_sentences
-    all_pos_tags = train_pos_tags#.union(valid_pos_tags)
+    valid_sentences, valid_pos_tags = parse_conllu(valid_file)
+    all_train_sentences = train_sentences + valid_sentences
+    all_train_pos_tags = train_pos_tags.union(valid_pos_tags)
     print(f"Parsed {len(all_train_sentences)} training sentences.")
-    print(f"POS tags found: {sorted(list(all_pos_tags))}")
+    print(f"POS tags found: {sorted(list(all_train_pos_tags))}")
 
-    # Step 2–3: Tokenize and label training set
-    tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-    tokenizer.pad_token = tokenizer.eos_token
-    tokenized_train, all_pos_tags = tokenize_and_label(all_train_sentences, all_pos_tags, tokenizer)
-
-    # Step 4: Encode training set
-    model = GPT2Model.from_pretrained("gpt2", output_hidden_states=True).to(device).eval()
-    train_embeddings = encode_with_gpt2(tokenized_train, model, device)
-
-    # Save training embeddings
-    train_save_path = os.path.join(save_dir, "gpt2_embeddings.pt")
-    with open(train_save_path, "wb") as f:
-        pickle.dump(train_embeddings, f)
-    print(f"Saved training embeddings to {train_save_path}")
-
-    # Step 1: Parse test set
+    # Parse test set
     print(f"Parsing {test_file} for test set...")
     test_sentences, test_pos_tags = parse_conllu(test_file)
     print(f"Parsed {len(test_sentences)} test sentences.")
 
-    # Step 2–3: Tokenize and label test set (use all_pos_tags from train+valid)
-    tokenized_test, _ = tokenize_and_label(test_sentences, all_pos_tags, tokenizer)
+    # Step 2–3: Tokenize and label training set
+    tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+    tokenizer.pad_token = tokenizer.eos_token
+    tokenized_train, all_train_pos_tags = tokenize_and_label(all_train_sentences, all_train_pos_tags, tokenizer)
 
-    # Step 4: Encode test set
+    # Tokenize and label test set
+    tokenized_test, test_pos_tags = tokenize_and_label(test_sentences, test_pos_tags, tokenizer)
+
+    # Step 4: Encode training set
+    model = GPT2Model.from_pretrained("gpt2", output_hidden_states=True).to(device).eval()
+    train_embeddings = encode_with_gpt2(tokenized_train, model, device)
+    
+    # Encode test set
     test_embeddings = encode_with_gpt2(tokenized_test, model, device)
+
+    # Save training embeddings
+    train_save_path = os.path.join(save_dir, "gpt2_embeddings_train.pt")
+    with open(train_save_path, "wb") as f:
+        pickle.dump(train_embeddings, f)
+    print(f"Saved training embeddings to {train_save_path}")
 
     # Save test embeddings
     test_save_path = os.path.join(save_dir, "gpt2_embeddings_test.pt")
