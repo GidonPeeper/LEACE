@@ -12,5 +12,3 @@ checkpoints/
 
 *.pt
 *.pkl
-
-depprobe/
