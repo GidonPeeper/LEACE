@@ -1,0 +1,3 @@
+[submodule "external/structural-probes"]
+	path = external/structural-probes
+	url = https://github.com/john-hewitt/structural-probes.git
