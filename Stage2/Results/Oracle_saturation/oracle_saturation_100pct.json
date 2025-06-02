@@ -1,0 +1,178 @@
+[
+  {
+    "erased": "function_content",
+    "probed": "function_content",
+    "acc_before": 0.979238064876066,
+    "acc_after": 0.6252889136845461,
+    "erasure_accuracy": 0.6252889136845461,
+    "dummy": 0.6252889136845461,
+    "l2_train": 57.954219818115234,
+    "l2_test": 57.53230667114258,
+    "fraction": 1.0
+  },
+  {
+    "erased": "function_content",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.970789830238304,
+    "acc_after": 0.9681198692914641,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "function_content",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9876065991870566,
+    "acc_after": 0.9874073483701283,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "function_content",
+    "probed": "closed_open",
+    "acc_before": 0.9787598629154379,
+    "acc_after": 0.9894397067027975,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "function_content",
+    "acc_before": 0.979238064876066,
+    "acc_after": 0.9749342472304137,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.970789830238304,
+    "acc_after": 0.7529688371722324,
+    "erasure_accuracy": 0.7529688371722324,
+    "dummy": 0.7529688371722324,
+    "l2_train": 29.823930740356445,
+    "l2_test": 32.973114013671875,
+    "fraction": 1.0
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9876065991870566,
+    "acc_after": 0.9919901171594804,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "noun_nonnoun",
+    "probed": "closed_open",
+    "acc_before": 0.9787598629154379,
+    "acc_after": 0.9157966047660795,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "function_content",
+    "acc_before": 0.979238064876066,
+    "acc_after": 0.9782019606280385,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.970789830238304,
+    "acc_after": 0.9738184426556149,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9876065991870566,
+    "acc_after": 0.8347015222762413,
+    "erasure_accuracy": 0.8347015222762413,
+    "dummy": 0.8347015222762413,
+    "l2_train": 28.475740432739258,
+    "l2_test": 27.046201705932617,
+    "fraction": 1.0
+  },
+  {
+    "erased": "verb_nonverb",
+    "probed": "closed_open",
+    "acc_before": 0.9787598629154379,
+    "acc_after": 0.9787200127520523,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "closed_open",
+    "probed": "function_content",
+    "acc_before": 0.979238064876066,
+    "acc_after": 0.9991631465689009,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "closed_open",
+    "probed": "noun_nonnoun",
+    "acc_before": 0.970789830238304,
+    "acc_after": 0.9544512632501794,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "closed_open",
+    "probed": "verb_nonverb",
+    "acc_before": 0.9876065991870566,
+    "acc_after": 0.9882043516378417,
+    "erasure_accuracy": null,
+    "dummy": null,
+    "l2_train": null,
+    "l2_test": null,
+    "fraction": 1.0
+  },
+  {
+    "erased": "closed_open",
+    "probed": "closed_open",
+    "acc_before": 0.9787598629154379,
+    "acc_after": 0.5024308599665258,
+    "erasure_accuracy": 0.5024308599665258,
+    "dummy": 0.5024308599665258,
+    "l2_train": 34.13492202758789,
+    "l2_test": 28.05129623413086,
+    "fraction": 1.0
+  }
+]
