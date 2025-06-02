@@ -12,7 +12,7 @@ import json
 # Settings
 # --------------------------
 EMBEDDING_FILE = "Stage3/Embeddings/UD/AllPOS/Original_embeddings/gpt2_embeddings.pt"
-RESULTS_FILE = "Full_concept_erasure/Results/oracle_deplab_erased_probe_pos.json"
+RESULTS_FILE = "Full_concept_erasure/Results/probe_pos_after_deplab_erased.json"
 PROJECTION_FILE = "Full_concept_erasure/Eraser_objects/oracle_leace_transf_matrix_ALL_DEPLABS.pkl"
 os.makedirs(os.path.dirname(RESULTS_FILE), exist_ok=True)
 SEED = 42
