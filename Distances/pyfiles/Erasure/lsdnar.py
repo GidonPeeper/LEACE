@@ -31,9 +31,9 @@ import json
 # Settings: Erasure of syntactic distances
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
-RESULTS_FILE = "Distances/Results/UD/leace_results_synt_dist.json"
+EMBEDDING_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
+RESULTS_FILE = "Distances/Results/Narratives/leace_results_synt_dist.json"
 os.makedirs(os.path.dirname(RESULTS_FILE), exist_ok=True)
 SEED = 42
 torch.manual_seed(SEED)
@@ -80,11 +80,18 @@ def batch_generator(data, layer, batch_size=BATCH_SIZE):
         dist = sent["distance_matrix"]            # [num_words, num_words]
         n = emb.shape[0]
         pairs = [(i, j) for i in range(n) for j in range(n)]
-        for k in range(0, len(pairs), batch_size):
-            batch_pairs = pairs[k:k+batch_size]
-            X = [torch.cat([emb[i], emb[j]]).numpy() for i, j in batch_pairs]
-            Y = [dist[i, j].item() for i, j in batch_pairs]
-            yield np.stack(X), np.array(Y)
+        X_batch, Y_batch = [], []
+        for i, j in pairs:
+            val = dist[i, j].item()
+            if np.isfinite(val):
+                X_batch.append(torch.cat([emb[i], emb[j]]).numpy())
+                Y_batch.append(val)
+            # else: skip this pair
+            if len(X_batch) == batch_size:
+                yield np.stack(X_batch), np.array(Y_batch)
+                X_batch, Y_batch = [], []
+        if X_batch:
+            yield np.stack(X_batch), np.array(Y_batch)
 
 # --------------------------
 # Standardize (fit on batches)
@@ -165,8 +172,8 @@ print(f"MSE on test set AFTER erasure: {mse_after:.4f}")
 # --------------------------
 # Save eraser object and results (no need to save all erased embeddings)
 # --------------------------
-os.makedirs(os.path.dirname("Distances/Eraser_objects/UD/leace_eraser_synt_dist.pkl"), exist_ok=True)
-with open("Distances/Eraser_objects/UD/leace_eraser_synt_dist.pkl", "wb") as f:
+os.makedirs(os.path.dirname("Distances/Eraser_objects/Narratives/leace_eraser_synt_dist.pkl"), exist_ok=True)
+with open("Distances/Eraser_objects/Narratives/leace_eraser_synt_dist.pkl", "wb") as f:
     pickle.dump(eraser, f)
 
 results = {
