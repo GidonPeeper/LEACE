@@ -39,12 +39,20 @@ def compute_tree_distances(heads):
     n = len(heads)
     G = nx.Graph()
     G.add_nodes_from(range(n))  # Ensure all nodes are present
+
     for i, head in enumerate(heads):
+        if head is None:
+            # Malformed sentence, skip by returning None
+            return None
         if head == 0:
             continue  # root
-        # Convert to 0-based indices
         G.add_edge(i, head - 1)
-    dist = nx.floyd_warshall_numpy(G, nodelist=range(n))
+
+    try:
+        dist = nx.floyd_warshall_numpy(G, nodelist=range(n))
+    except nx.NetworkXError as e:
+        # If the graph is still malformed, skip this sentence
+        return None
     return torch.tensor(dist, dtype=torch.float32)
 
 # ----------------------------------------------------------------------
@@ -57,6 +65,8 @@ def tokenize_and_align(sentences, tokenizer):
         words = sentence["words"]
         heads = sentence["heads"]
         distance_matrix = compute_tree_distances(heads)
+        if distance_matrix is None:
+            continue  # Skip malformed sentences
 
         input_ids = []
         attention_mask = []
@@ -168,11 +178,11 @@ def main():
     test_embeddings = encode_with_gpt2(tokenized_test, model, device)
 
     # Save
-    with open(os.path.join(save_dir, "gpt2_embeddings_train_dist.pt"), "wb") as f:
+    with open(os.path.join(save_dir, "gpt2_embeddings_train_synt_dist.pt"), "wb") as f:
         pickle.dump(train_embeddings, f)
-    with open(os.path.join(save_dir, "gpt2_embeddings_valid_dist.pt"), "wb") as f:
+    with open(os.path.join(save_dir, "gpt2_embeddings_valid_synt_dist.pt"), "wb") as f:
         pickle.dump(valid_embeddings, f)
-    with open(os.path.join(save_dir, "gpt2_embeddings_test_dist.pt"), "wb") as f:
+    with open(os.path.join(save_dir, "gpt2_embeddings_test_synt_dist.pt"), "wb") as f:
         pickle.dump(test_embeddings, f)
     print(f"Saved embeddings with distances to {save_dir}")
 
