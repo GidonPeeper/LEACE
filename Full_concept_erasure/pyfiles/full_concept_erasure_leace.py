@@ -14,12 +14,12 @@ import json
 # Settings, this file can be used for full erasure of both deplabs and all POS tags
 # --------------------------
 LAYER = 8
-# EMBEDDING_FILE = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/gpt2_embeddings.pt"
-# TEST_FILE = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/gpt2_embeddings_test.pt"
+EMBEDDING_FILE = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/gpt2_embeddings.pt"
+TEST_FILE = "Stage4/Embeddings/UD/Synt_deps/Original_embeddings/gpt2_embeddings_test.pt"
+RESULTS_FILE = "Full_concept_erasure/Results/leace_results_ALL_DEPLABS.json"
+# EMBEDDING_FILE = "Stage3/Embeddings/UD/AllPOS/Original_embeddings/gpt2_embeddings.pt"
+# TEST_FILE = "Stage3/Embeddings/UD/AllPOS/Original_embeddings/gpt2_embeddings_test.pt"
 # RESULTS_FILE = "Full_concept_erasure/Results/leace_results_ALL_POS.json"
-EMBEDDING_FILE = "Stage3/Embeddings/UD/AllPOS/Original_embeddings/gpt2_embeddings.pt"
-TEST_FILE = "Stage3/Embeddings/UD/AllPOS/Original_embeddings/gpt2_embeddings_test.pt"
-RESULTS_FILE = "Full_concept_erasure/Results/leace_results_ALL_POS.json"
 os.makedirs(os.path.dirname(RESULTS_FILE), exist_ok=True)
 SEED = 42
 torch.manual_seed(SEED)
@@ -69,15 +69,25 @@ eraser_all = LeaceEraser.fit(X, Z_all)
 X_all_erased = eraser_all(X)
 X_test_all_erased = eraser_all(X_test)
 
+# # Save embeddings and eraser
+# with open("Full_concept_erasure/Erased_embeddings/leace_embeddings_ALL_POS.pkl", "wb") as f:
+#     pickle.dump({
+#         "train_erased": X_all_erased.cpu(),
+#         "test_erased": X_test_all_erased.cpu(),
+#         "train_labels": y_train_pos.cpu(),
+#         "test_labels": y_test_pos.cpu(),
+#     }, f)
+# with open("Full_concept_erasure/Eraser_objects/leace_eraser_ALL_POS.pkl", "wb") as f:
+#     pickle.dump(eraser_all, f)
 # Save embeddings and eraser
-with open("Full_concept_erasure/Erased_embeddings/leace_embeddings_ALL_POS.pkl", "wb") as f:
+with open("Full_concept_erasure/Erased_embeddings/leace_embeddings_ALL_DEPLABS.pkl", "wb") as f:
     pickle.dump({
         "train_erased": X_all_erased.cpu(),
         "test_erased": X_test_all_erased.cpu(),
         "train_labels": y_train_pos.cpu(),
         "test_labels": y_test_pos.cpu(),
     }, f)
-with open("Full_concept_erasure/Eraser_objects/leace_eraser__ALL_POS.pkl", "wb") as f:
+with open("Full_concept_erasure/Eraser_objects/leace_eraser_ALL_DEPLABS.pkl", "wb") as f:
     pickle.dump(eraser_all, f)
 
 # --------------------------
