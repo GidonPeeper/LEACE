@@ -28,7 +28,7 @@ import os
 LAYER = 8
 EMBEDDING_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
 TEST_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
-ERASED_EMB_FILE = "Distances/Erased_embeddings/Narratives/leace_embeddings_synt_dist_vec.pkl"
+ERASED_EMB_FILE = "Distances/Embeddings/Erased_embeddings/Narratives/leace_embeddings_synt_dist_vec.pkl"
 ERASER_OBJ_FILE = "Distances/Eraser_objects/Narratives/leace_eraser_synt_dist_vec.pkl"
 
 os.makedirs(os.path.dirname(ERASED_EMB_FILE), exist_ok=True)
@@ -103,8 +103,8 @@ if not mask.all():
 # Fit LEACE eraser on word-level features/vector concepts
 # --------------------------
 eraser = LeaceEraser.fit(
-    torch.tensor(X_train_scaled, dtype=torch.float32),
-    torch.tensor(Z_train, dtype=torch.float32)
+    torch.tensor(X_train_scaled, dtype=torch.float64),
+    torch.tensor(Z_train, dtype=torch.float64)
 )
 print("LEACE eraser fitted.")
 
@@ -116,7 +116,9 @@ def erase_embeddings(dataset, layer, scaler, eraser):
     for sent in dataset:
         emb = sent["embeddings_by_layer"][layer]  # [num_words, hidden_dim]
         emb_scaled = scaler.transform(emb.numpy())
-        emb_erased = eraser(torch.tensor(emb_scaled, dtype=torch.float32)).numpy()
+        emb_erased_scaled = eraser(torch.tensor(emb_scaled, dtype=torch.float64)).numpy()
+        # Inverse transform to return to original embedding space
+        emb_erased = scaler.inverse_transform(emb_erased_scaled)
         erased.append(emb_erased)
     return erased
 
