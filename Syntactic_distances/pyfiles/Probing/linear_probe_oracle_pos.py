@@ -23,24 +23,27 @@ import os
 # --------------------------
 # Settings
 # --------------------------
+# Narratives or UD
+results_dir = "Syntactic_distances/Results/UD/Oracle/SD_on_POS/"
 LAYER = 8
 
 # Select one of the following:
-ORIGINAL_EMB_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+ORIGINAL_EMB_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
 
 # 1. Oracle LEACE (no PCA)
-# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec.pkl"
+# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec.pkl"
 # PCA_OBJ_FILE = None
 
 # 2. Oracle LEACE + PCA
-ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec_pca.pkl"
-PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/oracle_pca_synt_dist_vec.pkl"
+ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec_pca.pkl"
+PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/oracle_pca_synt_dist_vec.pkl"
 
 # 3. Original (no erasure)
 # ORACLE_EMB_FILE = ORIGINAL_EMB_FILE
 # PCA_OBJ_FILE = None
 
-TRAIN_CONLLU = "data/narratives/train_clean.conllu"
+# TRAIN_CONLLU = "data/narratives/train_clean.conllu"
+TRAIN_CONLLU = "data/ud_ewt/en_ewt-ud-train.conllu"
 
 # --------------------------
 # Helper: Extract POS tags from CoNLL-U using the same filtering as preprocessing
@@ -193,7 +196,6 @@ print(report)
 # --------------------------
 # Save results
 # --------------------------
-results_dir = "Syntactic_distances/Results/Narratives/Oracle/SD_on_POS/"
 os.makedirs(results_dir, exist_ok=True)
 emb_name = os.path.splitext(os.path.basename(ORACLE_EMB_FILE))[0]
 results_file = os.path.join(results_dir, f"probe_results_oracle_pos_{emb_name}.txt")

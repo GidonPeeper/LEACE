@@ -39,11 +39,13 @@ import os
 LAYER = 8
 N_PCA_COMPONENTS = 20  # Number of PCA components to keep
 
-EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
-ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased_embeddings/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-ERASER_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/leace_eraser_synt_dist_vec_pca.pkl"
-PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/leace_pca_synt_dist_vec.pkl"
+#Narratives or UD
+
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
+ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec_pca.pkl"
+ERASER_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/leace_eraser_synt_dist_vec_pca.pkl"
+PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/leace_pca_synt_dist_vec.pkl"
 
 os.makedirs(os.path.dirname(ERASED_EMB_FILE), exist_ok=True)
 os.makedirs(os.path.dirname(ERASER_OBJ_FILE), exist_ok=True)
