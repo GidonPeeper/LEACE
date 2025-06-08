@@ -16,7 +16,7 @@ Outputs:
 import pickle
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
 from sklearn.preprocessing import StandardScaler
 import os
 
@@ -24,25 +24,25 @@ import os
 # Settings
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
 TRAIN_CONLLU = "data/narratives/train_clean.conllu"
 TEST_CONLLU = "data/narratives/test_clean.conllu"
 
 # 1. Original
-EMB_PROBE_FILE = EMBEDDING_FILE
-EMB_PROBE_TEST_FILE = TEST_FILE
-PCA_OBJ_FILE = None
+# EMB_PROBE_FILE = EMBEDDING_FILE
+# EMB_PROBE_TEST_FILE = TEST_FILE
+# PCA_OBJ_FILE = None
 
 # 2. LEACE-erased (vector concept)
-# EMB_PROBE_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
-# EMB_PROBE_TEST_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
 # PCA_OBJ_FILE = None
 
 # 3. LEACE-erased (vector concept, PCA-reduced)
-# EMB_PROBE_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-# EMB_PROBE_TEST_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-# PCA_OBJ_FILE = "Distances/Eraser_objects/Narratives/leace_pca_synt_dist_vec.pkl"
+EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
+EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
+PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/leace_pca_synt_dist_vec.pkl"
 
 # --------------------------
 # Helper: Extract dependency labels from CoNLL-U using the same filtering as preprocessing
@@ -205,15 +205,27 @@ f1 = f1_score(Y_test, Y_pred, average='macro')
 print(f"Accuracy on test set: {acc:.4f}")
 print(f"Macro F1 on test set: {f1:.4f}")
 
+# Per-class F1 and support
+target_names = [lbl for lbl, idx in sorted(label2int.items(), key=lambda x: x[1])]
+report = classification_report(Y_test, Y_pred, target_names=target_names, digits=3)
+print("\nPer-class F1 and support:\n")
+print(report)
+
+# Optionally, print confusion matrix
+# cm = confusion_matrix(Y_test, Y_pred)
+# print("Confusion matrix:\n", cm)
+
 # --------------------------
 # Save results with informative filename
 # --------------------------
-results_dir = "Distances/Results/Narratives"
+results_dir = "Syntactic_distances/Results/Narratives/LEACE/SD_on_Deplab"
 os.makedirs(results_dir, exist_ok=True)
 
 emb_name = os.path.splitext(os.path.basename(EMB_PROBE_FILE))[0]
-results_file = os.path.join(results_dir, f"probe_results_deprel_{emb_name}.txt")
+results_file = os.path.join(results_dir, f"probe_results_deplab_{emb_name}.txt")
 
 with open(results_file, "w") as f:
-    f.write(f"Accuracy: {acc}\nMacro F1: {f1}\n")
+    f.write(f"Accuracy: {acc}\nMacro F1: {f1}\n\n")
+    f.write("Per-class F1 and support:\n")
+    f.write(report)
 print(f"Results saved to {results_file}")
