@@ -23,23 +23,26 @@ import os
 # --------------------------
 # Settings
 # --------------------------
+# Narratives or UD
 LAYER = 8
-
+results_dir = "Syntactic_distances/Results/UD/Oracle/SD_on_Deplab/"
 # Select one of the following:
 # 1. Oracle LEACE (no PCA)
-# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec.pkl"
-# PCA_OBJ_FILE = None
+ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec.pkl"
+PCA_OBJ_FILE = None
 
 # 2. Oracle LEACE + PCA
-ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec_pca.pkl"
-PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/oracle_pca_synt_dist_vec.pkl"
+# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec_pca.pkl"
+# PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/oracle_pca_synt_dist_vec.pkl"
 
 # 3. Original (no erasure)
-# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
 # PCA_OBJ_FILE = None
 
-ORIGINAL_EMB_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TRAIN_CONLLU = "data/narratives/train_clean.conllu"
+ORIGINAL_EMB_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
+
+# TRAIN_CONLLU = "data/narratives/train_clean.conllu"
+TRAIN_CONLLU = "data/ud_ewt/en_ewt-ud-train.conllu"
 
 # --------------------------
 # Helper: Extract dependency labels from CoNLL-U using the same filtering as preprocessing
@@ -194,7 +197,6 @@ print(report)
 # --------------------------
 # Save results
 # --------------------------
-results_dir = "Syntactic_distances/Results/Narratives/Oracle/SD_on_Deplab/"
 os.makedirs(results_dir, exist_ok=True)
 emb_name = os.path.splitext(os.path.basename(ORACLE_EMB_FILE))[0]
 results_file = os.path.join(results_dir, f"probe_results_oracle_deplabs_{emb_name}.txt")

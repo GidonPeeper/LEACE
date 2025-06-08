@@ -24,10 +24,14 @@ import os
 # Settings
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
-TRAIN_CONLLU = "data/narratives/train_clean.conllu"
-TEST_CONLLU = "data/narratives/test_clean.conllu"
+results_dir = "Syntactic_distances/Results/UD/LEACE/SD_on_Deplab"
+
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
+# TRAIN_CONLLU = "data/narratives/train_clean.conllu"
+# TEST_CONLLU = "data/narratives/test_clean.conllu"
+TRAIN_CONLLU = "data/ud_ewt/en_ewt-ud-train.conllu"
+TEST_CONLLU = "data/ud_ewt/en_ewt-ud-test.conllu"
 
 # 1. Original
 # EMB_PROBE_FILE = EMBEDDING_FILE
@@ -35,14 +39,14 @@ TEST_CONLLU = "data/narratives/test_clean.conllu"
 # PCA_OBJ_FILE = None
 
 # 2. LEACE-erased (vector concept)
-# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
-# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec.pkl"
 # PCA_OBJ_FILE = None
 
 # 3. LEACE-erased (vector concept, PCA-reduced)
-EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/leace_pca_synt_dist_vec.pkl"
+EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec_pca.pkl"
+EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec_pca.pkl"
+PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/leace_pca_synt_dist_vec.pkl"
 
 # --------------------------
 # Helper: Extract dependency labels from CoNLL-U using the same filtering as preprocessing
@@ -207,7 +211,8 @@ print(f"Macro F1 on test set: {f1:.4f}")
 
 # Per-class F1 and support
 target_names = [lbl for lbl, idx in sorted(label2int.items(), key=lambda x: x[1])]
-report = classification_report(Y_test, Y_pred, target_names=target_names, digits=3)
+labels = list(range(len(target_names)))
+report = classification_report(Y_test, Y_pred, target_names=target_names, labels=labels, digits=3, zero_division=0)
 print("\nPer-class F1 and support:\n")
 print(report)
 
@@ -218,7 +223,6 @@ print(report)
 # --------------------------
 # Save results with informative filename
 # --------------------------
-results_dir = "Syntactic_distances/Results/Narratives/LEACE/SD_on_Deplab"
 os.makedirs(results_dir, exist_ok=True)
 
 emb_name = os.path.splitext(os.path.basename(EMB_PROBE_FILE))[0]

@@ -23,25 +23,30 @@ import os
 # --------------------------
 # Settings
 # --------------------------
+
+# Narratives or UD
+
 LAYER = 8
-EMBEDDING_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
 
 # Choose one of the following for probing:
 # 1. Original
-# EMB_PROBE_FILE = EMBEDDING_FILE
-# EMB_PROBE_TEST_FILE = TEST_FILE
-# PCA_OBJ_FILE = None
+EMB_PROBE_FILE = EMBEDDING_FILE
+EMB_PROBE_TEST_FILE = TEST_FILE
+PCA_OBJ_FILE = None
 
 # 2. LEACE-erased (vector concept)
-# EMB_PROBE_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
-# EMB_PROBE_TEST_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec.pkl"
 # PCA_OBJ_FILE = None
 
 # 3. LEACE-erased (vector concept, PCA-reduced)
-EMB_PROBE_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-EMB_PROBE_TEST_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-PCA_OBJ_FILE = "Distances/Eraser_objects/Narratives/leace_pca_synt_dist_vec.pkl"
+EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec_pca.pkl"
+EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec_pca.pkl"
+PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/leace_pca_synt_dist_vec.pkl"
+
+results_dir = "Syntactic_distances/Results/UD/LEACE/SD_on_SD/"
 
 # --------------------------
 # Load data
@@ -170,7 +175,6 @@ print(f"R^2 on test set: {r2:.4f}")
 # --------------------------
 # Save results with informative filename
 # --------------------------
-results_dir = "Distances/Results/Narratives/LEACE"
 os.makedirs(results_dir, exist_ok=True)
 
 # Use the embedding file name to distinguish results

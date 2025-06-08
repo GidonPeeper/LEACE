@@ -23,13 +23,14 @@ import os
 # --------------------------
 # Settings
 # --------------------------
+# Narratives or UD
 LAYER = 8
 N_PCA_COMPONENTS = 20  # Number of PCA components to keep
 
-EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
-ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec_pca.pkl"
-PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/oracle_pca_synt_dist_vec.pkl"
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
+ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec_pca.pkl"
+PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/oracle_pca_synt_dist_vec.pkl"
 
 os.makedirs(os.path.dirname(ERASED_EMB_FILE), exist_ok=True)
 os.makedirs(os.path.dirname(PCA_OBJ_FILE), exist_ok=True)

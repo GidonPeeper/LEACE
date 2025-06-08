@@ -25,11 +25,16 @@ import os
 # --------------------------
 # Settings: Erasure of word-level syntactic distance vectors
 # --------------------------
+# LAYER = 8
+# EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+# TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
+# ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
+# ERASER_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/leace_eraser_synt_dist_vec.pkl"
 LAYER = 8
-EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
-ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
-ERASER_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/leace_eraser_synt_dist_vec.pkl"
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
+ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec.pkl"
+ERASER_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/leace_eraser_synt_dist_vec.pkl"
 
 os.makedirs(os.path.dirname(ERASED_EMB_FILE), exist_ok=True)
 os.makedirs(os.path.dirname(ERASER_OBJ_FILE), exist_ok=True)

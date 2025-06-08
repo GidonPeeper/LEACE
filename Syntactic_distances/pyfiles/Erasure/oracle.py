@@ -38,10 +38,11 @@ def oracle_leace(X: np.ndarray, Z: np.ndarray) -> np.ndarray:
 # --------------------------
 # Settings: Erasure of word-level syntactic distance vectors
 # --------------------------
+# Narratives or UD
 LAYER = 8
-EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
-ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_leace_embeddings_synt_dist_vec.pkl"
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
+ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec.pkl"
 
 os.makedirs(os.path.dirname(ERASED_EMB_FILE), exist_ok=True)
 SEED = 42
