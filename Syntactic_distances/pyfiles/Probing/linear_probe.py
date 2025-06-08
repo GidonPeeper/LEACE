@@ -170,7 +170,7 @@ print(f"R^2 on test set: {r2:.4f}")
 # --------------------------
 # Save results with informative filename
 # --------------------------
-results_dir = "Distances/Results/Narratives"
+results_dir = "Distances/Results/Narratives/LEACE"
 os.makedirs(results_dir, exist_ok=True)
 
 # Use the embedding file name to distinguish results

@@ -10,13 +10,13 @@ Inputs:
     - (Optional) PCA object, if probing on PCA-reduced concept
 
 Outputs:
-    - Accuracy and macro F1 for the probe on the test set
+    - Accuracy, macro F1, and per-class metrics for the probe on the test set
 """
 
 import pickle
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
 from sklearn.preprocessing import StandardScaler
 import os
 
@@ -24,25 +24,25 @@ import os
 # Settings
 # --------------------------
 LAYER = 8
-EMBEDDING_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
 TRAIN_CONLLU = "data/narratives/train_clean.conllu"
 TEST_CONLLU = "data/narratives/test_clean.conllu"
 
 # 1. Original
-# EMB_PROBE_FILE = EMBEDDING_FILE
-# EMB_PROBE_TEST_FILE = TEST_FILE
-# PCA_OBJ_FILE = None
+EMB_PROBE_FILE = EMBEDDING_FILE
+EMB_PROBE_TEST_FILE = TEST_FILE
+PCA_OBJ_FILE = None
 
 # 2. LEACE-erased (vector concept)
-# EMB_PROBE_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
-# EMB_PROBE_TEST_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
+# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec.pkl"
 # PCA_OBJ_FILE = None
 
 # 3. LEACE-erased (vector concept, PCA-reduced)
-EMB_PROBE_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-EMB_PROBE_TEST_FILE = "Distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
-PCA_OBJ_FILE = "Distances/Eraser_objects/Narratives/leace_pca_synt_dist_vec.pkl"
+# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
+# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/leace_embeddings_synt_dist_vec_pca.pkl"
+# PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/leace_pca_synt_dist_vec.pkl"
 
 # --------------------------
 # Helper: Extract POS tags from CoNLL-U using the same filtering as preprocessing
@@ -58,7 +58,6 @@ def extract_filtered_pos_from_conllu(conllu_path):
                 text = line[len("# text = "):].strip()
             if line.startswith("#") or not line.strip():
                 if sent:
-                    # Filtering: skip if empty or if only one token and that token is the sentence text
                     valid_tokens = [pos for pos in sent if pos.strip()]
                     if len(valid_tokens) == 0:
                         sent = []
@@ -87,10 +86,29 @@ def extract_filtered_pos_from_conllu(conllu_path):
                 texts.append(text)
     return sentences, texts
 
-# --------------------------
-# Load embeddings and align POS tags by filtering both with the same logic
-# --------------------------
-def load_embeddings_and_pos(embedding_file, layer, pos_sentences, erased_key=None):
+def get_sentence_lengths_from_embeddings(embedding_file, layer):
+    with open(embedding_file, "rb") as f:
+        data = pickle.load(f)
+    lengths = []
+    for sent in data:
+        emb = sent["embeddings_by_layer"][layer] if isinstance(sent, dict) else sent
+        lengths.append(emb.shape[0])
+    return lengths
+
+def align_labels_to_embeddings(label_sentences, emb_lengths):
+    aligned_labels = []
+    label_idx = 0
+    for emb_len in emb_lengths:
+        # Skip label sentences until we find one with the right length
+        while label_idx < len(label_sentences) and len(label_sentences[label_idx]) != emb_len:
+            label_idx += 1
+        if label_idx == len(label_sentences):
+            break
+        aligned_labels.append(label_sentences[label_idx])
+        label_idx += 1
+    return aligned_labels
+
+def load_embeddings_and_labels(embedding_file, layer, label_sentences, erased_key=None):
     with open(embedding_file, "rb") as f:
         data = pickle.load(f)
     if isinstance(data, dict) and erased_key is not None:
@@ -102,40 +120,15 @@ def load_embeddings_and_pos(embedding_file, layer, pos_sentences, erased_key=Non
             emb_sents.append(emb)
     X = []
     Y = []
-    for emb, pos_tags in zip(emb_sents, pos_sentences):
-        assert emb.shape[0] == len(pos_tags), "Mismatch after alignment!"
+    for emb, labels in zip(emb_sents, label_sentences):
+        assert emb.shape[0] == len(labels), "Mismatch after alignment!"
         for i in range(emb.shape[0]):
             X.append(emb[i].numpy() if hasattr(emb[i], "numpy") else emb[i])
-            Y.append(pos_tags[i])
+            Y.append(labels[i])
     X = np.stack(X)
     Y = np.array(Y)
     return X, Y
 
-def get_sentence_lengths_from_embeddings(embedding_file, layer):
-    with open(embedding_file, "rb") as f:
-        data = pickle.load(f)
-    lengths = []
-    for sent in data:
-        emb = sent["embeddings_by_layer"][layer] if isinstance(sent, dict) else sent
-        lengths.append(emb.shape[0])
-    return lengths
-
-def align_pos_to_embeddings(pos_sentences, emb_lengths):
-    aligned_pos = []
-    pos_idx = 0
-    for emb_len in emb_lengths:
-        # Skip POS sentences until we find one with the right length
-        while pos_idx < len(pos_sentences) and len(pos_sentences[pos_idx]) != emb_len:
-            pos_idx += 1
-        if pos_idx == len(pos_sentences):
-            break
-        aligned_pos.append(pos_sentences[pos_idx])
-        pos_idx += 1
-    return aligned_pos
-
-# --------------------------
-# Map POS tags to integer labels
-# --------------------------
 def pos_to_int_labels(pos_list):
     unique_pos = sorted(set(pos_list))
     pos2int = {pos: i for i, pos in enumerate(unique_pos)}
@@ -154,26 +147,13 @@ train_emb_lengths = get_sentence_lengths_from_embeddings(EMBEDDING_FILE, LAYER)
 test_emb_lengths = get_sentence_lengths_from_embeddings(TEST_FILE, LAYER)
 
 print("Aligning POS tags to embeddings...")
-aligned_train_pos = align_pos_to_embeddings(train_pos_sentences, train_emb_lengths)
-aligned_test_pos = align_pos_to_embeddings(test_pos_sentences, test_emb_lengths)
+aligned_train_pos = align_labels_to_embeddings(train_pos_sentences, train_emb_lengths)
+aligned_test_pos = align_labels_to_embeddings(test_pos_sentences, test_emb_lengths)
 
-print("Loading train embeddings and POS...")
-# For original embeddings:
-# X_train, Y_train_str = load_embeddings_and_pos(EMB_PROBE_FILE, LAYER, train_pos_sentences)
-# X_test, Y_test_str = load_embeddings_and_pos(EMB_PROBE_TEST_FILE, LAYER, test_pos_sentences)
-
-# For erased embeddings:
-X_train, Y_train_str = load_embeddings_and_pos(EMB_PROBE_FILE, LAYER, aligned_train_pos, erased_key="train_erased")
-X_test, Y_test_str = load_embeddings_and_pos(EMB_PROBE_TEST_FILE, LAYER, aligned_test_pos, erased_key="test_erased")
-
-print("Loading test embeddings and POS...")
-
-# If probing on erased embeddings, load those instead
-if "leace_embeddings" in EMB_PROBE_FILE:
-    with open(EMB_PROBE_FILE, "rb") as f:
-        erased = pickle.load(f)
-    X_train = np.vstack(erased["train_erased"])
-    X_test = np.vstack(erased["test_erased"])
+print("Loading train embeddings and POS tags...")
+X_train, Y_train_str = load_embeddings_and_labels(EMB_PROBE_FILE, LAYER, aligned_train_pos, erased_key="train_erased")
+print("Loading test embeddings and POS tags...")
+X_test, Y_test_str = load_embeddings_and_labels(EMB_PROBE_TEST_FILE, LAYER, aligned_test_pos, erased_key="test_erased")
 
 # If probing on PCA-reduced concept, just use the embeddings as is (no change to Y)
 if PCA_OBJ_FILE is not None:
@@ -214,7 +194,7 @@ if not mask_test.all():
 # --------------------------
 # Probe: Logistic regression (multi-class)
 # --------------------------
-print("Fitting linear probe for POS...")
+print("Fitting linear probe for POS tags...")
 probe = LogisticRegression(max_iter=1000, multi_class='multinomial', solver='lbfgs')
 probe.fit(X_train_scaled, Y_train)
 Y_pred = probe.predict(X_test_scaled)
@@ -224,15 +204,27 @@ f1 = f1_score(Y_test, Y_pred, average='macro')
 print(f"Accuracy on test set: {acc:.4f}")
 print(f"Macro F1 on test set: {f1:.4f}")
 
+# Per-class F1 and support
+target_names = [pos for pos, idx in sorted(pos2int.items(), key=lambda x: x[1])]
+report = classification_report(Y_test, Y_pred, target_names=target_names, digits=3)
+print("\nPer-class F1 and support:\n")
+print(report)
+
+# Optionally, print confusion matrix
+# cm = confusion_matrix(Y_test, Y_pred)
+# print("Confusion matrix:\n", cm)
+
 # --------------------------
 # Save results with informative filename
 # --------------------------
-results_dir = "Distances/Results/Narratives"
+results_dir = "Syntactic_distances/Results/Narratives/LEACE"
 os.makedirs(results_dir, exist_ok=True)
 
 emb_name = os.path.splitext(os.path.basename(EMB_PROBE_FILE))[0]
 results_file = os.path.join(results_dir, f"probe_results_pos_{emb_name}.txt")
 
 with open(results_file, "w") as f:
-    f.write(f"Accuracy: {acc}\nMacro F1: {f1}\n")
+    f.write(f"Accuracy: {acc}\nMacro F1: {f1}\n\n")
+    f.write("Per-class F1 and support:\n")
+    f.write(report)
 print(f"Results saved to {results_file}")
