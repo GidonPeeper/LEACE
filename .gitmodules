@@ -1,5 +1,5 @@
 [submodule "external/structural-probes"]
-	path = external/structural-probes
+	path = external/structural_probes
 	url = https://github.com/john-hewitt/structural-probes.git
 [submodule "depprobe"]
 	path = depprobe
