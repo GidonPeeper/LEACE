@@ -12,3 +12,6 @@ checkpoints/
 
 *.pt
 *.pkl
+
+external/
+/structural_probes
