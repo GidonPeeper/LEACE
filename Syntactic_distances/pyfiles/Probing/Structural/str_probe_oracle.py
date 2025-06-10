@@ -27,24 +27,24 @@ from external.structural_probes.structural_probe.probe import TwoWordPSDProbe
 # Settings
 # --------------------------
 LAYER = 8
-ORIGINAL_EMB_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
-ORIGINAL_TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
-results_dir = "Syntactic_distances/Results/UD/Oracle/SD_on_SD_structural/"
+ORIGINAL_EMB_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+ORIGINAL_TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
+results_dir = "Syntactic_distances/Results/Narratives/Oracle/SD_on_SD_structural/"
 
 # 1. Oracle LEACE (no PCA)
-# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec.pkl"
-# ORACLE_EMB_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec.pkl"
-# PCA_OBJ_FILE = None
+ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec.pkl"
+ORACLE_EMB_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec.pkl"
+PCA_OBJ_FILE = None
 
 # 2. Oracle LEACE + PCA
-# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec_pca.pkl"
-# ORACLE_EMB_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec_pca.pkl"
-# PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/oracle_pca_synt_dist_vec.pkl"
+# ORACLE_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec_pca.pkl"
+# ORACLE_EMB_TEST_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec_pca.pkl"
+# PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/Narratives/oracle_pca_synt_dist_vec.pkl"
 
 # 3. Original (no erasure)
-ORACLE_EMB_FILE = ORIGINAL_EMB_FILE
-ORACLE_EMB_TEST_FILE = ORIGINAL_TEST_FILE
-PCA_OBJ_FILE = None
+# ORACLE_EMB_FILE = ORIGINAL_EMB_FILE
+# ORACLE_EMB_TEST_FILE = ORIGINAL_TEST_FILE
+# PCA_OBJ_FILE = None
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
