@@ -1,0 +1,6 @@
+=== Probe Results Table ===
+Concept              Score     
+------------------------------
+Syntactic distance   0.1158 (R^2)
+POS                  0.9266 (accuracy)
+Dependency label     0.7759 (accuracy)
