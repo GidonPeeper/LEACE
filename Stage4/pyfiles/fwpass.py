@@ -33,6 +33,7 @@ def parse_conllu(file_path):
                     # Dependency head
                     head = token['head']  # Head index (1-based or 0 = ROOT)
                     head_indices.append(head)
+                    
 
                     # Dependency label
                     deprel = collapse_ud_label(token['deprel'])

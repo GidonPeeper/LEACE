@@ -1,0 +1,8 @@
+=== Probe Results (TRAIN only) ===
+Concept              Score               
+----------------------------------------
+Syntactic distance   R^2 = 0.0000
+                     PearsonR = 0.7901
+                     MSE = 1210.4947
+POS                  Accuracy = 0.9458
+Dependency label     Accuracy = 0.8197
