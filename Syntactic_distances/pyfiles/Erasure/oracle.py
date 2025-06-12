@@ -40,9 +40,9 @@ def oracle_leace(X: np.ndarray, Z: np.ndarray) -> np.ndarray:
 # --------------------------
 # Narratives or UD
 LAYER = 8
-EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
-ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/UD/oracle_embeddings_synt_dist_vec.pkl"
+EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_train_synt_dist.pt"
+TEST_FILE = "Syntactic_distances/Embeddings/Original/Narratives/gpt2_embeddings_test_synt_dist.pt"
+ERASED_EMB_FILE = "Syntactic_distances/Embeddings/Erased/Narratives/oracle_embeddings_synt_dist_vec.pkl"
 
 os.makedirs(os.path.dirname(ERASED_EMB_FILE), exist_ok=True)
 SEED = 42
@@ -55,6 +55,19 @@ with open(EMBEDDING_FILE, "rb") as f:
     data = pickle.load(f)
 with open(TEST_FILE, "rb") as f:
     test_data = pickle.load(f)
+
+def filter_sentences_with_nonfinite(dataset, layer):
+    filtered = []
+    for sent in dataset:
+        emb = sent["embeddings_by_layer"][layer]
+        dist = sent["distance_matrix"]
+        if np.isfinite(emb).all() and np.isfinite(dist).all():
+            filtered.append(sent)
+    return filtered
+
+data = filter_sentences_with_nonfinite(data, LAYER)
+test_data = filter_sentences_with_nonfinite(test_data, LAYER)
+print(f"Filtered train set to {len(data)} sentences, test set to {len(test_data)} sentences (all finite values).")
 
 # --------------------------
 # Find maximum sentence length in the dataset
@@ -104,18 +117,13 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 print("Scaler fitted.")
 
-# Check and filter non-finite values
-mask = np.isfinite(X_train_scaled).all(axis=1) & np.isfinite(Z_train).all(axis=1)
-if not mask.all():
-    print(f"Filtered out {np.sum(~mask)} rows with non-finite values in train set.")
-    X_train_scaled = X_train_scaled[mask]
-    Z_train = Z_train[mask]
-
-mask_test = np.isfinite(X_test_scaled).all(axis=1) & np.isfinite(Z_test).all(axis=1)
-if not mask_test.all():
-    print(f"Filtered out {np.sum(~mask_test)} rows with non-finite values in test set.")
-    X_test_scaled = X_test_scaled[mask_test]
-    Z_test = Z_test[mask_test]
+# --------------------------
+# Check for non-finite values, but DO NOT filter
+# --------------------------
+if not (np.isfinite(X_train_scaled).all() and np.isfinite(Z_train).all()):
+    print("Warning: Non-finite values found in train set, but not filtering to preserve alignment.")
+if not (np.isfinite(X_test_scaled).all() and np.isfinite(Z_test).all()):
+    print("Warning: Non-finite values found in test set, but not filtering to preserve alignment.")
 
 # --------------------------
 # Apply Oracle LEACE erasure to all embeddings (train and test)
