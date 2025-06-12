@@ -1,22 +1,3 @@
-"""
-linear_probe_compare.py
-
-This script evaluates how well syntactic distance information can be recovered from
-GPT-2 embeddings using linear probes (Ridge regression), under different conditions:
-- Original embeddings
-- LEACE-erased embeddings
-- Oracle LEACE-erased embeddings
-
-For each, it computes (on TRAINING DATA ONLY):
-- R² score (variance explained)
-- Pearson correlation
-- Mean squared error (MSE)
-- POS accuracy (Logistic regression)
-- Dependency label accuracy (Logistic regression)
-
-All evaluations are done on the **training set** for consistent comparison.
-"""
-
 import pickle
 import numpy as np
 from sklearn.linear_model import Ridge, LogisticRegression
@@ -43,7 +24,7 @@ probe_configs = [
 ]
 
 TRAIN_CONLLU = "data/narratives/train_clean.conllu"
-results_dir = "Syntactic_distances/Results/Narratives/LEACE/SD_on_SD_compare/"
+results_dir = "Syntactic_distances/Results/Narratives/SD_on_SD_compare/"
 os.makedirs(results_dir, exist_ok=True)
 
 def extract_labels(conllu_path):
@@ -123,6 +104,9 @@ def probe_all(X, Z, Y_pos, Y_dep, probe_name, results_dir):
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
+    ### SANITY CHECK ###
+    assert X.shape[0] == Z.shape[0] == len(Y_pos) == len(Y_dep), "Mismatch in sample counts across inputs"
+
     # SD probe
     mask = np.isfinite(X_scaled).all(axis=1) & np.isfinite(Z).all(axis=1)
     X_clean = X_scaled[mask]
@@ -145,7 +129,6 @@ def probe_all(X, Z, Y_pos, Y_dep, probe_name, results_dir):
     clf_dep.fit(X_scaled, Y_dep_enc)
     acc_dep = accuracy_score(Y_dep_enc, clf_dep.predict(X_scaled))
 
-    # Save
     with open(os.path.join(results_dir, f"probe_results_{probe_name}.txt"), "w") as f:
         f.write("=== Probe Results (TRAIN only) ===\n")
         f.write(f"{'Concept':<20} {'Score':<20}\n")
@@ -176,14 +159,17 @@ for cfg in probe_configs:
     aligned_pos = align_labels(train_pos_labels, sent_lengths)
     aligned_dep = align_labels(train_dep_labels, sent_lengths)
 
-    X = flatten_embeddings(emb_sents)
-    Y_pos = flatten_labels(aligned_pos)
-    Y_dep = flatten_labels(aligned_dep)
+    ### SANITY CHECK ###
+    print(f"  Number of sentences: embeddings={len(emb_sents)}, POS={len(aligned_pos)}, DEP={len(aligned_dep)}")
+    if not(len(emb_sents) == len(aligned_pos) == len(aligned_dep)):
+        print("  ⚠️ Warning: Sentence alignment mismatch! Results may be unreliable.")
 
-    if dist_sents is not None:
+    if dist_sents is not None and cfg["name"] == "original":
+        X = flatten_embeddings(emb_sents)
+        Y_pos = flatten_labels(aligned_pos)
+        Y_dep = flatten_labels(aligned_dep)
         Z = flatten_distances(dist_sents, max_len, pad_val)
     else:
-        # Align original gold distances to erased embeddings by sentence length
         orig_embs, orig_dists = load_embeddings_and_distances(probe_configs[0]["train_emb"], LAYER)
         orig_lengths = [emb.shape[0] for emb in orig_embs]
         erased_lengths = [emb.shape[0] for emb in emb_sents]
@@ -196,33 +182,27 @@ for cfg in probe_configs:
                 break
             match_idx.append(orig_idx)
             orig_idx += 1
-        # Only keep matching sentences
-        matched_orig_dists = [orig_dists[i] for i in match_idx]
-        Z = flatten_distances(matched_orig_dists, max_len, pad_val)
-        # Also align emb_sents for X, Y_pos, Y_dep
         emb_sents = [emb_sents[i] for i in range(len(match_idx))]
         aligned_pos = [aligned_pos[i] for i in range(len(match_idx))]
         aligned_dep = [aligned_dep[i] for i in range(len(match_idx))]
+        matched_orig_dists = [orig_dists[i] for i in match_idx]
         X = flatten_embeddings(emb_sents)
         Y_pos = flatten_labels(aligned_pos)
         Y_dep = flatten_labels(aligned_dep)
+        Z = flatten_distances(matched_orig_dists, max_len, pad_val)
 
-    # Optional: print L2 diff from original embeddings
     if cfg["name"] != "original":
-        # Align original and erased embeddings by sentence length before flattening
         orig_embs, _ = load_embeddings_and_distances(probe_configs[0]["train_emb"], LAYER)
         orig_lengths = [emb.shape[0] for emb in orig_embs]
-        erased_lengths = [emb.shape[0] for emb in emb_sents]
         match_idx = []
         orig_idx = 0
-        for e_len in erased_lengths:
+        for e_len in [emb.shape[0] for emb in emb_sents]:
             while orig_idx < len(orig_lengths) and orig_lengths[orig_idx] != e_len:
                 orig_idx += 1
             if orig_idx == len(orig_lengths):
                 break
             match_idx.append(orig_idx)
             orig_idx += 1
-        # Only keep matching sentences
         matched_orig_embs = [orig_embs[i] for i in match_idx]
         matched_erased_embs = [emb_sents[i] for i in range(len(match_idx))]
         flat_orig = np.vstack([emb[i].numpy() if hasattr(emb[i], "numpy") else emb[i]
@@ -230,12 +210,11 @@ for cfg in probe_configs:
         flat_erased = np.vstack([emb[i].numpy() if hasattr(emb[i], "numpy") else emb[i]
                                  for emb in matched_erased_embs for i in range(emb.shape[0])])
         if flat_orig.shape != flat_erased.shape:
-            print(f"  ⚠️ Skipping Δ L2: shape mismatch {flat_orig.shape} vs {flat_erased.shape}")
+            print(f"  ⚠️ Skipping ∆ L2: shape mismatch {flat_orig.shape} vs {flat_erased.shape}")
         else:
             delta = np.linalg.norm(flat_orig - flat_erased) / flat_orig.shape[0]
-            print(f"  Δ mean L2 (original vs {cfg['name']}): {delta:.4f}")
+            print(f"  ∆ mean L2 (original vs {cfg['name']}): {delta:.4f}")
 
     probe_all(X, Z, Y_pos, Y_dep, cfg["name"], results_dir)
 
 print(f"\n✅ All results saved to {results_dir}")
-
