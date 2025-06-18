@@ -114,21 +114,25 @@ eraser = LeaceEraser.fit(
 print("LEACE eraser fitted.")
 
 # --------------------------
-# Apply erasure to all embeddings
+# Apply erasure to all embeddings at once
 # --------------------------
-def erase_embeddings(dataset, layer, scaler, eraser):
-    erased = []
-    for sent in dataset:
-        emb = sent["embeddings_by_layer"][layer]  # [num_words, hidden_dim]
-        emb_scaled = scaler.transform(emb.numpy())
-        emb_erased_scaled = eraser(torch.tensor(emb_scaled, dtype=torch.float64)).numpy()
-        # Inverse transform to return to original embedding space
-        emb_erased = scaler.inverse_transform(emb_erased_scaled)
-        erased.append(emb_erased)
-    return erased
-
 print("Erasing all embeddings...")
-all_erased = erase_embeddings(data, LAYER, scaler, eraser)
+X_all_erased_scaled = eraser(torch.tensor(X_all_scaled, dtype=torch.float64)).numpy()
+X_all_erased = scaler.inverse_transform(X_all_erased_scaled)
+
+# --------------------------
+# Reconstruct sentence-wise structure for saving
+# --------------------------
+def reconstruct_sentencewise(erased_flat, dataset, layer):
+    out = []
+    idx = 0
+    for sent in dataset:
+        n = sent["embeddings_by_layer"][layer].shape[0]
+        out.append(erased_flat[idx:idx+n])
+        idx += n
+    return out
+
+all_erased = reconstruct_sentencewise(X_all_erased, data, LAYER)
 
 # --------------------------
 # Save erased embeddings and eraser object
