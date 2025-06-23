@@ -1,204 +1,300 @@
 """
-Runs a non-linear structural probe analysis on original and erased embeddings.
-... (docstring) ...
+================================================================================
+                    THE UNIFIED, FINAL PROBING SCRIPT
+================================================================================
+This script runs a comprehensive probing analysis on original and erased embeddings.
+It combines two types of probes:
+1.  Linear Probes:
+    - Logistic Regression for discrete concepts (pos, deplab).
+    - Ridge Regression for continuous concepts (sd, sdm).
+2.  Advanced Structural Probe:
+    - TwoWordPSDProbe for the non-linear concept of syntactic distance.
+
+It produces two sets of 4x4 tables for a given dataset and erasure method:
+- One set for the Linear Probes (Raw Performance + RDI).
+- One set for the Advanced Structural Probe (Raw Performance + RDI).
 """
 import argparse
 import pickle
 import numpy as np
+import torch
 import os
+import sys
 import pandas as pd
-import subprocess
-import tempfile
-import yaml
-import h5py
-from conllu import parse_incr
+from collections import Counter
+from sklearn.metrics import accuracy_score, r2_score
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression, Ridge
 from tqdm import tqdm
 
-# Configuration
-PROBE_SCRIPT_PATH = 'external/structural_probes/structural_probe/run_experiment.py'
-PROBE_TIMEOUT_SECONDS = 900
+# Ensure the structural_probes submodule is in the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
+from external.structural_probes.structural_probe.probe import TwoWordPSDProbe
 
-# Universal Data Filtering
-def get_golden_sentences(dataset):
-    # ... (this function is correct and unchanged) ...
-    print("[Phase 1/4] Constructing the golden set of sentences...")
-    if dataset == "narratives":
-        conllu_files = ["data/narratives/train_clean.conllu", "data/narratives/test_clean.conllu"]
-    else: # "ud"
-        conllu_files = ["data/ud_ewt/en_ewt-ud-train.conllu", "data/ud_ewt/en_ewt-ud-dev.conllu", "data/ud_ewt/en_ewt-ud-test.conllu"]
-    
-    all_token_lists = []
-    for file_path in conllu_files:
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                all_token_lists.extend(list(parse_incr(f)))
-        except FileNotFoundError:
-            print(f"Warning: File not found at {file_path}. Skipping.")
+# =========================================================================
+# 1. Data Loading and Preparation Helpers
+# =========================================================================
 
-    golden_set = []
-    for tl in all_token_lists:
-        words = [t for t in tl if isinstance(t['id'], int)]
-        heads = [t['head'] for t in words]
-        if len(words) > 1:
-            import networkx as nx
-            G = nx.Graph()
-            G.add_nodes_from(range(len(words)))
-            for i, h in enumerate(heads):
-                if h > 0: G.add_edge(i, h - 1)
-            if nx.is_connected(G):
-                golden_set.append(tl)
-    
-    print(f"Golden set contains {len(golden_set)} sentences.")
-    return golden_set
-
-# Probe Interfacing and Execution
-def prepare_and_run_probe(embeddings, golden_sentences):
-    # ... (this function is correct and unchanged) ...
-    if not embeddings or not golden_sentences: return np.nan
-    embedding_dim = embeddings[0].shape[1]
-    scaler = StandardScaler()
-    sent_lengths = [e.shape[0] for e in embeddings]
-    flat_embeddings = np.vstack(embeddings)
-    scaled_flat_embeddings = scaler.fit_transform(flat_embeddings)
-    scaled_embeddings = []
-    current_pos = 0
-    for length in sent_lengths:
-        scaled_embeddings.append(scaled_flat_embeddings[current_pos:current_pos + length])
-        current_pos += length
-
-    with tempfile.TemporaryDirectory() as temp_dir:
-        matched_indices = [i for i, emb in enumerate(scaled_embeddings) if emb.shape[0] == len([t for t in golden_sentences[i] if isinstance(t['id'], int)])]
-
-        hdf5_path = os.path.join(temp_dir, 'embeddings.hdf5')
-        with h5py.File(hdf5_path, 'w') as f:
-            for new_idx, old_idx in enumerate(matched_indices):
-                f.create_dataset(str(new_idx), data=scaled_embeddings[old_idx])
-
-        conllu_path = os.path.join(temp_dir, 'corpus.conllu')
-        with open(conllu_path, 'w', encoding='utf-8') as f:
-            for old_idx in matched_indices:
-                token_list_copy = golden_sentences[old_idx].copy()
-                for token in token_list_copy:
-                    if 'xpos' not in token or not token['xpos']:
-                        token['xpos'] = token['upos']
-                f.write(token_list_copy.serialize())
-        
-        if not matched_indices:
-            print("\nWarning: No sentences with matching embedding lengths found.")
-            return np.nan
-
-        config = {
-            'dataset': {'observation_fieldnames': ['index', 'sentence', 'lemma_sentence', 'upos_sentence', 'xpos_sentence', 'morph', 'head_indices', 'governance_relations', 'secondary_relations', 'extra_info', 'embeddings'],
-                        'corpus': {'root': temp_dir, 'train_path': 'corpus.conllu', 'dev_path': 'corpus.conllu'},
-                        'embeddings': {'root': temp_dir, 'train_path': 'embeddings.hdf5', 'dev_path': 'embeddings.hdf5'}, 'batch_size': 20},
-            'model': {'hidden_dim': embedding_dim, 'model_type': 'ELMo-disk', 'model_layer': 0},
-            'probe': {'task_name': 'parse-distance', 'maximum_rank': 128, 'psd_parameters': True},
-            'probe_training': {'epochs': 20, 'loss': 'L1'},
-            'reporting': {'root': temp_dir, 'reporting_methods': ['spearmanr']}
-        }
-        yaml_path = os.path.join(temp_dir, 'probe_config.yaml')
-        with open(yaml_path, 'w') as f: yaml.dump(config, f)
-        
-        try:
-            subprocess.run(['python', PROBE_SCRIPT_PATH, yaml_path],
-                           check=True, capture_output=True, text=True, timeout=PROBE_TIMEOUT_SECONDS)
-        except FileNotFoundError:
-            print(f"\nFATAL ERROR: Could not find the probe script at '{PROBE_SCRIPT_PATH}'. Please check the path.")
-            exit(1)
-        except subprocess.TimeoutExpired:
-            print(f"\nERROR: Structural probe subprocess timed out ({PROBE_TIMEOUT_SECONDS}s).")
-            return np.nan
-        except subprocess.CalledProcessError as e:
-            print(f"\nERROR: Structural probe subprocess failed with exit code {e.returncode}.")
-            print("STDERR (last 500 chars):\n", e.stderr[-500:])
-            return np.nan
-
-        result_file = os.path.join(temp_dir, 'dev.spearmanr-5-50-mean')
-        try:
-            with open(result_file, 'r') as f: score = float(f.read().strip())
-        except (FileNotFoundError, ValueError):
-            print(f"\nWarning: Could not find or parse result file {result_file}")
-            return np.nan
-
-    return score
-
-# Main Script Logic
-def load_embeddings_from_pkl(file_path, erased=False):
-    """Helper to load embeddings from a pickle file into a list of numpy arrays."""
+def load_embeddings(file_path, layer=8):
+    """Loads embeddings from a .pkl file into a list of numpy arrays."""
     try:
-        with open(file_path, "rb") as f: data = pickle.load(f)
-        if erased:
-            # Erased files contain a list of numpy arrays
+        with open(file_path, 'rb') as f: data = pickle.load(f)
+        if isinstance(data, dict) and "all_erased" in data:
             return data["all_erased"]
         else:
-            # Original files contain a list of dicts with torch tensors
-            return [sent['embeddings_by_layer'][8].numpy() for sent in data]
+            return [s["embeddings_by_layer"][layer].numpy() for s in data]
     except FileNotFoundError:
         print(f"Warning: Could not load embeddings from {file_path}")
         return None
 
+def prepare_concept_data(dataset, concept_cli, layer=8):
+    """Loads and prepares the ground truth data (Z) for a given concept."""
+    dataset_dir_name = "Narratives" if dataset == "narratives" else "UD"
+    dataset_name_short = "nar" if dataset == "narratives" else "ud"
+    
+    # This map defines the internal keys and filenames for each concept
+    concept_map = {
+        "pos": {"internal": "pos_tags", "file": "pos"},
+        "deplab": {"internal": "deplabs", "file": "deplab"},
+        "sd": {"internal": "distance_spectral_padded", "file": "distance_spectral_padded"},
+        "sdm": {"internal": "distance_matrix", "file": "distance_matrix"}
+    }
+    internal_key = concept_map[concept_cli]["internal"]
+    file_key = concept_map[concept_cli]["file"]
+    file_path = f"Final/Embeddings/Original/{dataset_dir_name}/Embed_{dataset_name_short}_{file_key}.pkl"
+
+    try:
+        with open(file_path, "rb") as f: data = pickle.load(f)
+    except FileNotFoundError: return None, None
+
+    if concept_cli in ["pos", "deplab"]:
+        all_labels_flat = [lab for sent in data for lab in sent.get(internal_key, [])]
+        if not all_labels_flat: return None, None
+        counts = Counter(all_labels_flat)
+        chance = counts.most_common(1)[0][1] / len(all_labels_flat)
+        return all_labels_flat, chance
+
+    elif concept_cli == "sd":
+        Z = np.vstack([sent[internal_key].cpu().numpy() for sent in data])
+        return Z, 0.0
+
+    elif concept_cli == "sdm":
+        all_sents = [s["distance_matrix"] for s in data]
+        max_len = max(s.shape[0] for s in all_sents)
+        all_z_vectors = []
+        for dist_matrix in all_sents:
+            sent_len = dist_matrix.shape[0]
+            for i in range(sent_len):
+                row_vector = dist_matrix[i, :]
+                padded_vector = np.pad(row_vector, (0, max_len - sent_len), 'constant')
+                all_z_vectors.append(padded_vector)
+        Z = np.vstack(all_z_vectors).astype(np.float32)
+        return Z, 0.0
+
+# =========================================================================
+# 2. Probe Implementations
+# =========================================================================
+
+def run_linear_probe(X, Z, concept_type, seed=42):
+    """Trains and evaluates a linear probe."""
+    if isinstance(Z, list): Z = np.array(Z)
+    X_train, X_test, Z_train, Z_test = train_test_split(X, Z, test_size=0.3, random_state=seed)
+    scaler = StandardScaler().fit(X_train)
+    X_train_scaled, X_test_scaled = scaler.transform(X_train), scaler.transform(X_test)
+    
+    if concept_type in ["pos", "deplab"]:
+        probe = LogisticRegression(max_iter=1000, random_state=seed, n_jobs=-1)
+        probe.fit(X_train_scaled, Z_train)
+        return accuracy_score(Z_test, probe.predict(X_test_scaled))
+    else: # "sd", "sdm"
+        probe = Ridge(random_state=seed)
+        probe.fit(X_train_scaled, Z_train)
+        return r2_score(Z_test, probe.predict(X_test_scaled))
+
+def run_structural_probe(embeddings_path, gold_distances_path, device="cuda", seed=42):
+    """Runs the advanced structural probe for syntactic distance."""
+    # This is a simplified version of your working script's logic
+    def load_sents(path):
+        with open(path, 'rb') as f: data = pickle.load(f)
+        return data["all_erased"] if "erased" in str(path) else [s['embeddings_by_layer'][8] for s in data]
+    def load_dists(path):
+        with open(path, 'rb') as f: data = pickle.load(f)
+        return [s['distance_matrix'] for s in data]
+
+    all_X, all_D = load_sents(embeddings_path), load_dists(gold_distances_path)
+    
+    X_clean, D_clean = [], []
+    for i in range(min(len(all_X), len(all_D))):
+        x_np = all_X[i].numpy() if isinstance(all_X[i], torch.Tensor) else all_X[i]
+        if np.isfinite(all_D[i]).all() and all_D[i].shape[0] == x_np.shape[0] and x_np.shape[0] > 0:
+            X_clean.append(all_X[i]); D_clean.append(all_D[i])
+            
+    if not X_clean: return np.nan
+
+    indices = range(len(X_clean))
+    train_indices, test_indices = train_test_split(indices, test_size=0.3, random_state=seed)
+    X_train, D_train = [X_clean[i] for i in train_indices], [D_clean[i] for i in train_indices]
+    X_test, D_test = [X_clean[i] for i in test_indices], [D_clean[i] for i in test_indices]
+
+    if not X_train or not X_test: return np.nan
+
+    scaler = StandardScaler().fit(np.vstack([x.numpy() if isinstance(x, torch.Tensor) else x for x in X_train]))
+    
+    def apply_scaler(sents, scaler, dev):
+        flat = np.vstack([x.numpy() if isinstance(x, torch.Tensor) else x for x in sents])
+        scaled = scaler.transform(flat)
+        res, idx = [], 0
+        for x in sents:
+            n = x.shape[0]; res.append(torch.tensor(scaled[idx:idx+n], dtype=torch.float32, device=dev)); idx += n
+        return res
+
+    X_train_s, X_test_s = apply_scaler(X_train, scaler, device), apply_scaler(X_test, scaler, device)
+    D_train_t, D_test_t = [torch.tensor(d, device=device) for d in D_train], [torch.tensor(d, device=device) for d in D_test]
+
+    probe_args = {'probe':{'maximum_rank':128}, 'model':{'hidden_dim':X_train_s[0].shape[1]}, 'device':device}
+    probe = TwoWordPSDProbe(probe_args)
+    optimizer = torch.optim.Adam(probe.parameters(), lr=1e-3)
+    
+    for _ in range(15):
+        probe.train()
+        for i in range(len(X_train_s)):
+            pred = probe(X_train_s[i].unsqueeze(0)).squeeze(0)
+            loss = ((pred[:D_train_t[i].shape[0],:D_train_t[i].shape[0]] - D_train_t[i])**2).mean()
+            if torch.isfinite(loss): optimizer.zero_grad(); loss.backward(); optimizer.step()
+            
+    probe.eval()
+    preds_flat, golds_flat = [], []
+    with torch.no_grad():
+        for i in range(len(X_test_s)):
+            pred = probe(X_test_s[i].unsqueeze(0)).squeeze(0)
+            preds_flat.append(pred[:D_test_t[i].shape[0],:D_test_t[i].shape[0]].cpu().numpy().flatten())
+            golds_flat.append(D_test_t[i].cpu().numpy().flatten())
+            
+    return r2_score(np.concatenate(golds_flat), np.concatenate(preds_flat))
+
+
+# =========================================================================
+# 3. Main Orchestrator
+# =========================================================================
+
 def main():
-    # ... (main function is correct and unchanged) ...
-    parser = argparse.ArgumentParser(description="Run a non-linear structural probe analysis.")
+    parser = argparse.ArgumentParser(description="Run a full linear and non-linear probing analysis.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True, help="Dataset to probe.")
     parser.add_argument("--method", choices=["leace", "oracle"], required=True, help="Erasure method to probe.")
     args = parser.parse_args()
 
+    # --- Setup ---
     CONCEPTS = ["pos", "deplab", "sd", "sdm"]
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+    SEED = 42
+    print(f"--- Running Full Probe Analysis ---")
+    print(f"Dataset: {args.dataset}, Method: {args.method}, Device: {DEVICE}")
+
     dataset_dir_name = "Narratives" if args.dataset == "narratives" else "UD"
     dataset_name_short = "nar" if args.dataset == "narratives" else "ud"
     
-    raw_scores = pd.DataFrame(index=['parse-distance'], columns=CONCEPTS + ['original'], dtype=float)
-    rdi_scores = pd.DataFrame(index=['parse-distance'], columns=CONCEPTS, dtype=float)
+    # Dataframes for results
+    linear_raw = pd.DataFrame(index=CONCEPTS, columns=CONCEPTS + ['original'], dtype=float)
+    linear_rdi = pd.DataFrame(index=CONCEPTS, columns=CONCEPTS, dtype=float)
+    struct_raw = pd.DataFrame(index=['distance'], columns=CONCEPTS + ['original'], dtype=float)
+    struct_rdi = pd.DataFrame(index=['distance'], columns=CONCEPTS, dtype=float)
+
+    orig_base = f"Final/Embeddings/Original/{dataset_dir_name}"
+    erased_base = f"Final/Embeddings/Erased/{dataset_dir_name}"
+
+    # --- Phase 1: Linear Probing ---
+    print("\n" + "="*40 + "\n[Phase 1/2] Running Linear Probes\n" + "="*40)
+    baseline_linear_scores = {}
+    chance_scores = {}
     
-    golden_sentences = get_golden_sentences(args.dataset)
-
-    print("\n[Phase 2/4] Calculating baseline performance on original embeddings...")
-    file_key = "distance_matrix" 
-    file_path = f"Final/Embeddings/Original/{dataset_dir_name}/Embed_{dataset_name_short}_{file_key}.pkl"
-    original_embeddings = load_embeddings_from_pkl(file_path)
-    baseline_score = prepare_and_run_probe(original_embeddings, golden_sentences)
-    raw_scores.loc['parse-distance', 'original'] = baseline_score
-    print(f"Baseline SpearmanR on original (sdm) embeddings: {baseline_score:.4f}")
-
-    print("\n[Phase 3/4] Calculating performance on ERASED embeddings...")
-    for erased_concept in tqdm(CONCEPTS, desc="Probing erased"):
-        file_path = f"Final/Embeddings/Erased/{dataset_dir_name}/{args.method}_{dataset_name_short}_{erased_concept}_vec.pkl"
-        erased_embeddings = load_embeddings_from_pkl(file_path, erased=True)
+    for concept in tqdm(CONCEPTS, desc="Baseline Linear Probes"):
+        Z, chance = prepare_concept_data(args.dataset, concept)
+        # We need the original embeddings generated for THAT concept for a fair baseline
+        concept_map = {"pos":"pos", "deplab":"deplab", "sd":"distance_spectral_padded", "sdm":"distance_matrix"}
+        emb_path = f"{orig_base}/Embed_{dataset_name_short}_{concept_map[concept]}.pkl"
+        X = np.vstack(load_embeddings(emb_path))
         
-        score = prepare_and_run_probe(erased_embeddings, golden_sentences)
-        raw_scores.loc['parse-distance', erased_concept] = score
-
-    print("\n[Phase 4/4] Calculating RDI scores...")
-    for erased_concept in CONCEPTS:
-        p_after = raw_scores.loc['parse-distance', erased_concept]
-        p_before = baseline_score
+        baseline_linear_scores[concept] = run_linear_probe(X, Z, concept, SEED)
+        chance_scores[concept] = chance
+        linear_raw.loc[concept, 'original'] = baseline_linear_scores[concept]
         
-        if pd.isna(p_after) or p_before is None or pd.isna(p_before) or p_before < 1e-6:
-            rdi = np.nan
-        else:
-            rdi = max(0, 1.0 - (p_after / p_before))
-        rdi_scores.loc['parse-distance', erased_concept] = rdi
+    for erased_concept in tqdm(CONCEPTS, desc="Erased Linear Probes "):
+        emb_path = f"{erased_base}/{args.method}_{dataset_name_short}_{erased_concept}_vec.pkl"
+        if not os.path.exists(emb_path): continue
+        X_erased = np.vstack(load_embeddings(emb_path))
+        
+        for probed_concept in CONCEPTS:
+            Z, _ = prepare_concept_data(args.dataset, probed_concept)
+            score = run_linear_probe(X_erased, Z, probed_concept, SEED)
+            linear_raw.loc[probed_concept, erased_concept] = score
 
+    # Calculate Linear RDI
+    for p_concept in CONCEPTS:
+        for e_concept in CONCEPTS:
+            p_after, p_before, chance = linear_raw.loc[p_concept, e_concept], baseline_linear_scores.get(p_concept), chance_scores.get(p_concept)
+            if pd.isna(p_after) or p_before is None or pd.isna(p_before): rdi = np.nan
+            else:
+                denom = p_before - chance if p_concept in ['pos', 'deplab'] else p_before
+                numer = p_after - chance if p_concept in ['pos', 'deplab'] else p_after
+                rdi = max(0, 1 - (numer/denom)) if denom > 1e-6 else np.nan
+            linear_rdi.loc[p_concept, e_concept] = rdi
+
+
+    # --- Phase 2: Advanced Structural Probing ---
+    print("\n" + "="*40 + "\n[Phase 2/2] Running Advanced Structural Probe\n" + "="*40)
+    gold_dist_path = f"{orig_base}/Embed_{dataset_name_short}_distance_matrix.pkl"
+    baseline_emb_path = gold_dist_path
+
+    print("  Calculating structural baseline...")
+    struct_baseline = run_structural_probe(baseline_emb_path, gold_dist_path, DEVICE, SEED)
+    struct_raw.loc['distance', 'original'] = struct_baseline
+    
+    for erased_concept in tqdm(CONCEPTS, desc="Erased Structural Probes"):
+        emb_path = f"{erased_base}/{args.method}_{dataset_name_short}_{erased_concept}_vec.pkl"
+        if not os.path.exists(emb_path): continue
+        score = run_structural_probe(emb_path, gold_dist_path, DEVICE, SEED)
+        struct_raw.loc['distance', erased_concept] = score
+
+    # Calculate Structural RDI
+    for e_concept in CONCEPTS:
+        r2_after, r2_before = struct_raw.loc['distance', e_concept], struct_baseline
+        if pd.isna(r2_after) or pd.isna(r2_before) or r2_before < 1e-6: rdi = np.nan
+        else: rdi = max(0, 1-(r2_after/r2_before))
+        struct_rdi.loc['distance', e_concept] = rdi
+
+
+    # --- Phase 3: Reporting ---
     pd.set_option('display.float_format', '{:.4f}'.format)
     print("\n\n" + "="*80)
-    print(f"STRUCTURAL PROBE RESULTS for Dataset: {args.dataset.upper()}, Method: {args.method.upper()}")
+    print(f"      FINAL PROBE RESULTS for Dataset: {args.dataset.upper()}, Method: {args.method.upper()}")
     print("="*80)
     
-    print("\n--- Raw Probe Performance (Spearman Correlation for Parse Distance) ---")
-    print("Columns: Concept Erased From Embeddings (+ Original Baseline)\n")
-    print(raw_scores)
+    print("\n\n--- [LINEAR PROBES] Raw Performance (Accuracy / R-squared) ---")
+    print("Columns: Concept Erased From Embeddings, Rows: Concept Being Probed\n")
+    print(linear_raw)
     
-    print("\n\n--- RDI Scores from Structural Probe ---")
+    print("\n\n--- [LINEAR PROBES] RDI (Remnant-to-Discarded Information) Scores ---")
     print("1.0 = Full Erasure, 0.0 = No Erasure\n")
-    print(rdi_scores)
+    print(linear_rdi)
+    
+    print("\n\n--- [ADVANCED STRUCTURAL PROBE] Raw Performance (R-squared) ---")
+    print("Columns: Concept Erased From Embeddings, Row: Probing for Syntactic Distance\n")
+    print(struct_raw)
+
+    print("\n\n--- [ADVANCED STRUCTURAL PROBE] RDI Scores ---")
+    print("1.0 = Full Erasure, 0.0 = No Erasure\n")
+    print(struct_rdi)
+
     print("\n" + "="*80)
     
     results_dir = f"Final/Results/{dataset_dir_name}"
-    raw_scores.to_csv(f"{results_dir}/structural_probe_raw_perf_{args.dataset}_{args.method}.csv")
-    rdi_scores.to_csv(f"{results_dir}/structural_probe_rdi_scores_{args.dataset}_{args.method}.csv")
-    print(f"\nResults saved to {results_dir}")
+    os.makedirs(results_dir, exist_ok=True)
+    linear_raw.to_csv(f"{results_dir}/linear_probe_raw_perf_{args.dataset}_{args.method}.csv")
+    linear_rdi.to_csv(f"{results_dir}/linear_probe_rdi_scores_{args.dataset}_{args.method}.csv")
+    struct_raw.to_csv(f"{results_dir}/struct_probe_raw_perf_{args.dataset}_{args.method}.csv")
+    struct_rdi.to_csv(f"{results_dir}/struct_probe_rdi_scores_{args.dataset}_{args.method}.csv")
+    print(f"\nAll results saved to {results_dir}")
 
 if __name__ == "__main__":
     main()
