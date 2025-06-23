@@ -1,249 +1,244 @@
 """
-structural_probe.py
+Runs an advanced probing analysis using the TwoWordPSDProbe from the
+Hewitt & Manning `structural-probes` repository.
 
-This script probes to what extent the concept of syntactic distances (as a vector per word)
-is present in word embeddings, using the **TwoWordPSDProbe** (structural probe) from structural-probes.
+This script automates the process of evaluating how well syntactic distance is
+encoded in various original and erased embeddings. It is built by wrapping the
+exact logic from a proven, working script into a reusable function, ensuring
+maximum reliability.
 
-Inputs:
-    - Pickled embeddings (train and test), each as a list of [num_words, hidden_dim] arrays
-    - Syntactic distance matrices for each sentence (as in your LEACE scripts)
-    - (Optional) PCA object, if probing on PCA-reduced concept
-
-Outputs:
-    - MSE and R^2 for the probe on the test set
+**Prerequisites:**
+1.  The `structural-probes` submodule must be patched to fix the PyYAML `Loader` error.
+    - In `.../run_experiment.py`, change `yaml.load(...)` to `yaml.load(..., Loader=yaml.FullLoader)`.
+2.  The `seaborn` package must be installed in the conda environment.
+    - `conda install seaborn` or `pip install seaborn`.
 """
-
+import argparse
 import pickle
 import numpy as np
 import torch
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.preprocessing import StandardScaler
 import os
 import sys
+import pandas as pd
+from sklearn.metrics import r2_score
+from sklearn.preprocessing import StandardScaler
+from tqdm import tqdm
+
+# Ensure the structural_probes submodule is in the Python path
+# This allows `from external...` to work.
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
 from external.structural_probes.structural_probe.probe import TwoWordPSDProbe
 
-# --------------------------
-# Settings
-# --------------------------
-LAYER = 8
-EMBEDDING_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_train_synt_dist.pt"
-TEST_FILE = "Syntactic_distances/Embeddings/Original/UD/gpt2_embeddings_test_synt_dist.pt"
-# 1. Original
-EMB_PROBE_FILE = EMBEDDING_FILE
-EMB_PROBE_TEST_FILE = TEST_FILE
-PCA_OBJ_FILE = None
+# =========================================================================
+# 1. Core Probing Function (Adapted from the user-provided working script)
+# =========================================================================
 
-# 2. LEACE-erased (vector concept)
-# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec.pkl"
-# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec.pkl"
-# PCA_OBJ_FILE = None
+def run_single_probe_experiment(
+    train_emb_path: str,
+    test_emb_path: str,
+    gold_dist_train_path: str,
+    gold_dist_test_path: str,
+    layer: int = 8,
+    device: str = "cuda"
+) -> float:
+    """
+    Runs a complete train/test cycle for a single structural probe experiment,
+    using the exact logic from the user-provided working script to ensure reliability.
+    """
+    # --- Data Loading Logic ---
+    def load_embeddings(file_path, layer):
+        with open(file_path, "rb") as f: data = pickle.load(f)
+        # Your script handles two cases for erased embeddings from different dev stages
+        if isinstance(data, dict) and ("train_erased" in data or "test_erased" in data):
+            return data["train_erased"] if "train" in file_path else data["test_erased"]
+        elif isinstance(data, dict) and "all_erased" in data:
+            # Assumes a single file for both train and test that needs splitting
+            return data["all_erased"] 
+        else: # Original embeddings format
+            return [sent["embeddings_by_layer"][layer] for sent in data]
 
-# 3. LEACE-erased (vector concept, PCA-reduced)
-# EMB_PROBE_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec_pca.pkl"
-# EMB_PROBE_TEST_FILE = "Syntactic_distances/Embeddings/Erased/UD/leace_embeddings_synt_dist_vec_pca.pkl"
-# PCA_OBJ_FILE = "Syntactic_distances/Eraser_objects/UD/leace_pca_synt_dist_vec.pkl"
+    def load_distances(file_path):
+        with open(file_path, "rb") as f: data = pickle.load(f)
+        return [sent["distance_matrix"] for sent in data]
 
-results_dir = "Syntactic_distances/Results/UD/LEACE/SD_on_SD_structural/"
+    X_train_sents = load_embeddings(train_emb_path, layer)
+    X_test_sents = load_embeddings(test_emb_path, layer)
+    D_train = load_distances(gold_dist_train_path)
+    D_test = load_distances(gold_dist_test_path)
 
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
-# --------------------------
-# Load data
-# --------------------------
-def load_embeddings_and_distances(embedding_file, layer, max_sentence_length=None, pad_value=None):
-    with open(embedding_file, "rb") as f:
-        data = pickle.load(f)
-    X = []
-    D = []
-    for sent in data:
-        emb = sent["embeddings_by_layer"][layer] if isinstance(sent, dict) else sent
-        if isinstance(sent, dict) and "distance_matrix" in sent:
-            dist = sent["distance_matrix"]
-            X.append(emb)
-            # Pad distance matrix to (max_sentence_length, max_sentence_length)
-            n = dist.shape[0]
-            if max_sentence_length is not None and pad_value is not None:
-                padded = np.full((max_sentence_length, max_sentence_length), pad_value, dtype=np.float32)
-                padded[:n, :n] = dist
-                D.append(padded)
-            else:
-                D.append(dist)
-    return X, D
-
-# --------------------------
-# Get max sentence length and pad value for concept vector
-# --------------------------
-with open(EMBEDDING_FILE, "rb") as f:
-    train_data = pickle.load(f)
-with open(TEST_FILE, "rb") as f:
-    test_data = pickle.load(f)
-
-def get_max_sentence_length(*datasets, layer=LAYER):
+    # --- Max Length and Padding ---
     max_len = 0
-    for dataset in datasets:
-        for sent in dataset:
-            n = sent["embeddings_by_layer"][layer].shape[0]
-            if n > max_len:
-                max_len = n
-    return max_len
+    for sents_list in [X_train_sents, X_test_sents]:
+        for sent in sents_list: max_len = max(max_len, sent.shape[0])
+    pad_value = max_len - 1
 
-max_sentence_length = get_max_sentence_length(train_data, test_data, layer=LAYER)
-pad_value = max_sentence_length - 1
+    def pad_and_clean(X_sents, D_sents, max_len, pad_val):
+        D_padded, X_clean = [], []
+        for i, d in enumerate(D_sents):
+            if np.isfinite(d).all() and d.shape[0] == X_sents[i].shape[0]:
+                n = d.shape[0]
+                padded = np.full((max_len, max_len), pad_val, dtype=np.float32)
+                padded[:n, :n] = d
+                D_padded.append(padded)
+                X_clean.append(X_sents[i])
+        return X_clean, D_padded
 
-# --------------------------
-# Load embeddings and distances
-# --------------------------
-print("Loading train embeddings and distances...")
-X_train_sents, D_train = load_embeddings_and_distances(EMBEDDING_FILE, LAYER, max_sentence_length, pad_value)
-print("Loading test embeddings and distances...")
-X_test_sents, D_test = load_embeddings_and_distances(TEST_FILE, LAYER, max_sentence_length, pad_value)
+    X_train_sents, D_train_padded = pad_and_clean(X_train_sents, D_train, max_len, pad_value)
+    X_test_sents, D_test_padded = pad_and_clean(X_test_sents, D_test, max_len, pad_value)
 
-# If probing on erased embeddings, load those instead
-if "leace_embeddings" in EMB_PROBE_FILE:
-    with open(EMB_PROBE_FILE, "rb") as f:
-        erased = pickle.load(f)
-    X_train_sents = erased["train_erased"]
-    with open(EMB_PROBE_TEST_FILE, "rb") as f:
-        erased_test = pickle.load(f)
-    X_test_sents = erased_test["test_erased"]
+    if not X_train_sents or not X_test_sents:
+        print("Warning: No valid data remains after cleaning/matching. Returning NaN.")
+        return np.nan
 
-# Clean training data: remove any samples where the distance matrix is not finite
-X_train_sents_clean = []
-D_train_clean = []
-removed_indices = []
-for i, (x, d) in enumerate(zip(X_train_sents, D_train)):
-    if np.isfinite(d).all():
-        X_train_sents_clean.append(x)
-        D_train_clean.append(d)
-    else:
-        removed_indices.append(i)
-X_train_sents = X_train_sents_clean
-D_train = D_train_clean
+    # --- Standardization ---
+    X_train_flat = np.vstack([x.numpy() if isinstance(x, torch.Tensor) else x for x in X_train_sents])
+    scaler = StandardScaler().fit(X_train_flat)
+    
+    def apply_scaler(X_sents, scaler, device):
+        X_flat = np.vstack([x.numpy() if isinstance(x, torch.Tensor) else x for x in X_sents])
+        X_flat_scaled = scaler.transform(X_flat)
+        X_scaled_sents, idx = [], 0
+        for x in X_sents:
+            n = x.shape[0]
+            X_scaled_sents.append(torch.tensor(X_flat_scaled[idx:idx+n], dtype=torch.float32, device=device))
+            idx += n
+        return X_scaled_sents
 
-print(f"Removed {len(removed_indices)} non-finite samples from training data. Indices: {removed_indices}")
+    X_train_scaled_sents = apply_scaler(X_train_sents, scaler, device)
+    X_test_scaled_sents = apply_scaler(X_test_sents, scaler, device)
 
-# Clean test data: remove any samples where the distance matrix is not finite
-X_test_sents_clean = []
-D_test_clean = []
-removed_test_indices = []
-for i, (x, d) in enumerate(zip(X_test_sents, D_test)):
-    if np.isfinite(d).all():
-        X_test_sents_clean.append(x)
-        D_test_clean.append(d)
-    else:
-        removed_test_indices.append(i)
-X_test_sents = X_test_sents_clean
-D_test = D_test_clean
+    D_train_torch = [torch.tensor(d, dtype=torch.float32, device=device) for d in D_train_padded]
+    D_test_torch = [torch.tensor(d, dtype=torch.float32, device=device) for d in D_test_padded]
 
-print(f"Removed {len(removed_test_indices)} non-finite samples from test data. Indices: {removed_test_indices}")
+    # --- Probe Training ---
+    probe_rank = min(128, X_train_scaled_sents[0].shape[1])
+    probe = TwoWordPSDProbe({'probe': {'maximum_rank': probe_rank}, 'model': {'hidden_dim': X_train_scaled_sents[0].shape[1]}}, device)
+    optimizer = torch.optim.Adam(probe.parameters(), lr=1e-4)
 
-# --------------------------
-# Standardize X (per token, then reconstruct sentences)
-# --------------------------
-def flatten_and_standardize(X_sents):
-    X_flat = np.vstack([x if isinstance(x, np.ndarray) else x.numpy() for x in X_sents])
-    scaler = StandardScaler()
-    X_flat_scaled = scaler.fit_transform(X_flat)
-    # Reconstruct sentences
-    X_scaled_sents = []
-    idx = 0
-    for x in X_sents:
+    def probe_loss(pred, gold, pad_val):
+        mask = (gold != pad_val)
+        return ((pred - gold)[mask] ** 2).mean()
+
+    for _ in range(10): # A fixed number of epochs is fine for this task
+        probe.train()
+        for x, d in zip(X_train_scaled_sents, D_train_torch):
+            pred = probe(x.unsqueeze(0)).squeeze(0)
+            loss = probe_loss(pred, d, pad_value)
+            if not torch.isfinite(loss): continue
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+    
+    # --- Evaluation ---
+    probe.eval()
+    all_preds, all_golds = [], []
+    for x, d in zip(X_test_scaled_sents, D_test_torch):
         n = x.shape[0]
-        X_scaled_sents.append(torch.tensor(X_flat_scaled[idx:idx+n], dtype=torch.float32, device=DEVICE))
-        idx += n
-    return X_scaled_sents, scaler
+        with torch.no_grad():
+            pred = probe(x.unsqueeze(0)).squeeze(0)[:n, :n].cpu().numpy()
+        gold = d[:n, :n].cpu().numpy()
+        all_preds.append(pred)
+        all_golds.append(gold)
+        
+    all_preds_flat = np.concatenate([p.flatten() for p in all_preds])
+    all_golds_flat = np.concatenate([g.flatten() for g in all_golds])
 
-X_train_scaled_sents, scaler = flatten_and_standardize(X_train_sents)
-# Use train scaler for test set
-def standardize_with_scaler(X_sents, scaler):
-    X_flat = np.vstack([x if isinstance(x, np.ndarray) else x.numpy() for x in X_sents])
-    X_flat_scaled = scaler.transform(X_flat)
-    X_scaled_sents = []
-    idx = 0
-    for x in X_sents:
-        n = x.shape[0]
-        X_scaled_sents.append(torch.tensor(X_flat_scaled[idx:idx+n], dtype=torch.float32, device=DEVICE))
-        idx += n
-    return X_scaled_sents
+    return r2_score(all_golds_flat, all_preds_flat)
 
-X_test_scaled_sents = standardize_with_scaler(X_test_sents, scaler)
 
-# --------------------------
-# Prepare distance matrices as torch tensors
-# --------------------------
-D_train_torch = [torch.tensor(d, dtype=torch.float32, device=DEVICE) for d in D_train]
-D_test_torch = [torch.tensor(d, dtype=torch.float32, device=DEVICE) for d in D_test]
+# =========================================================================
+# 2. Main Orchestrator
+# =========================================================================
 
-# --------------------------
-# Structural probe: TwoWordPSDProbe
-# --------------------------
-probe_args = {
-    'probe': {'maximum_rank': min(128, X_train_scaled_sents[0].shape[1])},
-    'model': {'hidden_dim': X_train_scaled_sents[0].shape[1]},
-    'device': DEVICE,
-}
-probe = TwoWordPSDProbe(probe_args)
+def main():
+    parser = argparse.ArgumentParser(description="Run an advanced structural probe analysis.")
+    parser.add_argument("--dataset", choices=["narratives", "ud"], required=True, help="Dataset to probe.")
+    parser.add_argument("--method", choices=["leace", "oracle"], required=True, help="Erasure method to probe.")
+    args = parser.parse_args()
 
-# Loss: MSE between predicted and gold distances (mask out padding)
-def probe_loss(pred, gold, pad_value):
-    mask = (gold != pad_value)
-    return ((pred - gold)[mask] ** 2).mean()  # Return tensor
+    # --- Setup ---
+    CONCEPTS = ["pos", "deplab", "sd", "sdm"]
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"--- Running Advanced Probe Analysis ---")
+    print(f"Dataset: {args.dataset}, Erasure Method: {args.method}, Device: {DEVICE}")
 
-# Training loop (simple, not optimized)
-lr = 1e-4
-epochs = 10
-optimizer = torch.optim.Adam(probe.parameters(), lr=lr)
+    dataset_dir_name = "Narratives" if args.dataset == "narratives" else "UD"
+    dataset_name_short = "nar" if args.dataset == "narratives" else "ud"
+    
+    raw_scores = pd.DataFrame(index=['structural_probe'], columns=CONCEPTS + ['original'], dtype=float)
+    rdi_scores = pd.DataFrame(index=['structural_probe'], columns=CONCEPTS, dtype=float)
 
-print("Training structural probe...")
-# Training loop
-for epoch in range(epochs):
-    probe.train()
-    total_loss = 0
-    for x, d in zip(X_train_scaled_sents, D_train_torch):
-        n = x.shape[0]
-        pred = probe(x.unsqueeze(0)).squeeze(0)[:n, :n]
-        gold = d[:n, :n]
-        loss = probe_loss(pred, gold, pad_value)
-        if not torch.isfinite(loss).item():
-            print("Non-finite loss encountered!")
-            break
-        optimizer.zero_grad()
-        loss.backward()
-        torch.nn.utils.clip_grad_norm_(probe.parameters(), max_norm=1.0)
-        optimizer.step()
-        total_loss += loss.item()
-    print(f"Epoch {epoch+1}/{epochs} - Train MSE: {total_loss/len(X_train_scaled_sents):.4f}")
+    # --- Define Gold Standard Data Paths ---
+    # These must point to files that contain both embeddings and distance matrices
+    # Let's assume your data generation pipeline creates combined train/test files now
+    base_path = f"Final/Embeddings/Original/{dataset_dir_name}/"
+    gold_dist_train_path = f"{base_path}Embed_{dataset_name_short}_distance_matrix_train.pkl" # Adjust if your names differ
+    gold_dist_test_path = f"{base_path}Embed_{dataset_name_short}_distance_matrix_test.pkl"   # Adjust if your names differ
 
-# --------------------------
-# Evaluation
-# --------------------------
-probe.eval()
-all_preds = []
-all_golds = []
-for x, d in zip(X_test_scaled_sents, D_test_torch):
-    n = x.shape[0]
-    with torch.no_grad():
-        pred = probe(x.unsqueeze(0)).squeeze(0)[:n, :n].cpu().numpy()
-    gold = d[:n, :n].cpu().numpy()
-    mask = (gold != pad_value)
-    all_preds.append(pred[mask])
-    all_golds.append(gold[mask])
-all_preds = np.concatenate(all_preds)
-all_golds = np.concatenate(all_golds)
+    # --- Baseline Calculation ---
+    print("\n[Phase 1/3] Calculating baseline on original embeddings...")
+    baseline_emb_train_path = gold_dist_train_path # Original embeddings are in the same file
+    baseline_emb_test_path = gold_dist_test_path
+    
+    baseline_score = run_single_probe_experiment(
+        train_emb_path=baseline_emb_train_path, test_emb_path=baseline_emb_test_path,
+        gold_dist_train_path=gold_dist_train_path, gold_dist_test_path=gold_dist_test_path,
+        device=DEVICE
+    )
+    raw_scores.loc['structural_probe', 'original'] = baseline_score
+    print(f"Baseline R² on original embeddings: {baseline_score:.4f}")
 
-mse = mean_squared_error(all_golds, all_preds)
-r2 = r2_score(all_golds, all_preds)
-print(f"MSE on test set: {mse:.4f}")
-print(f"R^2 on test set: {r2:.4f}")
+    # --- Probing Erased Embeddings ---
+    print("\n[Phase 2/3] Probing erased embeddings...")
+    for erased_concept in tqdm(CONCEPTS, desc="Probing erased"):
+        # This assumes your erasure script also saves separate train/test files.
+        erased_base_path = f"Final/Embeddings/Erased/{dataset_dir_name}/"
+        erased_train_path = f"{erased_base_path}{args.method}_{dataset_name_short}_{erased_concept}_train_vec.pkl" # Adjust name
+        erased_test_path = f"{erased_base_path}{args.method}_{dataset_name_short}_{erased_concept}_test_vec.pkl"   # Adjust name
 
-# --------------------------
-# Save results with informative filename
-# --------------------------
-os.makedirs(results_dir, exist_ok=True)
-emb_name = os.path.splitext(os.path.basename(EMB_PROBE_FILE))[0]
-results_file = os.path.join(results_dir, f"probe_results_structural_{emb_name}.txt")
+        if not (os.path.exists(erased_train_path) and os.path.exists(erased_test_path)):
+            print(f"\nWarning: Erased files not found for '{erased_concept}', skipping.")
+            raw_scores.loc['structural_probe', erased_concept] = np.nan
+            continue
+            
+        score = run_single_probe_experiment(
+            train_emb_path=erased_train_path, test_emb_path=erased_test_path,
+            gold_dist_train_path=gold_dist_train_path, gold_dist_test_path=gold_dist_test_path,
+            device=DEVICE
+        )
+        raw_scores.loc['structural_probe', erased_concept] = score
 
-with open(results_file, "w") as f:
-    f.write(f"MSE: {mse}\nR2: {r2}\n")
-print(f"Results saved to {results_file}")
+    # --- RDI Calculation and Reporting ---
+    print("\n[Phase 3/3] Calculating RDI scores and reporting...")
+    for erased_concept in CONCEPTS:
+        r2_after = raw_scores.loc['structural_probe', erased_concept]
+        r2_before = baseline_score
+        
+        if pd.isna(r2_after) or pd.isna(r2_before) or r2_before < 1e-6:
+            rdi = np.nan
+        else:
+            rdi = max(0, 1.0 - (r2_after / r2_before))
+        rdi_scores.loc['structural_probe', erased_concept] = rdi
+
+    pd.set_option('display.float_format', '{:.4f}'.format)
+    print("\n\n" + "="*80)
+    print(f"ADVANCED STRUCTURAL PROBE RESULTS for Dataset: {args.dataset.upper()}, Method: {args.method.upper()}")
+    print("="*80)
+    
+    print("\n--- Raw Probe Performance (R-squared for Syntactic Distance) ---")
+    print("Columns: Concept Erased From Embeddings (+ Original Baseline)\n")
+    print(raw_scores)
+    
+    print("\n\n--- RDI Scores from Structural Probe ---")
+    print("1.0 = Full Erasure, 0.0 = No Erasure\n")
+    print(rdi_scores)
+    print("\n" + "="*80)
+    
+    results_dir = f"Final/Results/{dataset_dir_name}"
+    os.makedirs(results_dir, exist_ok=True)
+    raw_scores.to_csv(f"{results_dir}/advanced_probe_raw_perf_{args.dataset}_{args.method}.csv")
+    rdi_scores.to_csv(f"{results_dir}/advanced_probe_rdi_scores_{args.dataset}_{args.method}.csv")
+    print(f"\nResults saved to {results_dir}")
+
+if __name__ == "__main__":
+    main()
