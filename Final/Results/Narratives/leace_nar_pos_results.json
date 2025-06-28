@@ -1,0 +1,10 @@
+{
+    "method": "leace",
+    "dataset": "narratives",
+    "concept": "pos",
+    "l2_distance": 384.2330627441406,
+    "fitter_details": {
+        "class": "LeaceFitter",
+        "library": "concept-erasure"
+    }
+}

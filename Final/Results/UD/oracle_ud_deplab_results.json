@@ -1,0 +1,10 @@
+{
+    "method": "oracle",
+    "dataset": "ud",
+    "concept": "deplab",
+    "l2_distance": 141.000244140625,
+    "fitter_details": {
+        "class": "OracleFitter",
+        "library": "concept-erasure"
+    }
+}

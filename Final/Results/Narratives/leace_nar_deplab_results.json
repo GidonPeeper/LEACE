@@ -1,0 +1,10 @@
+{
+    "method": "leace",
+    "dataset": "narratives",
+    "concept": "deplab",
+    "l2_distance": 283.57464599609375,
+    "fitter_details": {
+        "class": "LeaceFitter",
+        "library": "concept-erasure"
+    }
+}

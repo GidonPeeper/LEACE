@@ -1,0 +1,10 @@
+{
+    "method": "leace",
+    "dataset": "ud",
+    "concept": "deplab",
+    "l2_distance": 342.7540588378906,
+    "fitter_details": {
+        "class": "LeaceFitter",
+        "library": "concept-erasure"
+    }
+}

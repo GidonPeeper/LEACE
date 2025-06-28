@@ -1,0 +1,10 @@
+{
+    "method": "oracle",
+    "dataset": "narratives",
+    "concept": "pos",
+    "l2_distance": 149.90740966796875,
+    "fitter_details": {
+        "class": "OracleFitter",
+        "library": "concept-erasure"
+    }
+}

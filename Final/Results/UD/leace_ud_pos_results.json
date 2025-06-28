@@ -1,0 +1,10 @@
+{
+    "method": "leace",
+    "dataset": "ud",
+    "concept": "pos",
+    "l2_distance": 322.6062927246094,
+    "fitter_details": {
+        "class": "LeaceFitter",
+        "library": "concept-erasure"
+    }
+}
