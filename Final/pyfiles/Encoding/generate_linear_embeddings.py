@@ -1,12 +1,13 @@
 """
-Generates GPT-2 embeddings with aligned SYNTACTIC DISTANCE (sd) vectors.
+Generates GPT-2 embeddings with aligned POSITIONAL information.
 
-This method represents each word's structural position by taking its row from
-the all-pairs shortest path distance matrix and padding it to a fixed length
-(the max sentence length in the dataset).
+This script can generate two types of positional concepts, controlled by the
+--positional_type argument:
+1.  'ld': Linear Distance (simple token index).
+2.  'pe': Positional Encoding (sinusoidal vectors).
 
 It uses the same universal filtering and file naming conventions as the
-other generation scripts to ensure perfect pipeline compatibility.
+categorical generation script to ensure perfect pipeline compatibility.
 """
 import argparse
 import pickle
@@ -23,7 +24,6 @@ from tqdm import tqdm
 # ======================================================================
 
 def parse_conllu_universal(file_path):
-    # ... (Identical to your reference script) ...
     sentences = []
     try:
         with open(file_path, "r", encoding="utf-8") as f:
@@ -33,12 +33,13 @@ def parse_conllu_universal(file_path):
                     if isinstance(token['id'], int):
                         words.append(token['form']); pos_tags.append(token['upos'])
                         deplabs.append(token['deprel']); heads.append(token['head'])
-                if words: sentences.append({"words": words, "pos_tags": pos_tags, "deplabs": deplabs, "heads": heads})
-    except FileNotFoundError: print(f"Warning: File not found at {file_path}. Skipping."); return []
+                if words:
+                    sentences.append({"words": words, "pos_tags": pos_tags, "deplabs": deplabs, "heads": heads})
+    except FileNotFoundError:
+        print(f"Warning: File not found at {file_path}. Skipping."); return []
     return sentences
 
 def filter_and_validate_sentences(sentences):
-    # ... (Identical to your reference script) ...
     print("\n--- Step 2: Filtering Data to Create Golden Set ---")
     initial_count = len(sentences)
     valid_sentences = []
@@ -58,58 +59,40 @@ def filter_and_validate_sentences(sentences):
     return tree_sentences
 
 # ======================================================================
-# Concept Calculation: Padded Syntactic Distance Vectors
+# Positional Concept Calculation
 # ======================================================================
 
-def add_padded_distance_vectors(sentences):
-    """Computes distance matrices, then converts them to padded per-word vectors."""
-    print("\n--- Step 3: Computing Padded Syntactic Distance Vectors ---")
-    
-    # First pass: compute matrices to find the max_len for padding
-    max_len = 0
-    temp_sentences = []
-    for s in tqdm(sentences, desc="Computing matrices"):
-        n = len(s['words'])
-        G = nx.Graph()
-        G.add_nodes_from(range(n))
-        for i, head in enumerate(s['heads']):
-            if head > 0: G.add_edge(i, head - 1)
-        
-        dist_matrix = nx.floyd_warshall_numpy(G, nodelist=range(n))
-        s['distance_matrix'] = dist_matrix
-        temp_sentences.append(s)
-        if n > max_len: max_len = n
+def get_positional_encoding(max_len, d_model):
+    position = torch.arange(max_len).unsqueeze(1)
+    div_term = torch.exp(torch.arange(0, d_model, 2) * (-np.log(10000.0) / d_model))
+    pe = torch.zeros(max_len, d_model)
+    pe[:, 0::2] = torch.sin(position * div_term)
+    pe[:, 1::2] = torch.cos(position * div_term)
+    return pe
 
-    print(f"Max sentence length found: {max_len}. Vectors will be padded to this dimension.")
-    
-    # Second pass: create the final padded vectors
-    final_sentences = []
-    for s in tqdm(temp_sentences, desc="Creating padded vectors"):
-        dist_matrix = s.pop('distance_matrix') # Remove the temporary matrix
-        sent_len = dist_matrix.shape[0]
-        padded_vectors = []
-        for i in range(sent_len):
-            row_vector = dist_matrix[i, :]
-            # Pad with 0, which is a neutral value for regression and distance.
-            padded_vector = np.pad(row_vector, (0, max_len - sent_len), 'constant', constant_values=0)
-            padded_vectors.append(padded_vector)
-        
-        # The key for this concept will be 'sd'
-        s['sd'] = torch.from_numpy(np.array(padded_vectors, dtype=np.float32))
-        final_sentences.append(s)
-        
-    return final_sentences
+def add_positional_concepts(sentences, positional_type, pe_dim=128):
+    if positional_type == 'pe':
+        max_len = max(len(s['words']) for s in sentences)
+        pe_matrix = get_positional_encoding(max_len, pe_dim)
+        print(f"\nGenerated sinusoidal positional encodings up to length {max_len} with dim={pe_dim}.")
+
+    for sentence in sentences:
+        n_words = len(sentence['words'])
+        if positional_type == 'ld':
+            sentence['ld'] = [float(i) for i in range(n_words)]
+        elif positional_type == 'pe':
+            sentence['pe'] = pe_matrix[:n_words, :]
+    return sentences
 
 # ======================================================================
-# Generic Tokenization and Encoding Functions
+# Generic Tokenization and Encoding Functions (Adapted for positional data)
 # ======================================================================
 
 def tokenize_and_align(sentences, tokenizer, concept_key):
-    # This function is now robust enough to handle the 'sd' tensor
-    print("\n--- Step 4: Tokenizing and Aligning Data ---")
+    print("\n--- Step 3: Tokenizing and Aligning Data ---")
     tokenized_sentences = []
     for sentence in tqdm(sentences, desc=f"Tokenizing for '{concept_key}'"):
-        words, labels = sentence["words"], sentence[concept_key]
+        words = sentence["words"]; labels = sentence[concept_key]
         input_ids, word_to_token_positions, original_word_indices = [], [], []
         current_token_position = 0
         for i, word in enumerate(words):
@@ -120,7 +103,11 @@ def tokenize_and_align(sentences, tokenizer, concept_key):
             current_token_position += len(word_ids); original_word_indices.append(i)
         if not input_ids: continue
         
-        aligned_labels = labels[original_word_indices] # Select rows from the tensor
+        # This logic handles both lists of scalars (ld) and tensors of vectors (pe)
+        if isinstance(labels, list):
+            aligned_labels = [labels[i] for i in original_word_indices]
+        else: # It's a tensor
+            aligned_labels = labels[original_word_indices]
             
         tokenized_sentences.append({
             "input_ids": input_ids, "word_to_token_positions": word_to_token_positions,
@@ -129,8 +116,8 @@ def tokenize_and_align(sentences, tokenizer, concept_key):
     return tokenized_sentences
 
 def encode_with_gpt2(tokenized_sentences, model, device, concept_key):
-    # This function is identical to the one in your reference script
-    print("\n--- Step 5: Encoding with GPT-2 ---")
+    print("\n--- Step 4: Encoding with GPT-2 ---")
+    # ... (This function is identical to the one in your script) ...
     all_outputs = []
     for sentence in tqdm(tokenized_sentences, desc="Encoding with GPT-2"):
         input_ids = torch.tensor(sentence["input_ids"]).unsqueeze(0).to(device)
@@ -147,7 +134,7 @@ def encode_with_gpt2(tokenized_sentences, model, device, concept_key):
     return all_outputs
 
 def average_subtokens_per_word(hidden_states, word_to_token_positions):
-    # This function is identical to the one in your reference script
+    # ... (This function is identical to the one in your script) ...
     word_embeddings = []
     for token_idxs in word_to_token_positions:
         if not token_idxs: continue
@@ -155,22 +142,28 @@ def average_subtokens_per_word(hidden_states, word_to_token_positions):
     return torch.stack(word_embeddings) if word_embeddings else None
 
 # ======================================================================
-# Main Execution
+# Main Execution (Mirrors your provided script's structure)
 # ======================================================================
 def main():
-    parser = argparse.ArgumentParser(description="Generate embeddings with padded syntactic distance vectors.")
+    parser = argparse.ArgumentParser(description="Generate embeddings with positional concepts.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True)
+    parser.add_argument("--positional_type", choices=["ld", "pe"], required=True, help="Type of positional concept to generate.")
     args = parser.parse_args()
 
-    # The concept key is fixed for this script
-    CONCEPT_KEY = "sd"
+    # The concept_map now translates the new --positional_type argument
+    concept_map = {
+        "ld": {"internal_key": "ld", "file_key": "ld"},
+        "pe": {"internal_key": "pe", "file_key": "pe"}
+    }
+    internal_concept_key = concept_map[args.positional_type]["internal_key"]
+    file_concept_key = concept_map[args.positional_type]["file_key"]
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     print(f"--- Configuration ---")
-    print(f"Dataset: {args.dataset}, Concept: {CONCEPT_KEY.upper()}, Device: {device}")
+    print(f"Dataset: {args.dataset}, Concept: {args.positional_type}, Device: {device}")
 
-    # Identical file loading logic from your reference script
+    # Identical file loading logic
     if args.dataset == "narratives":
         dataset_name_short = "nar"
         data_files = ["data/narratives/train_clean.conllu", "data/narratives/test_clean.conllu"]
@@ -191,15 +184,15 @@ def main():
     if not golden_sentences:
         print("\nPipeline resulted in zero sentences. Exiting."); return
 
-    final_sentences = add_padded_distance_vectors(golden_sentences)
+    final_sentences = add_positional_concepts(golden_sentences, positional_type=internal_concept_key)
 
     tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-    tokenized_data = tokenize_and_align(final_sentences, tokenizer, concept_key=CONCEPT_KEY)
+    tokenized_data = tokenize_and_align(final_sentences, tokenizer, concept_key=internal_concept_key)
 
     model = GPT2Model.from_pretrained("gpt2", output_hidden_states=True).to(device).eval()
-    all_embeddings = encode_with_gpt2(tokenized_data, model, device, concept_key=CONCEPT_KEY)
+    all_embeddings = encode_with_gpt2(tokenized_data, model, device, concept_key=internal_concept_key)
 
-    save_path = os.path.join(save_dir, f"Embed_{dataset_name_short}_{CONCEPT_KEY}.pkl")
+    save_path = os.path.join(save_dir, f"Embed_{dataset_name_short}_{file_concept_key}.pkl")
     with open(save_path, "wb") as f: pickle.dump(all_embeddings, f)
     print(f"\n--- DONE ---\nSaved {len(all_embeddings)} sentences to {save_path}")
 

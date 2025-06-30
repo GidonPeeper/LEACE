@@ -1,8 +1,8 @@
 {
     "method": "oracle",
     "dataset": "ud",
-    "concept": "deplab",
-    "l2_distance_on_full_set": 141.000244140625,
+    "concept": "pe",
+    "l2_distance_on_full_set": 352.93304443359375,
     "fitter_details": {
         "class": "OracleFitter",
         "library": "concept-erasure"

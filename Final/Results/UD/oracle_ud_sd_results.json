@@ -2,9 +2,10 @@
     "method": "oracle",
     "dataset": "ud",
     "concept": "sd",
-    "l2_distance": 97.34776306152344,
+    "l2_distance_on_full_set": 316.1441650390625,
     "fitter_details": {
         "class": "OracleFitter",
         "library": "concept-erasure"
-    }
+    },
+    "notes": "Eraser trained and L2 distance calculated on the full dataset."
 }

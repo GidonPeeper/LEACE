@@ -2,9 +2,10 @@
     "method": "leace",
     "dataset": "narratives",
     "concept": "pos",
-    "l2_distance": 384.2330627441406,
+    "l2_distance_on_test_set": 392.53143310546875,
     "fitter_details": {
         "class": "LeaceFitter",
         "library": "concept-erasure"
-    }
+    },
+    "notes": "Eraser trained on 80% of data. L2 distance calculated on the 20% test set."
 }
