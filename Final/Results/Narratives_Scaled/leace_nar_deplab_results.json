@@ -1,0 +1,12 @@
+{
+    "method": "leace",
+    "dataset": "narratives",
+    "concept": "deplab",
+    "scaling": "on",
+    "l2_distance_on_test_set": 187.6534423828125,
+    "fitter_details": {
+        "class": "LeaceFitter",
+        "library": "concept-erasure"
+    },
+    "notes": "Eraser trained on 80% of data. L2 distance calculated on the 20% test set."
+}

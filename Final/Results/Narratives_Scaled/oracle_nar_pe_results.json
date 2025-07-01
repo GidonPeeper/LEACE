@@ -1,0 +1,12 @@
+{
+    "method": "oracle",
+    "dataset": "narratives",
+    "concept": "pe",
+    "scaling": "on",
+    "l2_distance_on_full_set": 398.19683837890625,
+    "fitter_details": {
+        "class": "OracleFitter",
+        "library": "concept-erasure"
+    },
+    "notes": "Eraser trained and L2 distance calculated on the full dataset."
+}

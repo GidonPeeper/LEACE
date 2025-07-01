@@ -1,4 +1,8 @@
-import argparse, pickle, numpy as np, os, pandas as pd
+import argparse
+import pickle
+import numpy as np
+import os
+import pandas as pd
 from collections import Counter
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression, Ridge
@@ -7,7 +11,7 @@ from numpy.linalg import norm
 from tqdm import tqdm
 
 def cosine_similarity_score(y_true, y_pred):
-    if y_true.ndim == 1: y_true = y_true.reshape(-1, 1);
+    if y_true.ndim == 1: y_true = y_true.reshape(-1, 1)
     if y_pred.ndim == 1: y_pred = y_pred.reshape(-1, 1)
     dot = np.sum(y_true * y_pred, axis=1)
     norms = norm(y_true, axis=1) * norm(y_pred, axis=1)
@@ -77,16 +81,13 @@ def main():
         except FileNotFoundError:
             print(f"  - WARNING: Original data for '{probed_concept}' not found at {orig_path}. Skipping."); continue
 
-        # 2. Determine which subset of data to use for probing
+        # 2. Determine which subset of data to use for probing based on method
         if method == "leace":
-            # For LEACE, we must probe on the 20% test set.
-            # Re-create the split using the same SEED used in the erasure script.
             indices = np.arange(X_full.shape[0])
             _, test_indices = train_test_split(indices, test_size=0.2, random_state=SEED)
             X_probe_orig = X_full[test_indices]
             Z_probe_labels = Z_full[test_indices]
         else: # oracle
-            # For Oracle, we probe on the full dataset.
             X_probe_orig = X_full
             Z_probe_labels = Z_full
         
@@ -100,18 +101,16 @@ def main():
 
         # --- Probe the Erased Embeddings ---
         for erased_concept in CONCEPTS:
-            # This path construction correctly handles your file names (e.g., 'leace_ud_pos.pkl')
             erased_path = f"{base_dir}/Embeddings/Erased/{dataset_dir_name}/{method}_{dataset_name_short}_{erased_concept}.pkl"
             try:
                 with open(erased_path, "rb") as f: e_data = pickle.load(f)
                 
-                # Oracle saves erased data as a dict, LEACE might save as a raw array.
-                # This logic should be updated based on how your LEACE script saves the file.
-                # Assuming LEACE saves a raw numpy array and Oracle saves a dict.
-                if isinstance(e_data, dict) and 'all_erased' in e_data:
-                    X_full_erased = np.vstack(e_data['all_erased']) # Oracle format
+                # --- SIMPLIFIED AND ROBUST LOADING LOGIC ---
+                if isinstance(e_data, np.ndarray):
+                    X_full_erased = e_data
                 else:
-                    X_full_erased = e_data # Assumed direct numpy array for LEACE
+                    print(f"\n  - FATAL ERROR: Unknown data format in '{erased_path}'. Expected np.ndarray, got {type(e_data)}.")
+                    continue
                 
                 # Select the correct subset of the erased data based on the method
                 if method == "leace":
@@ -128,7 +127,7 @@ def main():
                 print(f"  - INFO: Erased file '{erased_path}' not found. Cell will be NaN.")
                 continue
 
-    # --- RDI Calculation and Display/Save ---
+    # --- RDI Calculation and Display/Save (Unchanged) ---
     rdi_scores = pd.DataFrame(index=CONCEPTS, columns=CONCEPTS, dtype=float)
     for p_concept in CONCEPTS:
         p_before = raw_scores.loc[p_concept, "original"]

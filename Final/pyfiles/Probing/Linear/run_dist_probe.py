@@ -1,40 +1,31 @@
 """
-A specialized probing script to compare different distance/positional concepts:
-- sd: Syntactic Distance (structural position via dependency tree)
-- ld: Linear Distance (naive token index)
-- pe: Positional Encoding (sinusoidal vectors from 'Attention Is All You Need')
-
-This script evaluates how erasing one of these concepts affects the decodability
-of the others, using the rigorous LEACE (test-set) and ORACLE (in-sample)
-methodologies. All continuous concepts are evaluated using Cosine Similarity,
-except for the scalar 'ld' concept which uses R2 score.
+A specialized probing script to compare different distance/positional concepts.
+This version is FULLY UPDATED to be compatible with the final erasure pipeline.
 """
-import argparse, pickle, numpy as np, os, pandas as pd
+import argparse
+import pickle
+import numpy as np
+import os
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 from numpy.linalg import norm
 from tqdm import tqdm
-from sklearn.metrics import r2_score # IMPORT ADDED FOR R2 SCORE
+from sklearn.metrics import r2_score
 
 # =========================================================================
-# 1. Helper Functions
+# 1. Helper Functions (Unchanged - Correct)
 # =========================================================================
 
 def cosine_similarity_score(y_true, y_pred):
-    """Calculates the average cosine similarity for regression evaluation."""
     if y_true.ndim == 1: y_true = y_true.reshape(-1, 1)
     if y_pred.ndim == 1: y_pred = y_pred.reshape(-1, 1)
     dot = np.sum(y_true * y_pred, axis=1)
     norms = norm(y_true, axis=1) * norm(y_pred, axis=1)
     return np.mean(dot / (norms + 1e-9))
 
-# === MODIFIED FUNCTION TO HANDLE 'ld' DIFFERENTLY ===
 def train_probe_and_eval(X, y, concept_name, seed=42):
-    """
-    Trains and evaluates a linear Ridge regression probe on the provided data.
-    Uses R2 score for 'ld' and Cosine Similarity for other vector concepts.
-    """
     if y.ndim == 1: y = y.reshape(-1, 1)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=seed)
     
@@ -45,14 +36,12 @@ def train_probe_and_eval(X, y, concept_name, seed=42):
     preds = probe.predict(X_test_s)
     
     if concept_name == 'ld':
-        # Use R2 score for the scalar 'ld' concept
         return r2_score(y_test, preds)
     else:
-        # Use Cosine Similarity for vector concepts 'sd' and 'pe'
         return cosine_similarity_score(y_test, preds)
 
 # =========================================================================
-# 2. Main Script Logic
+# 2. Main Script Logic (Updated for New Pipeline)
 # =========================================================================
 
 def main():
@@ -63,6 +52,7 @@ def main():
 
     # --- Setup ---
     method = args.method
+    SEED = 42
     CONCEPTS = ["sd", "ld", "pe"]
     dataset_name_short = "nar" if args.dataset == "narratives" else "ud"
     dataset_dir_name = "Narratives" if args.dataset == "narratives" else "UD"
@@ -79,53 +69,75 @@ def main():
 
     # --- Data Loading and Probing Loop ---
     for probed_concept in tqdm(CONCEPTS, desc="Probing Concept"):
-        # --- Part A: Get the ground-truth labels (Z) and baseline data (X_original) ---
-        if method == "leace":
-            probe_data_path = f"{base_dir}/Embeddings/Erased/{dataset_dir_name}/leace_{dataset_name_short}_{probed_concept}_for_probing.pkl"
-            try:
-                with open(probe_data_path, "rb") as f: p_data = pickle.load(f)
-                X_original, Z_labels = p_data["X_test_original"], p_data["Z_test"]
-            except FileNotFoundError:
-                print(f"  - WARNING: Probing data file for '{probed_concept}' not found at {probe_data_path}. Skipping row."); continue
-        else: # ORACLE METHOD
-            internal_key = concept_map[probed_concept]["internal_key"]
-            file_key = concept_map[probed_concept]["file_key"]
-            orig_path = f"{base_dir}/Embeddings/Original/{dataset_dir_name}/Embed_{dataset_name_short}_{file_key}.pkl"
-            try:
-                with open(orig_path, "rb") as f: data = pickle.load(f)
-                X_original = np.vstack([s["embeddings_by_layer"][8].numpy() for s in data])
-                if probed_concept == 'ld':
-                    Z_labels = np.array([val for s in data for val in s[internal_key]]).reshape(-1, 1)
-                else:
-                    Z_labels = np.vstack([s[internal_key].cpu().numpy() for s in data])
-            except FileNotFoundError:
-                print(f"  - WARNING: Original data for '{probed_concept}' not found at {orig_path}. Skipping row."); continue
+        p_info = concept_map[probed_concept]
         
-        # === MODIFIED CALL: Pass concept name to evaluation function ===
-        raw_scores.loc[probed_concept, "original"] = train_probe_and_eval(X_original, Z_labels, probed_concept)
-
-        # --- Part B: Probe the erased embeddings ---
-        for erased_concept in CONCEPTS:
-            if method == "leace":
-                erased_path = f"{base_dir}/Embeddings/Erased/{dataset_dir_name}/leace_{dataset_name_short}_{erased_concept}_for_probing.pkl"
-                try:
-                    with open(erased_path, "rb") as f: e_data = pickle.load(f)
-                    X_erased = e_data["X_test_erased"]
-                except FileNotFoundError: continue
-            else: # oracle
-                erased_path = f"{base_dir}/Embeddings/Erased/{dataset_dir_name}/oracle_{dataset_name_short}_{erased_concept}_vec.pkl"
-                try:
-                    with open(erased_path, "rb") as f: e_data = pickle.load(f)
-                    X_erased = np.vstack(e_data['all_erased'])
-                except FileNotFoundError: continue
-
-            if X_erased.shape[0] == X_original.shape[0]:
-                # === MODIFIED CALL: Pass concept name to evaluation function ===
-                raw_scores.loc[probed_concept, erased_concept] = train_probe_and_eval(X_erased, Z_labels, probed_concept)
+        # ======================================================================
+        # === START: NEW UNIFIED DATA LOADING AND SPLITTING LOGIC ===
+        # ======================================================================
+        
+        # 1. Load Original Data (X_full and Z_full) for the concept being probed.
+        orig_path = f"{base_dir}/Embeddings/Original/{dataset_dir_name}/Embed_{dataset_name_short}_{p_info['file_key']}.pkl"
+        try:
+            with open(orig_path, "rb") as f: data = pickle.load(f)
+            X_full = np.vstack([s["embeddings_by_layer"][8].numpy() for s in data])
+            
+            # This logic handles ld (scalar) vs. sd/pe (vector) correctly.
+            if probed_concept == 'ld':
+                Z_full = np.array([val for s in data for val in s[p_info['internal_key']]]).reshape(-1, 1)
             else:
-                print(f"  - WARNING: Mismatch in data points for erased concept '{erased_concept}'. Skipping cell.")
+                Z_full = np.vstack([s[p_info['internal_key']].cpu().numpy() for s in data])
+        except FileNotFoundError:
+            print(f"  - WARNING: Original data for '{probed_concept}' not found at {orig_path}. Skipping row."); continue
 
-    # --- Calculate RDI and Display/Save Results ---
+        # 2. Determine which subset of data to use for probing based on the method.
+        if method == "leace":
+            # For LEACE, we must probe on the 20% test set.
+            # Re-create the split using the same SEED used in the erasure script.
+            indices = np.arange(X_full.shape[0])
+            _, test_indices = train_test_split(indices, test_size=0.2, random_state=SEED)
+            X_probe_orig = X_full[test_indices]
+            Z_probe_labels = Z_full[test_indices]
+        else: # oracle
+            # For Oracle, we probe on the full dataset.
+            X_probe_orig = X_full
+            Z_probe_labels = Z_full
+            
+        # 3. Probe the original (unerased) embeddings.
+        raw_scores.loc[probed_concept, "original"] = train_probe_and_eval(X_probe_orig, Z_probe_labels, probed_concept, seed=SEED)
+
+        # 4. Probe the erased embeddings for each concept.
+        for erased_concept in CONCEPTS:
+            # Use the new, unified file path.
+            erased_path = f"{base_dir}/Embeddings/Erased/{dataset_dir_name}/{method}_{dataset_name_short}_{erased_concept}.pkl"
+            try:
+                with open(erased_path, "rb") as f: e_data = pickle.load(f)
+                
+                # Check if the loaded data is a NumPy array, as expected.
+                if isinstance(e_data, np.ndarray):
+                    X_full_erased = e_data
+                else:
+                    print(f"\n  - FATAL ERROR: Unknown data format in '{erased_path}'. Expected np.ndarray, got {type(e_data)}.")
+                    continue
+                
+                # Select the correct subset of the erased data based on the method.
+                if method == "leace":
+                    X_erased_probe = X_full_erased[test_indices]
+                else: # oracle
+                    X_erased_probe = X_full_erased
+
+                if X_erased_probe.shape[0] == Z_probe_labels.shape[0]:
+                    raw_scores.loc[probed_concept, erased_concept] = train_probe_and_eval(X_erased_probe, Z_probe_labels, probed_concept, seed=SEED)
+                else:
+                    print(f"  - WARNING: Mismatch for Z:'{probed_concept}' ({Z_probe_labels.shape[0]}) and X_erased:'{erased_concept}' ({X_erased_probe.shape[0]}). Skipping cell.")
+
+            except FileNotFoundError:
+                print(f"  - INFO: Erased file '{erased_path}' not found. Cell will be NaN.")
+                continue
+        # ======================================================================
+        # === END: NEW UNIFIED DATA LOADING AND SPLITTING LOGIC ===
+        # ======================================================================
+
+    # --- RDI Calculation and Display/Save Results (Unchanged - Correct) ---
     rdi_scores = pd.DataFrame(index=CONCEPTS, columns=CONCEPTS, dtype=float)
     for p_concept in CONCEPTS:
         p_before = raw_scores.loc[p_concept, "original"]
@@ -133,7 +145,6 @@ def main():
         for e_concept in CONCEPTS:
             p_after = raw_scores.loc[p_concept, e_concept]
             if pd.isna(p_after): continue
-            # For Cosine Similarity and R2, the baseline/chance score is 0
             denominator = p_before
             rdi = 1.0 - p_after / denominator if abs(denominator) > 1e-9 else 0.0
             rdi_scores.loc[p_concept, e_concept] = rdi
