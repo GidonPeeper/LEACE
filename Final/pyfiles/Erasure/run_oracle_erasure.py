@@ -2,7 +2,7 @@
 Performs ORACLE "in-sample" erasure using the official `concept-erasure`
 library. This version is updated to save the full erased embeddings as a single
 NumPy array, consistent with the LEACE script's output format.
-MODIFIED: Added an optional --scaling flag.
+With optional --scaling flag.
 """
 import argparse
 import pickle
@@ -11,13 +11,12 @@ import json
 import torch
 import numpy as np
 from concept_erasure.oracle import OracleFitter
-from sklearn.preprocessing import StandardScaler  # ADDED
+from sklearn.preprocessing import StandardScaler 
 
 def main():
     parser = argparse.ArgumentParser(description="Oracle erasure with official library.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True)
     parser.add_argument("--concept", choices=["pos", "deplab", "sd", "ld", "pe"], required=True)
-    # ADDED a new argument for scaling
     parser.add_argument("--scaling", choices=["on", "off"], default="on", help="Enable StandardScaler before erasure ('on') or not ('off').")
     args = parser.parse_args()
 
@@ -39,9 +38,7 @@ def main():
     dataset_dir_name_scaled = dataset_dir_name_base + scaling_suffix
     
     base_dir = "Final"
-    # emb_file still reads from the original, unscaled embeddings
     emb_file = f"{base_dir}/Embeddings/Original/{dataset_dir_name_base}/Embed_{dataset_name}_{args.concept}.pkl"
-    # Output directories now depend on the scaling flag
     erased_dir = f"{base_dir}/Embeddings/Erased/{dataset_dir_name_scaled}"
     results_dir = f"{base_dir}/Results/{dataset_dir_name_scaled}"
     for d in [erased_dir, results_dir]:
@@ -53,7 +50,7 @@ def main():
     with open(emb_file, "rb") as f:
         data = pickle.load(f)
 
-    # --- Prepare Full Tensors (Unchanged) ---
+    # --- Prepare Full Tensors ---
     print("Preparing full data tensors...")
     X_full = torch.cat([s["embeddings_by_layer"][LAYER] for s in data]).to(device).float()
     if args.concept in ["pos", "deplab"]:
@@ -68,7 +65,7 @@ def main():
         Z_full = torch.cat([s[internal_concept_key] for s in data]).to(device).float()
     
     # =====================================================================
-    # === ADDED: PREPARE DATA FOR FITTING WITH/WITHOUT SCALING ===
+    # === PREPARE DATA FOR FITTING WITH/WITHOUT SCALING ===
     # =====================================================================
     if args.scaling == "on":
         print("Fitting StandardScaler and transforming data...")
@@ -78,14 +75,14 @@ def main():
         print("Skipping scaling step.")
         X_to_fit = X_full
 
-    # --- Fit and Erase on Full Dataset (Unchanged logic, but uses prepared data) ---
+    # --- Fit and Erase on Full Dataset ---
     print(f"Fitting Oracle eraser and erasing all {X_to_fit.shape[0]} samples...")
     fitter = OracleFitter.fit(X_to_fit, Z_full)
     eraser = fitter.eraser
     X_erased_processed = eraser(X_to_fit, Z_full)
 
     # =====================================================================
-    # === MODIFIED: ERASURE LOGIC NOW HANDLES SCALING ===
+    # === ERASURE LOGIC NOW HANDLES SCALING ===
     # =====================================================================
 
     # 1. Inverse transform if necessary to return to original embedding space.
@@ -103,7 +100,7 @@ def main():
     # 3. Calculate metrics on the FULL SET and save results.
     l2_distance = torch.norm(X_full - X_full_erased, dim=1).mean().item()
 
-    # Results saving is unchanged from your original
+    # Results saving 
     results_file = f"{results_dir}/oracle_{dataset_name}_{args.concept}_results.json"
     results = {
         "method": "oracle", "dataset": args.dataset, "concept": args.concept, "scaling": args.scaling,

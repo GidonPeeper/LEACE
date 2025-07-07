@@ -3,7 +3,7 @@ Performs LEACE erasure following the original paper's methodology.
 This version is updated to save the full erased embeddings array for the entire
 dataset, while still calculating metrics on the held-out test set.
 This ensures compatibility with the final probing script.
-MODIFIED: Added an optional --scaling flag.
+With optional --scaling flag.
 """
 import argparse
 import pickle
@@ -13,13 +13,12 @@ import torch
 import numpy as np
 from concept_erasure.leace import LeaceFitter
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler  # ADDED
+from sklearn.preprocessing import StandardScaler  
 
 def main():
     parser = argparse.ArgumentParser(description="LEACE erasure for test-set evaluation.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True)
     parser.add_argument("--concept", choices=["pos", "deplab", "sd", "ld", "pe"], required=True)
-    # ADDED a new argument for scaling
     parser.add_argument("--scaling", choices=["on", "off"], default="on", help="Enable StandardScaler before erasure ('on') or not ('off').")
     args = parser.parse_args()
 
@@ -57,7 +56,7 @@ def main():
     with open(emb_file, "rb") as f:
         data = pickle.load(f)
 
-    # --- Prepare Full Tensors (Unchanged) ---
+    # --- Prepare Full Tensors ---
     print("Preparing full data tensors...")
     X_full = torch.cat([s["embeddings_by_layer"][LAYER] for s in data]).to(device).float()
     if args.concept in ["pos", "deplab"]:
@@ -71,7 +70,7 @@ def main():
     else: # sd, pe
         Z_full = torch.cat([s[internal_concept_key] for s in data]).to(device).float()
     
-    # --- Split Data (Unchanged) ---
+    # --- Split Data ---
     print("Splitting data into 80% train and 20% test sets...")
     indices = np.arange(X_full.shape[0])
     train_indices, test_indices = train_test_split(indices, test_size=0.2, random_state=SEED)
@@ -79,7 +78,7 @@ def main():
     X_test, Z_test = X_full[test_indices], Z_full[test_indices]
     
     # =====================================================================
-    # === ADDED: PREPARE DATA FOR FITTING WITH/WITHOUT SCALING ===
+    # === PREPARE DATA FOR FITTING WITH/WITHOUT SCALING ===
     # =====================================================================
     if args.scaling == "on":
         print("Fitting StandardScaler and transforming data for fitting...")
@@ -91,13 +90,13 @@ def main():
         scaler = None # Ensure scaler is None if not used
         X_train_to_fit = X_train
 
-    # --- Fit Eraser on Train Set (Unchanged logic, but uses prepared data) ---
+    # --- Fit Eraser on Train Set (uses prepared data) ---
     print(f"Fitting LEACE eraser on {X_train_to_fit.shape[0]} training samples...")
     fitter = LeaceFitter.fit(X_train_to_fit, Z_train)
     eraser = fitter.eraser
 
     # =====================================================================
-    # === MODIFIED: ERASURE LOGIC NOW HANDLES SCALING ===
+    # === ERASURE LOGIC NOW HANDLES SCALING ===
     # =====================================================================
 
     # 1. Apply eraser to the FULL dataset, handling scaling if enabled.
@@ -111,13 +110,13 @@ def main():
         # Erase directly
         X_full_erased = eraser(X_full)
 
-    # Saving logic is unchanged from your original
+    # Saving 
     erased_emb_path = f"{erased_dir}/leace_{dataset_name}_{args.concept}.pkl"
     print(f"Saving FULL erased embeddings array to: {erased_emb_path}")
     with open(erased_emb_path, "wb") as f:
         pickle.dump(X_full_erased.cpu().numpy(), f)
 
-    # 2. Save the eraser OBJECT (Unchanged)
+    # 2. Save the eraser OBJECT 
     eraser_obj_file = f"{eraser_dir}/eraser_obj_leace_{dataset_name}_{args.concept}.pkl"
     print(f"Saving eraser object to: {eraser_obj_file}")
     with open(eraser_obj_file, "wb") as f:
@@ -134,7 +133,7 @@ def main():
         
     l2_distance = torch.norm(X_test - X_test_erased, dim=1).mean().item()
     
-    # Results saving is unchanged from your original
+    # Results saving 
     results_file = f"{results_dir}/leace_{dataset_name}_{args.concept}_results.json"
     results = {
         "method": "leace", "dataset": args.dataset, "concept": args.concept, "scaling": args.scaling,
