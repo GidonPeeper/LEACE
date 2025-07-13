@@ -1,16 +1,10 @@
 """
-A unified script to calculate L2 distances for all erasure experiments.
+A unified script to calculate L2 distances for all erasure experiments,
+using the most methodologically sound approach for each erasure type.
 
-This script standardizes the L2 score calculation by always comparing the
-original full dataset against the corresponding erased full dataset. This ensures
-a fair "apples-to-apples" comparison of the "cost" or "damage" inflicted by
-each erasure method and scaling condition.
-
-It will generate a single summary table showing the L2 distance for:
-- oracle (unscaled)
-- leace (unscaled)
-- leace (scaled)
-- regressout (unscaled)
+- For 'oracle' (in-sample), L2 is calculated on the full dataset.
+- For 'leace' and 'regressout' (generalization), L2 is calculated
+  exclusively on the held-out test set (20% of the data).
 """
 import argparse
 import pickle
@@ -18,93 +12,103 @@ import numpy as np
 import os
 import pandas as pd
 from tqdm import tqdm
+from sklearn.model_selection import train_test_split
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate L2 distances for all erasure experiments.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True, help="Dataset to analyze.")
+    parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the dataset to use, corresponding to the pre-generated embedding files.")
     args = parser.parse_args()
 
     # --- Setup ---
-    CONCEPTS = ["pos", "deplab", "ld", "sd", "pe"]
+    SEED = 42
+    # --- CHANGE: 'pe' removed from list of concepts ---
+    CONCEPTS = ["pos", "deplab", "ld", "sd"]
     dataset_name_short = "nar" if args.dataset == "narratives" else "ud"
     dataset_dir_name_base = "UD" if args.dataset == "ud" else "Narratives"
     base_dir = "Final"
 
-    # Define all the experimental conditions we want to test
+    # Create suffix for data fraction to append to filenames
+    file_suffix = f"_{args.data_fraction}pct" if args.data_fraction < 100 else ""
+
     conditions = [
         {"method": "oracle", "scaling": "off"},
         {"method": "leace", "scaling": "off"},
-        {"method": "leace", "scaling": "on"},
+        #{"method": "leace", "scaling": "on"},
         {"method": "regressout", "scaling": "off"},
     ]
     
-    # Create a DataFrame to store all results
     results_df = pd.DataFrame(index=CONCEPTS, columns=[f"{c['method']}_{c['scaling']}" for c in conditions], dtype=float)
 
-    print(f"\n--- Calculating L2 Distances for Dataset: {args.dataset.upper()} ---")
-    print("[Note: All scores are calculated between the original and erased full datasets.]\n")
+    print(f"\n--- Calculating L2 Distances for Dataset: {args.dataset.upper()} (Fraction: {args.data_fraction}%) ---")
 
     for concept in tqdm(CONCEPTS, desc="Processing Concepts"):
         # --- 1. Load the Original Full Dataset (X_full) ---
-        # This only needs to be done once per concept
+        # --- CHANGE: 'pe' removed from concept map ---
         concept_map = { 
-            "pos": "pos", "deplab": "deplab", "sd": "sd", "ld": "ld", "pe": "pe" 
+            "pos": "pos", "deplab": "deplab", "sd": "sd", "ld": "ld"
         }
         fkey = concept_map[concept]
-        orig_path = f"{base_dir}/Embeddings/Original/{dataset_dir_name_base}/Embed_{dataset_name_short}_{fkey}.pkl"
+        orig_path = f"{base_dir}/Embeddings/Original/{dataset_dir_name_base}/Embed_{dataset_name_short}_{fkey}{file_suffix}.pkl"
         
         try:
-            with open(orig_path, "rb") as f:
-                data = pickle.load(f)
-            # We assume Layer 8 for consistency
+            with open(orig_path, "rb") as f: data = pickle.load(f)
             X_full = np.vstack([s["embeddings_by_layer"][8].numpy() for s in data])
         except FileNotFoundError:
-            print(f"  - WARNING: Original file for '{concept}' not found at {orig_path}. Skipping concept.")
-            continue
+            print(f"  - WARNING: Original file for '{concept}' not found at {orig_path}. Skipping."); continue
 
-        # --- 2. Loop through each experimental condition ---
+        # --- 2. Isolate the test set indices for leace/regressout ---
+        indices = np.arange(X_full.shape[0])
+        _, test_indices = train_test_split(indices, test_size=0.2, random_state=SEED)
+        X_test_original = X_full[test_indices]
+
+        # --- 3. Loop through each experimental condition ---
         for cond in conditions:
-            method = cond["method"]
-            scaling_str = cond["scaling"]
+            method, scaling_str = cond["method"], cond["scaling"]
+            col_name = f"{method}_{scaling_str}"
             
-            # Construct the path to the erased file
             scaling_suffix = "_Scaled" if scaling_str == "on" else "_Unscaled"
             erased_dir_name = dataset_dir_name_base + scaling_suffix
-            erased_path = f"{base_dir}/Embeddings/Erased/{erased_dir_name}/{method}_{dataset_name_short}_{concept}.pkl"
+            erased_path = f"{base_dir}/Embeddings/Erased/{erased_dir_name}/{method}_{dataset_name_short}_{concept}{file_suffix}.pkl"
             
             try:
-                with open(erased_path, "rb") as f:
-                    X_full_erased = pickle.load(f)
-                
-                # Ensure it's a flat numpy array
-                if not isinstance(X_full_erased, np.ndarray):
-                    raise TypeError("Loaded data is not a numpy array.")
-                if X_full_erased.shape != X_full.shape:
-                    raise ValueError("Shape mismatch between original and erased embeddings.")
-                    
-                # --- 3. Calculate L2 Distance ---
-                l2_distance = np.linalg.norm(X_full - X_full_erased, axis=1).mean()
-                
-                # Store it in the DataFrame
-                col_name = f"{method}_{scaling_str}"
+                with open(erased_path, "rb") as f: X_full_erased = pickle.load(f)
+                if not isinstance(X_full_erased, np.ndarray): raise TypeError("Not a numpy array")
+
+                # --- 4. Select the correct subset for L2 calculation ---
+                if method == "oracle":
+                    # For Oracle, compare the full original to the full erased
+                    X_orig_subset = X_full
+                    X_erased_subset = X_full_erased
+                    note = "on full dataset"
+                else: # leace and regressout
+                    # For generalization methods, compare the original test set
+                    # to the corresponding slice of the erased data.
+                    X_orig_subset = X_test_original
+                    X_erased_subset = X_full_erased[test_indices]
+                    note = "on held-out test set"
+
+                if X_orig_subset.shape != X_erased_subset.shape:
+                    raise ValueError("Shape mismatch between original and erased subsets.")
+
+                l2_distance = np.linalg.norm(X_orig_subset - X_erased_subset, axis=1).mean()
                 results_df.loc[concept, col_name] = l2_distance
                 
             except (FileNotFoundError, TypeError, ValueError) as e:
-                # print(f"  - INFO: Could not process {erased_path}. Reason: {e}. Skipping.")
-                results_df.loc[concept, f"{method}_{scaling_str}"] = np.nan
+                results_df.loc[concept, col_name] = np.nan
                 continue
                 
-    # --- 4. Display and Save the Final Table ---
+    # --- 5. Display and Save the Final Table ---
     pd.set_option('display.float_format', '{:.4f}'.format)
     print("\n\n" + "="*80)
-    print(f"FINAL L2 DISTANCE SUMMARY for Dataset: {args.dataset.upper()}")
-    print("Scores represent the average geometric distance between original and erased vectors.")
+    print(f"FINAL L2 DISTANCE SUMMARY for Dataset: {args.dataset.upper()} (Fraction: {args.data_fraction}%)")
+    print("Scores represent avg geometric distance. Oracle is on full data; others on test set.")
     print("="*80 + "\n")
     print(results_df)
     
-    results_dir = f"Final/Results/{dataset_dir_name_base}" # Save to base results dir
+    results_dir = f"{base_dir}/Results/{dataset_dir_name_base}"
     os.makedirs(results_dir, exist_ok=True)
-    save_path = f"{results_dir}/l2_distance_summary_{args.dataset}.csv"
+    save_path = f"{results_dir}/l2_distance_summary_{args.dataset}{file_suffix}.csv"
     results_df.to_csv(save_path)
     print(f"\nSummary table saved to: {save_path}")
 

@@ -1,5 +1,5 @@
 """
-A unified probing script to analyze the erasure of five core concepts.
+A unified probing script to analyze the erasure of four core concepts.
 This version is updated to include 'regressout' as a valid erasure method,
 treating it as a generalization experiment evaluated on the test set, just like LEACE.
 """
@@ -52,35 +52,37 @@ def train_probe_and_eval(X, y, task_type, seed=42):
 def main():
     parser = argparse.ArgumentParser(description="Run a unified probing analysis for all concepts.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True)
-    # --- CHANGE 1: Add 'regressout' to the list of valid choices ---
     parser.add_argument("--method", choices=["leace", "oracle", "regressout"], required=True)
     parser.add_argument("--scaling", choices=["on", "off"], default="on", help="Probe the scaled ('on') or unscaled ('off') erasure results.")
+    parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the dataset to use, corresponding to the pre-generated embedding files.")
     args = parser.parse_args()
 
-    # --- Setup (Unchanged) ---
+    # --- Setup ---
     method, SEED = args.method, 42
-    CONCEPTS = ["pos", "deplab", "ld", "sd", "pe"]
+    # --- CHANGE: 'pe' removed from list of concepts ---
+    CONCEPTS = ["pos", "deplab", "ld", "sd"]
     dataset_name_short = "nar" if args.dataset == "narratives" else "ud"
+    # --- CHANGE: 'pe' removed from concept map ---
     concept_map = {
         "pos":    {"ikey": "pos_tags", "fkey": "pos",    "task": "classification"},
         "deplab": {"ikey": "deplabs",  "fkey": "deplab", "task": "classification"},
         "ld":     {"ikey": "ld",       "fkey": "ld",     "task": "regression_r2"},
         "sd":     {"ikey": "sd",       "fkey": "sd",     "task": "regression_r2"},
-        "pe":     {"ikey": "pe",       "fkey": "pe",     "task": "regression_cos"}
     }
+    file_suffix = f"_{args.data_fraction}pct" if args.data_fraction < 100 else ""
     scaling_suffix = "_Scaled" if args.scaling == "on" else "_Unscaled"
     dataset_dir_name_base = "UD" if args.dataset == "ud" else "Narratives"
     dataset_dir_name_probe = dataset_dir_name_base + scaling_suffix
     base_dir = "Final"
 
-    print(f"\n\n{'='*80}\nUNIFIED PROBE (Method: {method.upper()}, Dataset: {args.dataset.upper()}, Scaling: {args.scaling.upper()})\n{'='*80}")
+    print(f"\n\n{'='*80}\nUNIFIED PROBE (Method: {method.upper()}, Dataset: {args.dataset.upper()}, Scaling: {args.scaling.upper()}, Fraction: {args.data_fraction}%)\n{'='*80}")
     raw_scores = pd.DataFrame(index=CONCEPTS, columns=["original"] + CONCEPTS, dtype=float)
     chance_scores = {}
 
     for p_concept in tqdm(CONCEPTS, desc="Probing Concept"):
         p_info = concept_map[p_concept]
         
-        orig_path = f"{base_dir}/Embeddings/Original/{dataset_dir_name_base}/Embed_{dataset_name_short}_{p_info['fkey']}.pkl"
+        orig_path = f"{base_dir}/Embeddings/Original/{dataset_dir_name_base}/Embed_{dataset_name_short}_{p_info['fkey']}{file_suffix}.pkl"
         try:
             with open(orig_path, "rb") as f: data = pickle.load(f)
             X_full = np.vstack([s["embeddings_by_layer"][8].numpy() for s in data])
@@ -95,7 +97,6 @@ def main():
         except FileNotFoundError:
             print(f"  - WARNING: Original data for '{p_concept}' not found at {orig_path}. Skipping."); continue
 
-        # --- CHANGE 2: Treat 'regressout' the same as 'leace' for splitting ---
         if method in ["leace", "regressout"]:
             indices = np.arange(X_full.shape[0])
             _, test_indices = train_test_split(indices, test_size=0.2, random_state=SEED)
@@ -112,7 +113,7 @@ def main():
         raw_scores.loc[p_concept, "original"] = train_probe_and_eval(X_probe_orig, Z_probe_labels, p_info["task"], seed=SEED)
 
         for e_concept in CONCEPTS:
-            erased_path = f"{base_dir}/Embeddings/Erased/{dataset_dir_name_probe}/{method}_{dataset_name_short}_{e_concept}.pkl"
+            erased_path = f"{base_dir}/Embeddings/Erased/{dataset_dir_name_probe}/{method}_{dataset_name_short}_{e_concept}{file_suffix}.pkl"
             try:
                 with open(erased_path, "rb") as f: X_full_erased = pickle.load(f)
                 if not isinstance(X_full_erased, np.ndarray):
@@ -148,8 +149,8 @@ def main():
     results_dir = f"Final/Results/{dataset_dir_name_probe}"
     scaling_filename = "scaled" if args.scaling == "on" else "unscaled"
     os.makedirs(results_dir, exist_ok=True)
-    raw_scores.to_csv(f"{results_dir}/unified_raw_{args.dataset}_{method}_{scaling_filename}.csv")
-    rdi_scores.to_csv(f"{results_dir}/unified_rdi_{args.dataset}_{method}_{scaling_filename}.csv")
+    raw_scores.to_csv(f"{results_dir}/unified_raw_{args.dataset}_{method}_{scaling_filename}{file_suffix}.csv")
+    rdi_scores.to_csv(f"{results_dir}/unified_rdi_{args.dataset}_{method}_{scaling_filename}{file_suffix}.csv")
     print(f"\nResults tables saved to CSV files in: {results_dir}")
 
 if __name__ == "__main__":

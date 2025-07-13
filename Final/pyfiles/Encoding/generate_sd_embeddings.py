@@ -160,7 +160,11 @@ def average_subtokens_per_word(hidden_states, word_to_token_positions):
 def main():
     parser = argparse.ArgumentParser(description="Generate embeddings with padded syntactic distance vectors.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True)
+    parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the filtered dataset to use for encoding.")
     args = parser.parse_args()
+
+    # Set seed for reproducibility of data subsetting
+    np.random.seed(42)
 
     # The concept key is fixed for this script
     CONCEPT_KEY = "sd"
@@ -168,7 +172,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     print(f"--- Configuration ---")
-    print(f"Dataset: {args.dataset}, Concept: {CONCEPT_KEY.upper()}, Device: {device}")
+    print(f"Dataset: {args.dataset}, Concept: {CONCEPT_KEY.upper()}, Device: {device}, Data Fraction: {args.data_fraction}%")
 
     # Identical file loading logic from your reference script
     if args.dataset == "narratives":
@@ -191,6 +195,15 @@ def main():
     if not golden_sentences:
         print("\nPipeline resulted in zero sentences. Exiting."); return
 
+    # --- SUBSETTING LOGIC ---
+    if args.data_fraction < 100:
+        print(f"\n--- Subsetting Data to {args.data_fraction}% ---")
+        num_samples = int(len(golden_sentences) * (args.data_fraction / 100.0))
+        # np.random.seed(42) was set at the start of main for reproducibility
+        subset_indices = np.random.choice(len(golden_sentences), num_samples, replace=False)
+        golden_sentences = [golden_sentences[i] for i in subset_indices]
+        print(f"Using a random subset of {len(golden_sentences)} sentences for encoding.")
+
     final_sentences = add_padded_distance_vectors(golden_sentences)
 
     tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
@@ -199,7 +212,14 @@ def main():
     model = GPT2Model.from_pretrained("gpt2", output_hidden_states=True).to(device).eval()
     all_embeddings = encode_with_gpt2(tokenized_data, model, device, concept_key=CONCEPT_KEY)
 
-    save_path = os.path.join(save_dir, f"Embed_{dataset_name_short}_{CONCEPT_KEY}.pkl")
+    # --- DYNAMIC FILENAME LOGIC ---
+    if args.data_fraction == 100:
+        file_suffix = ""
+    else:
+        file_suffix = f"_{args.data_fraction}pct"
+
+    save_path = os.path.join(save_dir, f"Embed_{dataset_name_short}_{CONCEPT_KEY}{file_suffix}.pkl")
+    
     with open(save_path, "wb") as f: pickle.dump(all_embeddings, f)
     print(f"\n--- DONE ---\nSaved {len(all_embeddings)} sentences to {save_path}")
 

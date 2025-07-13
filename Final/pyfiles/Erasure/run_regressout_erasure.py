@@ -61,6 +61,7 @@ def main():
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True)
     parser.add_argument("--concept", choices=["pos", "deplab", "sd", "ld", "pe"], required=True)
     parser.add_argument("--scaling", choices=["on", "off"], default="off", help="Enable StandardScaler before erasure ('on') or not ('off').")
+    parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the dataset to use, corresponding to the pre-generated embedding file.")
     args = parser.parse_args()
 
     # --- Setup ---
@@ -75,19 +76,26 @@ def main():
     internal_concept_key = concept_key_map[args.concept]
     
     # --- File Paths ---
+    file_suffix = f"_{args.data_fraction}pct" if args.data_fraction < 100 else ""
     scaling_suffix = "_Scaled" if args.scaling == "on" else "_Unscaled"
     dataset_dir_name_probe = dataset_dir_name_base + scaling_suffix
     base_dir = "Final"
-    emb_file = f"{base_dir}/Embeddings/Original/{dataset_dir_name_base}/Embed_{dataset_name}_{args.concept}.pkl"
+    emb_file = f"{base_dir}/Embeddings/Original/{dataset_dir_name_base}/Embed_{dataset_name}_{args.concept}{file_suffix}.pkl"
     erased_dir = f"{base_dir}/Embeddings/Erased/{dataset_dir_name_probe}"
     results_dir = f"{base_dir}/Results/{dataset_dir_name_probe}"
     for d in [erased_dir, results_dir]:
         os.makedirs(d, exist_ok=True)
 
     print(f"--- Running 'Regressing Out' Baseline (Scaling: {args.scaling.upper()}) ---")
-    print(f"Dataset: {args.dataset}, Concept to Erase: {args.concept}")
+    print(f"Dataset: {args.dataset}, Concept: {args.concept}, Data Fraction: {args.data_fraction}%")
+    print(f"Loading embeddings from: {emb_file}")
 
-    with open(emb_file, "rb") as f: data = pickle.load(f)
+    try:
+        with open(emb_file, "rb") as f: data = pickle.load(f)
+    except FileNotFoundError:
+        print(f"ERROR: Input file not found at {emb_file}")
+        print("Please ensure you have generated the embeddings for this data fraction first.")
+        return
 
     # --- Prepare Full Numpy Arrays ---
     X_full = np.vstack([s["embeddings_by_layer"][LAYER].numpy() for s in data])
@@ -141,16 +149,17 @@ def main():
     print(f"\nL2 distance on test set: {l2_distance_test:.4f}")
 
     # --- Save the "erased" embeddings (residuals) ---
-    erased_emb_path = f"{erased_dir}/regressout_{dataset_name}_{args.concept}.pkl"
+    erased_emb_path = f"{erased_dir}/regressout_{dataset_name}_{args.concept}{file_suffix}.pkl"
     print(f"Saving FULL erased (residual) embeddings array to: {erased_emb_path}")
     with open(erased_emb_path, "wb") as f: pickle.dump(X_full_erased, f)
         
     # --- Save Results Summary ---
-    results_file = f"{results_dir}/regressout_{dataset_name}_{args.concept}_results.json"
+    results_file = f"{results_dir}/regressout_{dataset_name}_{args.concept}{file_suffix}_results.json"
     results = {
         "method": "regressout", "dataset": args.dataset, "concept": args.concept, "scaling": args.scaling,
+        "data_fraction_used": args.data_fraction,
         "l2_distance_on_test_set": float(l2_distance_test),
-        "notes": "L2 distance is between original test vectors and their computed residuals."
+        "notes": f"L2 distance is between original test vectors and their computed residuals, on the {args.data_fraction}% data subset."
     }
     print(f"Saving results summary to: {results_file}")
     with open(results_file, "w") as f: json.dump(results, f, indent=4)

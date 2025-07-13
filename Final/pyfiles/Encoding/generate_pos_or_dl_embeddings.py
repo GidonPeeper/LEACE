@@ -127,7 +127,11 @@ def main():
     parser = argparse.ArgumentParser(description="Generate GPT-2 embeddings with aligned POS or Deplab labels.")
     parser.add_argument("--dataset", choices=["narratives", "ud"], required=True, help="The dataset to process.")
     parser.add_argument("--concept", choices=["pos", "deplab"], required=True, help="The concept to align (pos or deplab).")
+    parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the filtered dataset to use for encoding.")
     args = parser.parse_args()
+
+    # Set seed for reproducibility of data subsetting
+    np.random.seed(42)
 
     # This map translates the user-friendly CLI argument to the actual key in the parsed data.
     # It also provides the key to use in the output filename.
@@ -141,7 +145,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     print(f"--- Configuration ---")
-    print(f"Dataset: {args.dataset}, Concept: {args.concept} (using data key '{internal_concept_key}'), Device: {device}")
+    print(f"Dataset: {args.dataset}, Concept: {args.concept} (using data key '{internal_concept_key}'), Device: {device}, Data Fraction: {args.data_fraction}%")
 
     if args.dataset == "narratives":
         dataset_name_short = "nar"
@@ -164,14 +168,30 @@ def main():
         print("\nPipeline resulted in zero sentences. Cannot proceed. Exiting.")
         return
 
+    # --- SUBSETTING LOGIC ---
+    if args.data_fraction < 100:
+        print(f"\n--- Subsetting Data to {args.data_fraction}% ---")
+        num_samples = int(len(golden_sentences) * (args.data_fraction / 100.0))
+        # np.random.seed(42) was set at the start of main for reproducibility
+        subset_indices = np.random.choice(len(golden_sentences), num_samples, replace=False)
+        golden_sentences = [golden_sentences[i] for i in subset_indices]
+        print(f"Using a random subset of {len(golden_sentences)} sentences for encoding.")
+
     tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
     tokenized_data = tokenize_and_align(golden_sentences, tokenizer, concept_key=internal_concept_key)
 
     model = GPT2Model.from_pretrained("gpt2", output_hidden_states=True).to(device).eval()
     all_embeddings = encode_with_gpt2(tokenized_data, model, device, concept_key=internal_concept_key)
 
+    # --- DYNAMIC FILENAME LOGIC ---
+    if args.data_fraction == 100:
+        file_suffix = ""
+    else:
+        file_suffix = f"_{args.data_fraction}pct"
+
     # Use the short, user-friendly key for the filename for compatibility with the erasure script.
-    save_path = os.path.join(save_dir, f"Embed_{dataset_name_short}_{file_concept_key}.pkl")
+    save_path = os.path.join(save_dir, f"Embed_{dataset_name_short}_{file_concept_key}{file_suffix}.pkl")
+    
     with open(save_path, "wb") as f: pickle.dump(all_embeddings, f)
     print(f"\n--- DONE ---\nSaved {len(all_embeddings)} sentences to {save_path}")
 
