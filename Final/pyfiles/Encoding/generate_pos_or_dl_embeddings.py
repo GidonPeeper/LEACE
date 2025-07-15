@@ -1,10 +1,6 @@
 """
 Generates GPT-2 embeddings with aligned categorical labels (POS tags or
 Dependency Relations).
-
-This script uses the universal parsing and filtering pipeline to ensure perfect
-data alignment with other concept embeddings. It is fully command-line driven
-for selecting the dataset and the specific concept to embed.
 """
 import argparse
 import pickle
@@ -17,7 +13,7 @@ from transformers import GPT2Tokenizer, GPT2Model
 from tqdm import tqdm
 
 # ======================================================================
-# Universal Data Loading and Filtering Pipeline (Now Fully Consistent)
+# Universal Data Loading and Filtering Pipeline 
 # ======================================================================
 
 def parse_conllu_universal(file_path):
@@ -43,9 +39,6 @@ def filter_and_validate_sentences(sentences):
     print("\n--- Step 2: Filtering Data to Create Golden Set ---")
     initial_count = len(sentences)
     
-    # *** CRITICAL FIX FOR CONSISTENCY ***
-    # Changed num_words > 0 to num_words > 1 to match other scripts.
-    # This guarantees the "golden set" of sentences is identical for all concepts.
     valid_sentences = []
     for s in sentences:
         num_words = len(s['words'])
@@ -87,7 +80,6 @@ def tokenize_and_align(sentences, tokenizer, concept_key):
             original_word_indices.append(i)
         if not input_ids: continue
 
-        # This list comprehension is correct for categorical (string) labels
         aligned_labels = [labels[i] for i in original_word_indices]
         
         tokenized_sentences.append({
@@ -130,11 +122,8 @@ def main():
     parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the filtered dataset to use for encoding.")
     args = parser.parse_args()
 
-    # Set seed for reproducibility of data subsetting
     np.random.seed(42)
 
-    # This map translates the user-friendly CLI argument to the actual key in the parsed data.
-    # It also provides the key to use in the output filename.
     concept_map = {
         "pos": {"internal_key": "pos_tags", "file_key": "pos"},
         "deplab": {"internal_key": "deplabs", "file_key": "deplab"}
@@ -151,7 +140,7 @@ def main():
         dataset_name_short = "nar"
         data_files = ["data/narratives/train_clean.conllu", "data/narratives/test_clean.conllu"]
         save_dir = "Final/Embeddings/Original/Narratives"
-    else: # args.dataset == "ud"
+    else: 
         dataset_name_short = "ud"
         data_files = ["data/ud_ewt/en_ewt-ud-train.conllu", "data/ud_ewt/en_ewt-ud-dev.conllu", "data/ud_ewt/en_ewt-ud-test.conllu"]
         save_dir = "Final/Embeddings/Original/UD"
@@ -172,7 +161,6 @@ def main():
     if args.data_fraction < 100:
         print(f"\n--- Subsetting Data to {args.data_fraction}% ---")
         num_samples = int(len(golden_sentences) * (args.data_fraction / 100.0))
-        # np.random.seed(42) was set at the start of main for reproducibility
         subset_indices = np.random.choice(len(golden_sentences), num_samples, replace=False)
         golden_sentences = [golden_sentences[i] for i in subset_indices]
         print(f"Using a random subset of {len(golden_sentences)} sentences for encoding.")
@@ -183,13 +171,11 @@ def main():
     model = GPT2Model.from_pretrained("gpt2", output_hidden_states=True).to(device).eval()
     all_embeddings = encode_with_gpt2(tokenized_data, model, device, concept_key=internal_concept_key)
 
-    # --- DYNAMIC FILENAME LOGIC ---
     if args.data_fraction == 100:
         file_suffix = ""
     else:
         file_suffix = f"_{args.data_fraction}pct"
 
-    # Use the short, user-friendly key for the filename for compatibility with the erasure script.
     save_path = os.path.join(save_dir, f"Embed_{dataset_name_short}_{file_concept_key}{file_suffix}.pkl")
     
     with open(save_path, "wb") as f: pickle.dump(all_embeddings, f)

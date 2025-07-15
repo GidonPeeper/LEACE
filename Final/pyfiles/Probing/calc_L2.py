@@ -22,7 +22,6 @@ def main():
 
     # --- Setup ---
     SEED = 42
-    # --- CHANGE: 'pe' removed from list of concepts ---
     CONCEPTS = ["pos", "deplab", "ld", "sd"]
     dataset_name_short = "nar" if args.dataset == "narratives" else "ud"
     dataset_dir_name_base = "UD" if args.dataset == "ud" else "Narratives"
@@ -34,7 +33,7 @@ def main():
     conditions = [
         {"method": "oracle", "scaling": "off"},
         {"method": "leace", "scaling": "off"},
-        #{"method": "leace", "scaling": "on"},
+        {"method": "leace", "scaling": "on"}, # Irrelevant for experiment with 1%, 10%, and 100% data.
         {"method": "regressout", "scaling": "off"},
     ]
     
@@ -44,7 +43,6 @@ def main():
 
     for concept in tqdm(CONCEPTS, desc="Processing Concepts"):
         # --- 1. Load the Original Full Dataset (X_full) ---
-        # --- CHANGE: 'pe' removed from concept map ---
         concept_map = { 
             "pos": "pos", "deplab": "deplab", "sd": "sd", "ld": "ld"
         }

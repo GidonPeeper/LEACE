@@ -106,7 +106,7 @@ def tokenize_and_align(sentences, tokenizer, concept_key):
         # This logic handles both lists of scalars (ld) and tensors of vectors (pe)
         if isinstance(labels, list):
             aligned_labels = [labels[i] for i in original_word_indices]
-        else: # It's a tensor
+        else: 
             aligned_labels = labels[original_word_indices]
             
         tokenized_sentences.append({
@@ -117,7 +117,6 @@ def tokenize_and_align(sentences, tokenizer, concept_key):
 
 def encode_with_gpt2(tokenized_sentences, model, device, concept_key):
     print("\n--- Step 4: Encoding with GPT-2 ---")
-    # ... (This function is identical to the one in your script) ...
     all_outputs = []
     for sentence in tqdm(tokenized_sentences, desc="Encoding with GPT-2"):
         input_ids = torch.tensor(sentence["input_ids"]).unsqueeze(0).to(device)
@@ -134,7 +133,6 @@ def encode_with_gpt2(tokenized_sentences, model, device, concept_key):
     return all_outputs
 
 def average_subtokens_per_word(hidden_states, word_to_token_positions):
-    # ... (This function is identical to the one in your script) ...
     word_embeddings = []
     for token_idxs in word_to_token_positions:
         if not token_idxs: continue
@@ -151,10 +149,8 @@ def main():
     parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the filtered dataset to use for encoding.")
     args = parser.parse_args()
 
-    # Set seed for reproducibility of data subsetting
     np.random.seed(42)
 
-    # The concept_map now translates the new --positional_type argument
     concept_map = {
         "ld": {"internal_key": "ld", "file_key": "ld"},
         "pe": {"internal_key": "pe", "file_key": "pe"}
@@ -192,7 +188,6 @@ def main():
     if args.data_fraction < 100:
         print(f"\n--- Subsetting Data to {args.data_fraction}% ---")
         num_samples = int(len(golden_sentences) * (args.data_fraction / 100.0))
-        # np.random.seed(42) was set at the start of main for reproducibility
         subset_indices = np.random.choice(len(golden_sentences), num_samples, replace=False)
         golden_sentences = [golden_sentences[i] for i in subset_indices]
         print(f"Using a random subset of {len(golden_sentences)} sentences for encoding.")

@@ -59,10 +59,8 @@ def main():
 
     # --- Setup ---
     method, SEED = args.method, 42
-    # --- CHANGE: 'pe' removed from list of concepts ---
     CONCEPTS = ["pos", "deplab", "ld", "sd"]
     dataset_name_short = "nar" if args.dataset == "narratives" else "ud"
-    # --- CHANGE: 'pe' removed from concept map ---
     concept_map = {
         "pos":    {"ikey": "pos_tags", "fkey": "pos",    "task": "classification"},
         "deplab": {"ikey": "deplabs",  "fkey": "deplab", "task": "classification"},

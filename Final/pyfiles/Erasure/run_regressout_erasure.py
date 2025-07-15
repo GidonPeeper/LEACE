@@ -1,9 +1,6 @@
 """
 Performs concept erasure using the "Regressing Out" baseline method.
 
-This script is a direct parallel to the LEACE erasure script, including the
-optional --scaling flag, to ensure a fair comparison.
-
 The method replaces embeddings entirely with the residuals of a linear regression.
 The regression is trained on 80% of the data. This script saves both the full
 "erased" (residual) dataset for probing, and a results file containing the
@@ -142,9 +139,6 @@ def main():
     # =====================================================================
 
     # Calculate L2 distance between original test vectors and their residuals
-    # This measures how much the vectors were changed/replaced.
-    # Note: If scaled, the X_test_erased (residuals) are in the scaled space.
-    # We must compare them to the scaled original X_test for a fair comparison.
     l2_distance_test = np.linalg.norm(X_test_to_erase - X_test_erased, axis=1).mean()
     print(f"\nL2 distance on test set: {l2_distance_test:.4f}")
 

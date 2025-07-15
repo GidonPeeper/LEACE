@@ -19,11 +19,10 @@ from transformers import GPT2Tokenizer, GPT2Model
 from tqdm import tqdm
 
 # ======================================================================
-# Universal Data Loading and Filtering Pipeline (Identical to your script)
+# Universal Data Loading and Filtering Pipeline
 # ======================================================================
 
 def parse_conllu_universal(file_path):
-    # ... (Identical to your reference script) ...
     sentences = []
     try:
         with open(file_path, "r", encoding="utf-8") as f:
@@ -38,7 +37,6 @@ def parse_conllu_universal(file_path):
     return sentences
 
 def filter_and_validate_sentences(sentences):
-    # ... (Identical to your reference script) ...
     print("\n--- Step 2: Filtering Data to Create Golden Set ---")
     initial_count = len(sentences)
     valid_sentences = []
@@ -65,7 +63,6 @@ def add_padded_distance_vectors(sentences):
     """Computes distance matrices, then converts them to padded per-word vectors."""
     print("\n--- Step 3: Computing Padded Syntactic Distance Vectors ---")
     
-    # First pass: compute matrices to find the max_len for padding
     max_len = 0
     temp_sentences = []
     for s in tqdm(sentences, desc="Computing matrices"):
@@ -85,16 +82,14 @@ def add_padded_distance_vectors(sentences):
     # Second pass: create the final padded vectors
     final_sentences = []
     for s in tqdm(temp_sentences, desc="Creating padded vectors"):
-        dist_matrix = s.pop('distance_matrix') # Remove the temporary matrix
+        dist_matrix = s.pop('distance_matrix') 
         sent_len = dist_matrix.shape[0]
         padded_vectors = []
         for i in range(sent_len):
             row_vector = dist_matrix[i, :]
-            # Pad with 0, which is a neutral value for regression and distance.
             padded_vector = np.pad(row_vector, (0, max_len - sent_len), 'constant', constant_values=0)
             padded_vectors.append(padded_vector)
         
-        # The key for this concept will be 'sd'
         s['sd'] = torch.from_numpy(np.array(padded_vectors, dtype=np.float32))
         final_sentences.append(s)
         
@@ -105,7 +100,6 @@ def add_padded_distance_vectors(sentences):
 # ======================================================================
 
 def tokenize_and_align(sentences, tokenizer, concept_key):
-    # This function is now robust enough to handle the 'sd' tensor
     print("\n--- Step 4: Tokenizing and Aligning Data ---")
     tokenized_sentences = []
     for sentence in tqdm(sentences, desc=f"Tokenizing for '{concept_key}'"):
@@ -120,7 +114,7 @@ def tokenize_and_align(sentences, tokenizer, concept_key):
             current_token_position += len(word_ids); original_word_indices.append(i)
         if not input_ids: continue
         
-        aligned_labels = labels[original_word_indices] # Select rows from the tensor
+        aligned_labels = labels[original_word_indices] 
             
         tokenized_sentences.append({
             "input_ids": input_ids, "word_to_token_positions": word_to_token_positions,
@@ -129,7 +123,6 @@ def tokenize_and_align(sentences, tokenizer, concept_key):
     return tokenized_sentences
 
 def encode_with_gpt2(tokenized_sentences, model, device, concept_key):
-    # This function is identical to the one in your reference script
     print("\n--- Step 5: Encoding with GPT-2 ---")
     all_outputs = []
     for sentence in tqdm(tokenized_sentences, desc="Encoding with GPT-2"):
@@ -147,7 +140,6 @@ def encode_with_gpt2(tokenized_sentences, model, device, concept_key):
     return all_outputs
 
 def average_subtokens_per_word(hidden_states, word_to_token_positions):
-    # This function is identical to the one in your reference script
     word_embeddings = []
     for token_idxs in word_to_token_positions:
         if not token_idxs: continue
@@ -163,10 +155,8 @@ def main():
     parser.add_argument("--data_fraction", type=int, choices=[1, 10, 100], default=100, help="Percentage of the filtered dataset to use for encoding.")
     args = parser.parse_args()
 
-    # Set seed for reproducibility of data subsetting
     np.random.seed(42)
 
-    # The concept key is fixed for this script
     CONCEPT_KEY = "sd"
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -174,12 +164,11 @@ def main():
     print(f"--- Configuration ---")
     print(f"Dataset: {args.dataset}, Concept: {CONCEPT_KEY.upper()}, Device: {device}, Data Fraction: {args.data_fraction}%")
 
-    # Identical file loading logic from your reference script
     if args.dataset == "narratives":
         dataset_name_short = "nar"
         data_files = ["data/narratives/train_clean.conllu", "data/narratives/test_clean.conllu"]
         save_dir = "Final/Embeddings/Original/Narratives"
-    else: # args.dataset == "ud"
+    else:   
         dataset_name_short = "ud"
         data_files = ["data/ud_ewt/en_ewt-ud-train.conllu", "data/ud_ewt/en_ewt-ud-dev.conllu", "data/ud_ewt/en_ewt-ud-test.conllu"]
         save_dir = "Final/Embeddings/Original/UD"
@@ -199,7 +188,6 @@ def main():
     if args.data_fraction < 100:
         print(f"\n--- Subsetting Data to {args.data_fraction}% ---")
         num_samples = int(len(golden_sentences) * (args.data_fraction / 100.0))
-        # np.random.seed(42) was set at the start of main for reproducibility
         subset_indices = np.random.choice(len(golden_sentences), num_samples, replace=False)
         golden_sentences = [golden_sentences[i] for i in subset_indices]
         print(f"Using a random subset of {len(golden_sentences)} sentences for encoding.")
